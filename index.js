@@ -1149,9 +1149,11 @@ class ZhenshangyinDateRangePicker {
             `;
         document.body.appendChild(picker);
         this.picker = picker;
+
         picker.addEventListener('click', (event) => {
             event.stopPropagation();
         });
+
         this.setupDatePickers();
         this.setupButtons();
 
@@ -1447,7 +1449,6 @@ class ZhenshangyinDateRangePicker {
         Array.from(calendarBody.querySelectorAll('td')).forEach(td => {
             td.classList.remove('zhenshangyin-hover-range', 'zhenshangyin-custom-selected', 'zhenshangyin-selected-range');
         });
-
     }
     highlightDate(day, month, year, type) {
         const selectedDate = new Date(year, month, day);

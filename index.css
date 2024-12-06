@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    transition: all 0.3s;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -68,7 +67,7 @@ input {
 }
 
 .Zhenshangyin-rom{
-    width: 95%;
+    width: calc(100% - 40px);
     overflow: hidden;
     margin: 20px auto;
     display: grid;
@@ -76,7 +75,7 @@ input {
     gap: 20px;
 }
 .Zhenshangyin-xiala{
-    width: 95%;
+    width: calc(100% - 40px);
     overflow: hidden;
     margin: 20px auto;
     display: grid;
@@ -89,6 +88,7 @@ input {
     padding: 20px;
     border: 1px solid #00000010;
     border-radius: 10px;
+    position: relative;
 }
 .Zhenshangyin-list button{
     width: 100%;
@@ -120,7 +120,7 @@ input {
     position: relative;
 }
 .Zhenshangyin-riqi{
-    width: 95%;
+    width: calc(100% - 40px);
     overflow: hidden;
     margin: 20px auto;
     display: grid;
@@ -128,11 +128,20 @@ input {
     gap: 20px;
 }
 
-
+.zhenshangyin-copy-button{
+    font-size: 14px;
+    color: #ffffff;
+    position: absolute;
+    top: 37px;
+    right: 40px;
+    z-index: 5;
+    cursor: pointer;
+    font-weight: bold;
+}
 .code-highlight {
     background-color: #000000;
     color: #ffffff;
-    line-height: 2;
+    line-height: 1.5;
     white-space: pre-wrap;
     font-size: 14px;
 }
