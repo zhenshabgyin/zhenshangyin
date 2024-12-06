@@ -228,24 +228,25 @@ document.addEventListener('DOMContentLoaded', () => {
         highlightCode(block);
     });
 
-    // document.querySelectorAll(".ZhenshangYin").forEach((block) => {
-    //     const copyButton = document.createElement("button");
-    //     copyButton.innerText = "复制";
-    //     copyButton.addEventListener("click", () => {
-    //         const range = document.createRange();
-    //         range.selectNode(block);
-    //         window.getSelection().removeAllRanges();
-    //         window.getSelection().addRange(range);
-    //         document.execCommand("copy");
-    //         window.getSelection().removeAllRanges();
-    //         new ZhenshangyinMessage({ 
-    //             message: '复制成功', 
-    //             type: 'success', 
-    //             duration: 2000 
-    //         });
-    //     });
-    //     block.parentNode.insertBefore(copyButton, block);
-    // });
+    document.querySelectorAll(".ZhenshangYin").forEach((block) => {
+        const copyButton = document.createElement("div");
+        copyButton.classList.add("zhenshangyin-copy-button");
+        copyButton.innerText = "复制";
+        copyButton.addEventListener("click", () => {
+            const range = document.createRange();
+            range.selectNode(block);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            new ZhenshangyinMessage({ 
+                message: '复制成功', 
+                type: 'success', 
+                duration: 2000 
+            });
+        });
+        block.parentNode.insertBefore(copyButton, block);
+    });
 
 });
 
