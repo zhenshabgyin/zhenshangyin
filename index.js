@@ -2199,24 +2199,24 @@ class ZhenshangyinNotification {
                         .zhenshangyin-notification.error {
                             background-color: #f56c6c;
                         }
-                        .zhenshangyin-notification.zhenshangyin-notification-show {
+                        .zhenshangyin-notification-show {
                             opacity: 1;
                             transform: translateX(0);
                         }
-                        .zhenshangyin-notification.zhenshangyin-notification-hide {
+                        .zhenshangyin-notification-hide {
                             opacity: 0;
-                            transform: translateX(0px) translateY(-5px); 
+                            transform: translateX(0px) translateY(-20px); 
                             transition: opacity 0.5s ease, transform 0.5s ease;
                         }
                         .zhenshangyin-notification-subtitle {
                             flex: 1;
                         }
-                        .zhenshangyin-notification .zhenshangyin-notification-icon {
+                        .zhenshangyin-notification-icon {
                             width: 25px;
                             height: 25px;
                             margin-right: 10px;
                         }
-                        .zhenshangyin-notification .zhenshangyin-notification-title {
+                        .zhenshangyin-notification-title {
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
@@ -2224,12 +2224,12 @@ class ZhenshangyinNotification {
                             line-height: 25px;
                             font-size: 16px;
                         }
-                        .zhenshangyin-notification .zhenshangyin-notification-message {
+                        .zhenshangyin-notification-message {
                             flex: 1;
                             margin-top: 5px;
                             font-size: 14px;
                         }
-                        .zhenshangyin-notification .zhenshangyin-notification-close {
+                        .zhenshangyin-notification-close {
                             width: 18px;
                             cursor: pointer;
                         }
@@ -2682,7 +2682,7 @@ class ZhenshangyinDropdown {
                     border-radius: 3px;
                     background: #00000020;
                 }
-                .zhenshengyin-dropdown.zhenshengyin-dropdown-show {
+                .zhenshengyin-dropdown-show {
                     opacity: 1;
                     transition: opacity 0.3s ease, transform 0.3s ease;
                 }
@@ -2698,9 +2698,6 @@ class ZhenshangyinDropdown {
                     cursor: pointer;
                     color: #868686;
                     position: relative;
-                }
-                .zhenshengyin-dropdown-group .zhenshengyin-dropdown-item {
-                    padding: 5px 15px;
                 }
                 .zhenshengyin-dropdown-item:hover {
                     background: #f0f0f0;
@@ -2751,8 +2748,6 @@ class ZhenshangyinDropdown {
         document.head.appendChild(style);
     }
 }
-
-
 
 class ZhenshangyinLinkage {
     constructor(options) {
