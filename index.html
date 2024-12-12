@@ -14,6 +14,9 @@
     <div class="Main">
         <div class="MainLeft">
             <div class="MainLeftList MainLeftListNav">
+                <h2>LoadingBar 加载进度条</h2>
+            </div>
+            <div class="MainLeftList">
                 <h2>Message 消息提示</h2>
             </div>
             <div class="MainLeftList">
@@ -31,6 +34,50 @@
         </div>
 
         <div class="MainRight">
+            <div class="MainRightList">
+                <h2>LoadingBar 加载进度条</h2>
+                <div class="code">
+                    <code>new ZhenshangyinLoadingBar({ });</code>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><strong>参数/方法</strong></th>
+                                <th><strong>类型</strong></th>
+                                <th><strong>默认值</strong></th>
+                                <th><strong>说明</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong><code>height</code></strong></td>
+                                <td><code>String</code></td>
+                                <td><code>'2px'</code></td>
+                                <td>加载条的高度。</td>
+                            </tr>
+                            <tr>
+                                <td><strong><code>backgroundColor</code></strong></td>
+                                <td><code>String</code></td>
+                                <td><code>'#000000'</code></td>
+                                <td>加载条的背景颜色。</td>
+                            </tr>
+                            <tr>
+                                <td><strong><code>bindToScroll</code></strong></td>
+                                <td><code>Function</code></td>
+                                <td>无</td>
+                                <td>绑定滚动事件，将加载条的宽度根据滚动位置实时更新。</td>
+                            </tr>
+                            <tr>
+                                <td><strong><code>updateProgress</code></strong></td>
+                                <td><code>Function</code></td>
+                                <td>无</td>
+                                <td>手动更新加载条的进度。接受一个数字类型的参数 <code>percentage</code>，表示加载进度（0 到 100）。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="MainRightList">
                 <h2>Message 消息提示</h2>
                 <ul class="grid4">
@@ -877,6 +924,15 @@
             item.addEventListener('click', () => {
                 window.scrollTo({ top: listys[index].offsetTop - 100, behavior: 'smooth' });
             });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const loadingBar = new ZhenshangyinLoadingBar({
+                height: '4px'
+            });
+            loadingBar.bindToScroll();
+            loadingBar.updateScrollProgress();
+
         });
     </script>
 </body>
