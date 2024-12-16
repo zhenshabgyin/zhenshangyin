@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <div class="Main">
         <div class="MainLeft">
             <div class="MainLeftList MainLeftListNav">
@@ -32,7 +33,11 @@
             <div class="MainLeftList">
                 <h2>Cascader 级联选择器</h2>
             </div>
+            <div class="MainLeftList">
+                <h2>Slider 滑块</h2>
+            </div>
         </div>
+
 
         <div class="MainRight">
             <div class="MainRightList">
@@ -119,7 +124,8 @@
                                 <td><code>type</code></td>
                                 <td><code>string</code></td>
                                 <td><code>'info'</code></td>
-                                <td>消息类型，可选值：<code>'info'</code>、<code>'success'</code>、<code>'warning'</code>、<code>'error'</code></td>
+                                <td>消息类型，可选值：<code>'info'</code>、<code>'success'</code>、<code>'warning'</code>、<code>'error'</code>
+                                </td>
                             </tr>
                             <tr>
                                 <td><code>duration</code></td>
@@ -177,7 +183,8 @@
                                 <td><code>type</code></td>
                                 <td><code>string</code></td>
                                 <td><code>'info'</code></td>
-                                <td>通知类型，可选值：<code>'info'</code>、<code>'success'</code>、<code>'warning'</code>、<code>'error'</code></td>
+                                <td>通知类型，可选值：<code>'info'</code>、<code>'success'</code>、<code>'warning'</code>、<code>'error'</code>
+                                </td>
                             </tr>
                             <tr>
                                 <td><code>duration</code></td>
@@ -257,13 +264,15 @@
                                 <td><code>type</code></td>
                                 <td><code>string</code></td>
                                 <td><code>'date'</code></td>
-                                <td>选择器类型，可选值：<code>'date'</code>(日期)、<code>'dateRange'</code>(日期范围)、<code>'month'</code>(月份)、<code>'monthRange'</code>(月份范围)、<code>'year'</code>(年份)、<code>'yearRange'</code>(年份范围)</td>
+                                <td>选择器类型，可选值：<code>'date'</code>(日期)、<code>'dateRange'</code>(日期范围)、<code>'month'</code>(月份)、<code>'monthRange'</code>(月份范围)、<code>'year'</code>(年份)、<code>'yearRange'</code>(年份范围)
+                                </td>
                             </tr>
                             <tr>
                                 <td><code>dateFormat</code></td>
                                 <td><code>string</code></td>
                                 <td><code>'YYYY-MM-DD'</code></td>
-                                <td>日期格式，支持：<code>YYYY</code>(年)、<code>MM</code>(月)、<code>DD</code>(日)、<code>HH</code>(时)、<code>mm</code>(分)、<code>ss</code>(秒)</td>
+                                <td>日期格式，支持：<code>YYYY</code>(年)、<code>MM</code>(月)、<code>DD</code>(日)、<code>HH</code>(时)、<code>mm</code>(分)、<code>ss</code>(秒)
+                                </td>
                             </tr>
                             <tr>
                                 <td><code>separator</code></td>
@@ -539,6 +548,130 @@
                     </table>
                 </div>
             </div>
+            <div class="MainRightList">
+                <h2>Slider 滑块</h2>
+                <ul>
+                    <li>
+                        <h3>用法</h3>
+                        <div id="slider"></div>
+                    </li>
+                </ul>
+                <div class="code">
+                    <code>new ZhenshangyinSlider('selector', options);</code>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>参数</th>
+                                <th>类型</th>
+                                <th>默认值</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>min</code></td>
+                                <td><code>number</code></td>
+                                <td><code>0</code></td>
+                                <td>最小值</td>
+                            </tr>
+                            <tr>
+                                <td><code>max</code></td>
+                                <td><code>number</code></td>
+                                <td><code>100</code></td>
+                                <td>最大值</td>
+                            </tr>
+                            <tr>
+                                <td><code>step</code></td>
+                                <td><code>number</code></td>
+                                <td><code>1</code></td>
+                                <td>步长，设置为 0 时不显示断点</td>
+                            </tr>
+                            <tr>
+                                <td><code>value</code></td>
+                                <td><code>number/array</code></td>
+                                <td><code>0</code></td>
+                                <td>初始值，区间选择时为数组</td>
+                            </tr>
+                            <tr>
+                                <td><code>range</code></td>
+                                <td><code>boolean</code></td>
+                                <td><code>false</code></td>
+                                <td>是否为区间选择</td>
+                            </tr>
+                            <tr>
+                                <td><code>height</code></td>
+                                <td><code>number</code></td>
+                                <td><code>6</code></td>
+                                <td>滑块轨道高度(px)</td>
+                            </tr>
+                            <tr>
+                                <td><code>buttonSize</code></td>
+                                <td><code>number</code></td>
+                                <td><code>20</code></td>
+                                <td>滑块按钮(px)</td>
+                            </tr>
+                            <tr>
+                                <td><code>primaryColor</code></td>
+                                <td><code>string</code></td>
+                                <td><code>'#000000'</code></td>
+                                <td>主题色</td>
+                            </tr>
+                            <tr>
+                                <td><code>backgroundColor</code></td>
+                                <td><code>string</code></td>
+                                <td><code>'#00000020'</code></td>
+                                <td>背景题色</td>
+                            </tr>
+                            <tr>
+                                <td><code>showInput</code></td>
+                                <td><code>boolean</code></td>
+                                <td><code>false</code></td>
+                                <td>是否显示输入框</td>
+                            </tr>
+                            <tr>
+                                <td><code>showStops</code></td>
+                                <td><code>boolean</code></td>
+                                <td><code>false</code></td>
+                                <td>是否显示间断点</td>
+                            </tr>
+                            <tr>
+                                <td><code>showTooltip</code></td>
+                                <td><code>boolean</code></td>
+                                <td><code>false</code></td>
+                                <td>是否显示提示框</td>
+                            </tr>
+                            <tr>
+                                <td><code>tooltipFormatter</code></td>
+                                <td><code>function</code></td>
+                                <td><code>value => value</code></td>
+                                <td>提示框格式化函数</td>
+                            </tr>
+                            <tr>
+                                <td><code>vertical</code></td>
+                                <td><code>boolean</code></td>
+                                <td><code>false</code></td>
+                                <td>是否垂直模式</td>
+                            </tr>
+                            <tr>
+                                <td><code>disabled</code></td>
+                                <td><code>boolean</code></td>
+                                <td><code>false</code></td>
+                                <td>是否禁用</td>
+                            </tr>
+                            <tr>
+                                <td><code>onChange</code></td>
+                                <td><code>function</code></td>
+                                <td><code>() => {}</code></td>
+                                <td>值改变时的回调函数</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+               
+            </div>
         </div>
     </div>
 
@@ -588,7 +721,7 @@
 
         // 选择日期带时间
         new ZhenshangyinDateSelector('#datePickerWithTime', {
-            type: 'date', 
+            type: 'date',
             dateFormat: 'YYYY-MM-DD HH:mm:ss',
             onDateSelect: (formattedDate) => {
                 console.log('Selected Date and Time:', formattedDate);
@@ -843,6 +976,27 @@
             },
         });
 
+        new ZhenshangyinSlider('#slider', {
+            range: true,                   // 区间选择模式
+            value: [20, 50],               // 初始值
+            min: 0,                        // 最小值
+            max: 100,                      // 最大值
+            step: 10,                      // 步长
+            height: 10,                    // 轨道高度
+            buttonSize: 20,                // 较大的滑块按钮
+            primaryColor: '#000000',          // 绿色主题
+            backgroundColor: '#00000050',  // 浅绿色背景
+            showInput: true,               // 显示输入框
+            showTooltip: true,             // 显示提示框
+            showStops: true,               // 显示间断点
+            vertical: false,               // 水平模式
+            disabled: false,               // 启用状态
+            tooltipFormatter: (value) => `${value}%`, // 提示框格式化
+            onChange: (value) => {         // 回调函数
+                console.log('当前值:', value);
+            }
+        });
+
         const listys = document.querySelectorAll('.MainRightList');
         const showioNavItems = document.querySelectorAll('.MainLeftList');
 
@@ -873,7 +1027,6 @@
 
         });
     </script>
-
 </body>
 
 </html>
