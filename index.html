@@ -3,14 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zhenshangyin</title>
+    <title>枕上瘾</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-
     <div class="Main">
         <div class="MainLeft">
             <div class="MainLeftList MainLeftListNav">
@@ -24,6 +22,9 @@
             </div>
             <div class="MainLeftList">
                 <h2>DatePicker 日期选择器</h2>
+            </div>
+            <div class="MainLeftList">
+                <h2>TimePicker 时间选择器</h2>
             </div>
             <div class="MainLeftList">
                 <h2>Select 选择器</h2>
@@ -476,6 +477,66 @@
                 </div>
             </div>
             <div class="MainRightList">
+                <h2>TimePicker 时间选择器</h2>
+                <ul class="grid2">
+                    <li>
+                        <h3>选择时间</h3>
+                        <input type="text" id="timeInput" placeholder="选择时间">
+                    </li>
+                    <li>
+                        <h3>选择时间区间</h3>
+                        <input type="text" id="timeRangeInput" placeholder="选择时间区间">
+                    </li>
+                </ul>
+                <div class="code">
+                    <code>new ZhenshangyinTimePicker('inputSelector', {});</code>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>参数</th>
+                                <th>类型</th>
+                                <th>默认值</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>inputSelector</code></td>
+                                <td><code>string</code></td>
+                                <td>-</td>
+                                <td>输入框的选择器字符串</td>
+                            </tr>
+                            <tr>
+                                <td><code>dateFormat</code></td>
+                                <td><code>string</code></td>
+                                <td><code>'HH:mm:ss'</code></td>
+                                <td>时间格式，支持 <code>'HH'</code>、<code>'HH:mm'</code>、<code>'HH:mm:ss'</code> 三种格式</td>
+                            </tr>
+                            <tr>
+                                <td><code>onTimeSelect</code></td>
+                                <td><code>function</code></td>
+                                <td><code>() => {}</code></td>
+                                <td>时间选择后的回调函数</td>
+                            </tr>
+                            <tr>
+                                <td><code>isRange</code></td>
+                                <td><code>boolean</code></td>
+                                <td><code>false</code></td>
+                                <td>是否为时间范围选择器</td>
+                            </tr>
+                            <tr>
+                                <td><code>separator</code></td>
+                                <td><code>string</code></td>
+                                <td><code>' - '</code></td>
+                                <td>范围选择时的分隔符</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="MainRightList">
                 <h2>Select 选择器</h2>
                 <ul class="grid3">
                     <li>
@@ -577,7 +638,7 @@
                         <input type="text" id="cascaderProvinceCityDistrict" placeholder="请选择">
                     </li>
                     <li>
-                        <h3>-限联动</h3>
+                        <h3>无限联动</h3>
                         <input type="text" id="cascaderInfinite" placeholder="请选择">
                     </li>
                     <li>
@@ -747,6 +808,24 @@
             separator: '至',
             onYearRangeSelect: (formattedRange) => {
                 console.log('Selected Year Range:', formattedRange);
+            }
+        });
+
+        // 基本时间选择器 (时:分:秒)
+        new ZhenshangyinTimePicker('#timeInput', {
+            dateFormat: 'HH:mm:ss',
+            onTimeSelect: (time) => {
+                console.log('Selected time:', time);
+            }
+        });
+
+        // 时间范围选择器
+        new ZhenshangyinTimePicker('#timeRangeInput', {
+            dateFormat: 'HH:mm:ss',
+            isRange: true,
+            separator: ' 至 ',
+            onTimeSelect: (timeRange) => {
+                console.log('Selected time range:', timeRange);
             }
         });
 
@@ -935,6 +1014,7 @@
 
         });
     </script>
+
 </body>
 
 </html>

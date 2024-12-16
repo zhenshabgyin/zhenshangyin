@@ -1,1 +1,3270 @@
-const a=['setHours','hideNotification','add','map','selected','#hours-scroll','splice','message-style','zhenshengyin-dropdown-down','createGroup','\x20-\x20','formatTime','style','onMonthRangeSelect','setupButtons','.zhenshangyin-dropdown-label','.zhenshengyin-dropdown{position:absolute;border:1px\x20solid#f0f0f0;background:rgb(255,255,255);box-sizing:border-box;z-index:999999999999999;max-height:250px;box-shadow:0\x202px\x2012px\x20rgba(0,0,0,0.1);overflow:auto;opacity:0;transition:opacity\x200.3s\x20ease,transform\x200.3s\x20ease}.zhenshengyin-dropdown::-webkit-scrollbar{width:3px}.zhenshengyin-dropdown::-webkit-scrollbar-thumb{border-radius:3px;background:#00000040}.zhenshengyin-dropdown::-webkit-scrollbar-track{border-radius:3px;background:#00000020}.zhenshengyin-dropdown-show{opacity:1;transition:opacity\x200.3s\x20ease,transform\x200.3s\x20ease}.zhenshengyin-dropdown-up{transform:translateY(-5px)}.zhenshengyin-dropdown-down{transform:translateY(5px)}.zhenshengyin-dropdown-item{padding:10px\x2015px;font-size:12px;cursor:pointer;color:#868686;position:relative}.zhenshengyin-dropdown-item:hover{background:#f0f0f0}.zhenshengyin-dropdown-item-selected{background:rgb(64,158,255)!important;color:#fff}.zhenshengyin-dropdown-item-selected-multiSelect{padding-right:25px;color:rgb(64,158,255)}.zhenshengyin-dropdown-item-selected-multiSelect::after{content:\x22✔\x22;color:rgb(64,158,255);font-size:12px;position:absolute;top:50%;right:15px;transform:translateY(-50%);font-weight:bold;line-height:1}.zhenshengyin-dropdown-search{width:calc(100%-10px);margin:5px\x20auto;display:block;height:36px;border:1px\x20solid#868686;color:#868686;padding:0\x2010px;font-size:12px}.zhenshengyin-dropdown-group{width:100%;overflow:hidden;border-bottom:1px\x20solid#00000010;padding-bottom:5px}.zhenshengyin-dropdown-group-title{width:100%;padding:10px\x2010px\x205px\x2010px;font-size:12px;cursor:pointer;color:#303030}','toggleMonthSelection','clientHeight','startYear','setupDatePickers','zhenshangyin-custom-show','container','split','addEventListener','<div\x20class=\x22zhenshangyin-time-picker\x22><div\x20class=\x22zhenshangyin-date-label\x22data-type=\x22','toString','from','<div\x20class=\x22zhenshangyin-custom-navigation\x22><button\x20class=\x22prev-decade\x22data-type=\x22','updateGroupedDropdown','getHours','zhenshengyin-dropdown','zhenshengyin-dropdown-multiSelect','showButtons','.zhenshangyin-dropdown-list','parse','updateYearRows','<td>','offsetWidth','zhenshengyin-dropdown-show','random','updateInputValue','left','currentYear','zhenshangyin-message-hide','scrollY','element','calendar','type','createMonthRangePicker','scrollX','push','changeYear','999999','end','updateDropdown','getFullYear','onYearSelect','filter','getDate','.zhenshengyin-dropdown-group','createStyle','populateList','name','0.5','items','customParams','</td>','innerText','createDropdownMenu','2px','zhenshengyin-dropdown-search','<ul\x20class=\x22zhenshangyin-dropdown-list\x22></ul>','menu','-minutes-scroll','createYearRangePicker','getMonth','.zhenshangyin-date-label[data-type=\x22','dropdown','block','</span><button\x20class=\x22zhenshangyin-next-year\x22data-type=\x22','zhenshangyin-custom-selected','searchEnabled','setupYearPickers','innerHeight','.zhenshangyin-confirm-btn','-year-picker-body\x22>','zhenshangyin-custom-up','opacity','setupTimeDropdowns','.next-decade','toLowerCase','floor','clearLowerLevelMenus','createYearPicker','selectedDate','error','-calendar-body','target','right','background','closest','children','YYYY-MM-DD','div','createItems','oninput','updateInput','hideMessage','start','highlightMonth','zhenshangyin-notification\x20','-zhenshangyin-time-dropdown','#calendar-body','selectedItems','seconds','setupScroll','.zhenshengyin-dropdown-item-selected','generateYearRows','.zhenshangyin-current-time-btn','.zhenshangyin-current-display[data-type=\x22','mouseover','endTime','onDateSelect','hasChildNodes','<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22viewBox=\x220\x200\x201024\x201024\x22><path\x20fill=\x22currentColor\x22d=\x22M512\x2064a448\x20448\x200\x201\x201\x200\x20896\x20448\x20448\x200\x200\x201\x200-896m-55.808\x20536.384-99.52-99.584a38.4\x2038.4\x200\x201\x200-54.336\x2054.336l126.72\x20126.72a38.272\x2038.272\x200\x200\x200\x2054.336\x200l262.4-262.464a38.4\x2038.4\x200\x201\x200-54.272-54.336z\x22></path></svg>','zIndex','highlightDate','remove','\x22><svg\x20viewBox=\x220\x200\x201024\x201024\x22xmlns=\x22http://www.w3.org/2000/svg\x22><path\x20d=\x22M896.4\x20496.5L505\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9l374.4\x20374.4L474\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7l388.5-388.5c9.3-9.3\x209.3-24.5-0.1-33.9z\x22fill=\x22#AAAAAA\x22></path><path\x20d=\x22M561.9\x20513.5c0-6.4-2.5-12.5-7-17L163.5\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9L504\x20513.5\x20132.5\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7L555\x20530.4c4.4-4.5\x206.9-10.6\x206.9-16.9z\x22fill=\x22#AAAAAA\x22></path></svg></button></div><div\x20class=\x22zhenshangyin-table-container\x22><table><tbody\x20id=\x22','zhenshangyin-selected-range','length','zhenshangyin-custom-calendar\x20date-range-calendar','textContent','flattenGroupedItems','zhenshengyin-dropdown-item-selected-multiSelect','fixed','populateMonths','endMonth','hours','-minutes-scroll\x22>','showDropdown','.zhenshangyin-next-month','createNotification','minutes','Time','reduce','tagName','zhenshangyin-dropdown-selected','setupSingleMonthPicker','loading','updateDateDisplay','.zhenshangyin-current-display','grouped','\x22><svg\x20viewBox=\x220\x200\x201024\x201024\x22xmlns=\x22http://www.w3.org/2000/svg\x22><path\x20d=\x22M129.6\x20527.5L521\x20918.9c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L180.5\x20510.5\x20552\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L129.6\x20493.6c-9.4\x209.3-9.4\x2024.5\x200\x2033.9z\x22fill=\x22#AAAAAA\x22></path><path\x20d=\x22M464\x20510.5c0\x206.4\x202.5\x2012.5\x207\x2017l391.4\x20391.4c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L522\x20510.5\x20893.5\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L471.1\x20493.6c-4.5\x204.5-7.1\x2010.6-7.1\x2016.9z\x22fill=\x22#AAAAAA\x22></path></svg></button><span\x20class=\x22zhenshangyin-current-display\x22data-type=\x22','-zhenshangyin-time-dropdown.zhenshangyin-dropdown-label','input','</span><button\x20class=\x22next-decade\x22><svg\x20t=\x221732243152928\x22viewBox=\x220\x200\x201024\x201024\x22version=\x221.1\x22xmlns=\x22http://www.w3.org/2000/svg\x22p-id=\x227738\x22><path\x20d=\x22M896.4\x20496.5L505\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9l374.4\x20374.4L474\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7l388.5-388.5c9.3-9.3\x209.3-24.5-0.1-33.9z\x22fill=\x22#AAAAAA\x22p-id=\x227739\x22></path><path\x20d=\x22M561.9\x20513.5c0-6.4-2.5-12.5-7-17L163.5\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9L504\x20513.5\x20132.5\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7L555\x20530.4c4.4-4.5\x206.9-10.6\x206.9-16.9z\x22fill=\x22#AAAAAA\x22p-id=\x227740\x22></path></svg></button></div><div\x20class=\x22zhenshangyin-table-container\x22><table><tbody\x20id=\x22year-picker-body\x22>','zhenshangyin-custom-down','multiSelect','<div\x20class=\x22zhenshangyin-custom-navigation\x22><button\x20class=\x22zhenshangyin-prev-year\x22data-type=\x22','-zhenshangyin-time-dropdown\x22><div\x20class=\x22zhenshangyin-dropdown-label\x22>','innerWidth','<div\x20class=\x22zhenshangyin-notification-title\x22><div\x20class=\x22zhenshangyin-notification-icon\x22>','</tr>','title','</div><div\x20class=\x22zhenshangyin-year-picker-wrapper\x22>','removeStyles','toggleYearSelection','closeDropdown','bind','replaceWith','data','forEach','scroll','bottom','round','zhenshangyin-message-container','zhenshangyin-notification-show','body','year','dateFormat','zhenshangyin-custom-today','currentMonth','<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22viewBox=\x220\x200\x201024\x201024\x22><path\x20fill=\x22currentColor\x22d=\x22M512\x2064a448\x20448\x200\x201\x201\x200\x20896\x20448\x20448\x200\x200\x201\x200-896m0\x20393.664L407.936\x20353.6a38.4\x2038.4\x200\x201\x200-54.336\x2054.336L457.664\x20512\x20353.6\x20616.064a38.4\x2038.4\x200\x201\x200\x2054.336\x2054.336L512\x20566.336\x20616.064\x20670.4a38.4\x2038.4\x200\x201\x200\x2054.336-54.336L566.336\x20512\x20670.4\x20407.936a38.4\x2038.4\x200\x201\x200-54.336-54.336z\x22></path></svg>','<div\x20class=\x22zhenshangyin-button-container\x22><button\x20class=\x22zhenshangyin-confirm-btn\x22>确认</button></div>','join','startTime','.zhenshangyin-prev-month','selectSingleYear','.zhenshangyin-next-month[data-type=\x22','onYearRangeSelect','</div></div><button\x20class=\x22zhenshangyin-confirm-confirm\x22>确认</button></div></div></div>','#zhenshangyin-time-dropdown','createPlaceholder','changeMonth','highlightYear','-calendar-body\x22></tbody></table></div>','resize','</div><div\x20class=\x22zhenshangyin-date-picker-wrapper\x22>','</div></div><div\x20class=\x22zhenshangyin-button-container\x22><button\x20class=\x22zhenshangyin-confirm-btn\x22>确认</button></div>','<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22viewBox=\x220\x200\x201024\x201024\x22><path\x20fill=\x22currentColor\x22d=\x22M512\x2064a448\x20448\x200\x201\x201\x200\x20896.064A448\x20448\x200\x200\x201\x20512\x2064m67.2\x20275.072c33.28\x200\x2060.288-23.104\x2060.288-57.344s-27.072-57.344-60.288-57.344c-33.28\x200-60.16\x2023.104-60.16\x2057.344s26.88\x2057.344\x2060.16\x2057.344M590.912\x20699.2c0-6.848\x202.368-24.64\x201.024-34.752l-52.608\x2060.544c-10.88\x2011.456-24.512\x2019.392-30.912\x2017.28a12.992\x2012.992\x200\x200\x201-8.256-14.72l87.68-276.992c7.168-35.136-12.544-67.2-54.336-71.296-44.096\x200-108.992\x2044.736-148.48\x20101.504\x200\x206.784-1.28\x2023.68.064\x2033.792l52.544-60.608c10.88-11.328\x2023.552-19.328\x2029.952-17.152a12.8\x2012.8\x200\x200\x201\x207.808\x2016.128L388.48\x20728.576c-10.048\x2032.256\x208.96\x2063.872\x2055.04\x2071.04\x2067.84\x200\x20107.904-43.648\x20147.456-100.416z\x22></path></svg>','zhenshangyin-custom-right','zhenshangyin-dropdown-list','#minutes-scroll','.zhenshangyin-scroll-container','message','未选择日期','setupSingleDatePicker','contains','width','getSeconds','filterItems','setupMonthPickers','querySelector','callback','zhenshengyin-dropdown-multiSelect-Button','-month-picker-body','documentElement','updateScrollProgress','</span><button\x20class=\x22next-decade\x22data-type=\x22','position','<svg\x20class=\x22zhenshangyin-message-icon\x22xmlns=\x22http://www.w3.org/2000/svg\x22viewBox=\x220\x200\x201024\x201024\x22><path\x20fill=\x22currentColor\x22d=\x22M512\x2064a448\x20448\x200\x201\x201\x200\x20896\x20448\x20448\x200\x200\x201\x200-896m-55.808\x20536.384-99.52-99.584a38.4\x2038.4\x200\x201\x200-54.336\x2054.336l126.72\x20126.72a38.272\x2038.272\x200\x200\x200\x2054.336\x200l262.4-262.464a38.4\x2038.4\x200\x201\x200-54.272-54.336z\x22></path></svg>','updateProgress','getFullSelection','getElementById','padStart','some','setupSingleYearPicker','-hours-scroll','<div\x20class=\x22zhenshangyin-date-range-container\x22><div\x20class=\x22zhenshangyin-month-picker-wrapper\x22>','applyHoverRangeStyle','formatMonth','zhenshangyin-notification-hide','isSelectingStart','月</span><button\x20class=\x22zhenshangyin-next-month\x22><svg\x20t=\x221732243152928\x22viewBox=\x220\x200\x201024\x201024\x22version=\x221.1\x22xmlns=\x22http://www.w3.org/2000/svg\x22p-id=\x227738\x22><path\x20d=\x22M896.4\x20496.5L505\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9l374.4\x20374.4L474\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7l388.5-388.5c9.3-9.3\x209.3-24.5-0.1-33.9z\x22fill=\x22#AAAAAA\x22p-id=\x227739\x22></path></svg></button><button\x20class=\x22zhenshangyin-next-year\x22><svg\x20t=\x221732243152928\x22viewBox=\x220\x200\x201024\x201024\x22version=\x221.1\x22xmlns=\x22http://www.w3.org/2000/svg\x22p-id=\x227738\x22><path\x20d=\x22M896.4\x20496.5L505\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9l374.4\x20374.4L474\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7l388.5-388.5c9.3-9.3\x209.3-24.5-0.1-33.9z\x22fill=\x22#AAAAAA\x22p-id=\x227739\x22></path><path\x20d=\x22M561.9\x20513.5c0-6.4-2.5-12.5-7-17L163.5\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9L504\x20513.5\x20132.5\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7L555\x20530.4c4.4-4.5\x206.9-10.6\x206.9-16.9z\x22fill=\x22#AAAAAA\x22p-id=\x227740\x22></path></svg></button></div><table><thead\x20style=\x22border-bottom:\x201px\x20solid\x20#ebeef5;\x22><tr><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></tr></thead></table><div\x20class=\x22zhenshangyin-table-container\x22><table><tbody\x20id=\x22calendar-body\x22></tbody></table></div>','updateSelection','zhenshengyin-dropdown-item','zhenshangyin-dropdown-show','</div><h2>','cloneNode','bindToScroll','offsetHeight','<div\x20class=\x22zhenshangyin-custom-navigation\x22><button\x20class=\x22zhenshangyin-prev-year\x22><svg\x20t=\x221732243173238\x22viewBox=\x220\x200\x201024\x201024\x22version=\x221.1\x22xmlns=\x22http://www.w3.org/2000/svg\x22p-id=\x228093\x22><path\x20d=\x22M129.6\x20527.5L521\x20918.9c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L180.5\x20510.5\x20552\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L129.6\x20493.6c-9.4\x209.3-9.4\x2024.5\x200\x2033.9z\x22fill=\x22#AAAAAA\x22p-id=\x228094\x22></path><path\x20d=\x22M464\x20510.5c0\x206.4\x202.5\x2012.5\x207\x2017l391.4\x20391.4c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L522\x20510.5\x20893.5\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L471.1\x20493.6c-4.5\x204.5-7.1\x2010.6-7.1\x2016.9z\x22fill=\x22#AAAAAA\x22p-id=\x228095\x22></path></svg></button><button\x20class=\x22zhenshangyin-prev-month\x22><svg\x20t=\x221732243173238\x22viewBox=\x220\x200\x201024\x201024\x22version=\x221.1\x22xmlns=\x22http://www.w3.org/2000/svg\x22p-id=\x228093\x22><path\x20d=\x22M129.6\x20527.5L521\x20918.9c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L180.5\x20510.5\x20552\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L129.6\x20493.6c-9.4\x209.3-9.4\x2024.5\x200\x2033.9z\x22fill=\x22#AAAAAA\x22p-id=\x228094\x22></path></svg></button><span\x20class=\x22zhenshangyin-current-display\x22>','removeEventListener','</div>','</li>','parentNode','removeDropdown','selectedYears','none','<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22viewBox=\x220\x200\x201024\x201024\x22><path\x20fill=\x22currentColor\x22d=\x22M512\x2064a448\x20448\x200\x201\x201\x200\x20896\x20448\x20448\x200\x200\x201\x200-896m0\x20192a58.432\x2058.432\x200\x200\x200-58.24\x2063.744l23.36\x20256.384a35.072\x2035.072\x200\x200\x200\x2069.76\x200l23.296-256.384A58.432\x2058.432\x200\x200\x200\x20512\x20256m0\x20512a51.2\x2051.2\x200\x201\x200\x200-102.4\x2051.2\x2051.2\x200\x200\x200\x200\x20102.4\x22></path></svg>','endYear','changeDecade','zhenshengyin-dropdown-item-selected','-seconds-scroll','toggle','indexOf','startMonth','updateCalendar','applySingleSelectionStyle','toggleCalendar','</span><button\x20class=\x22zhenshangyin-next-year\x22><svg\x20t=\x221732243152928\x22viewBox=\x220\x200\x201024\x201024\x22version=\x221.1\x22xmlns=\x22http://www.w3.org/2000/svg\x22p-id=\x227738\x22><path\x20d=\x22M896.4\x20496.5L505\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9l374.4\x20374.4L474\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7l388.5-388.5c9.3-9.3\x209.3-24.5-0.1-33.9z\x22fill=\x22#AAAAAA\x22p-id=\x227739\x22></path><path\x20d=\x22M561.9\x20513.5c0-6.4-2.5-12.5-7-17L163.5\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9L504\x20513.5\x20132.5\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7L555\x20530.4c4.4-4.5\x206.9-10.6\x206.9-16.9z\x22fill=\x22#AAAAAA\x22p-id=\x227740\x22></path></svg></button></div><div\x20class=\x22zhenshangyin-table-container\x22><table><tbody\x20id=\x22month-picker-body\x22><tr><td>1月</td><td>2月</td><td>3月</td></tr><tr><td>4月</td><td>5月</td><td>6月</td></tr><tr><td>7月</td><td>8月</td><td>9月</td></tr><tr><td>10月</td><td>11月</td><td>12月</td></tr></tbody></table></div>','.zhenshengyin-dropdown-item','inputMultiSelect','getMinutes','<svg\x20class=\x22zhenshangyin-message-icon\x22xmlns=\x22http://www.w3.org/2000/svg\x22viewBox=\x220\x200\x201024\x201024\x22><path\x20fill=\x22currentColor\x22d=\x22M512\x2064a448\x20448\x200\x201\x201\x200\x20896.064A448\x20448\x200\x200\x201\x20512\x2064m67.2\x20275.072c33.28\x200\x2060.288-23.104\x2060.288-57.344s-27.072-57.344-60.288-57.344c-33.28\x200-60.16\x2023.104-60.16\x2057.344s26.88\x2057.344\x2060.16\x2057.344M590.912\x20699.2c0-6.848\x202.368-24.64\x201.024-34.752l-52.608\x2060.544c-10.88\x2011.456-24.512\x2019.392-30.912\x2017.28a12.992\x2012.992\x200\x200\x201-8.256-14.72l87.68-276.992c7.168-35.136-12.544-67.2-54.336-71.296-44.096\x200-108.992\x2044.736-148.48\x20101.504\x200\x206.784-1.28\x2023.68.064\x2033.792l52.544-60.608c10.88-11.328\x2023.552-19.328\x2029.952-17.152a12.8\x2012.8\x200\x200\x201\x207.808\x2016.128L388.48\x20728.576c-10.048\x2032.256\x208.96\x2063.872\x2055.04\x2071.04\x2067.84\x200\x20107.904-43.648\x20147.456-100.416z\x22></path></svg>','selectSingleMonth','<div\x20class=\x22zhenshangyin-date-range-container\x22><div\x20class=\x22zhenshangyin-date-picker-wrapper\x22>','success','warning','inputElements','onDateRangeSelect','separator','populateCalendar','click','bindEvents','endDate','zhenshangyin-notification-style','top','isSameDate','onSelect','\x22><svg\x20viewBox=\x220\x200\x201024\x201024\x22xmlns=\x22http://www.w3.org/2000/svg\x22><path\x20d=\x22M129.6\x20527.5L521\x20918.9c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L180.5\x20510.5\x20552\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L129.6\x20493.6c-9.4\x209.3-9.4\x2024.5\x200\x2033.9z\x22fill=\x22#AAAAAA\x22></path></svg></button><span\x20class=\x22zhenshangyin-current-display\x22data-type=\x22','\x20selected','bindListEvents','#000000','createMonthPicker','picker','duration','hide','createDatePicker','zhenshangyin-message\x20','removeItem','find','</div><div\x20class=\x22zhenshangyin-month-picker-wrapper\x22>','月</span><button\x20class=\x22zhenshangyin-next-month\x22data-type=\x22','startDate','createRemoveButton','querySelectorAll','.zhenshangyin-confirm-confirm','init','applyRangeStyle','-year-picker-body','createContainer','text','showTime','createDateRangePicker','\x20/\x20','formatDate','createMessage','<div\x20class=\x22zhenshangyin-date-range-container\x22><div\x20class=\x22zhenshangyin-year-picker-wrapper\x22>','.zhenshangyin-next-year','getIcon','<tr>','removeChild','placeholder','-year-picker-body\x20td','.zhenshangyin-prev-year','info','togglePicker','createTimePicker','populateYears','.zhenshangyin-custom-calendar{position:absolute;background:rgb(255,255,255);filter:drop-shadow(0\x202px\x2012px\x20rgba(0,0,0,0.25));border-radius:6px;z-index:9999999999999999999999999999999;opacity:0;transition:opacity\x200.3s\x20ease,transform\x200.3s\x20ease;padding:20px\x2015px;width:300px}.zhenshangyin-custom-calendar*{line-height:1}.zhenshangyin-custom-calendar.zhenshangyin-custom-show{opacity:1}.zhenshangyin-custom-calendar.zhenshangyin-custom-down{transform:translateY(15px)}.zhenshangyin-custom-calendar.zhenshangyin-custom-up{transform:translateY(-15px)}.zhenshangyin-custom-down::before{content:\x22\x22;width:0px;height:0px;border-bottom:6px\x20solid\x20rgb(255,255,255);border-left:6px\x20solid\x20transparent;border-right:6px\x20solid\x20transparent;position:absolute;top:-6px;left:50px}.zhenshangyin-custom-up::before{content:\x22\x22;width:0px;height:0px;border-top:6px\x20solid\x20rgb(255,255,255);border-left:6px\x20solid\x20transparent;border-right:6px\x20solid\x20transparent;position:absolute;bottom:-6px;left:50px}.zhenshangyin-custom-right::before{left:auto;right:50px}.zhenshangyin-custom-calendar\x20table{width:100%;border-collapse:collapse}.zhenshangyin-custom-calendar\x20th,.zhenshangyin-custom-calendar\x20td{padding:10px;line-height:1;text-align:center;cursor:pointer;font-size:12px;color:rgb(96,98,102);border:2px\x20solid#ffffff;border-radius:10px}.zhenshangyin-custom-calendar\x20th{font-weight:500;color:rgb(144,147,153)}.zhenshangyin-custom-calendar\x20td:hover{background-color:rgb(242,246,252)}.zhenshangyin-custom-calendar\x20td.zhenshangyin-custom-selected{background-color:rgb(64,158,255);color:rgb(255,255,255)!important}.zhenshangyin-custom-calendar\x20td.zhenshangyin-custom-today{color:rgb(64,158,255);font-weight:bold}.zhenshangyin-custom-navigation{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px\x20solid#ebeef5}.zhenshangyin-custom-navigation\x20button{background:none;border:none;cursor:pointer}.zhenshangyin-next-month,.zhenshangyin-prev-month{margin:0\x2015px}.zhenshangyin-custom-navigation\x20svg{width:16px;height:auto;display:block}.zhenshangyin-custom-navigation\x20button:hover\x20svg\x20path{fill:rgb(64,158,255)}.zhenshangyin-custom-navigation\x20button:hover{color:rgb(102,177,255)}.zhenshangyin-current-display{font-size:14px;color:rgb(94,94,94);margin:0\x20auto}.zhenshangyin-time-picker{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:10px}.zhenshangyin-time-dropdown{flex:1;position:relative}.zhenshangyin-current-tame{font-size:12px;color:rgb(0,0,0,0.5);margin-right:10px}.zhenshangyin-date-label{flex:1;border-radius:4px;text-align:center;cursor:pointer;line-height:30px;font-size:12px;letter-spacing:1px;border:1px\x20solid#c1c1c1;color:#c1c1c1}.zhenshangyin-dropdown-label{width:100%;border-radius:4px;text-align:center;cursor:pointer;line-height:30px;font-size:12px;letter-spacing:1px;border:1px\x20solid#c1c1c1;color:#c1c1c1}.zhenshangyin-current-time-btn{font-size:12px;color:rgb(64,158,255);background:transparent;border:transparent;margin:0px\x2010px\x200px\x2020px;cursor:pointer}.zhenshangyin-confirm-btn{width:50px;height:30px;background:rgb(64,158,255);border:transparent;color:rgb(255,255,255);font-size:12px;border-radius:2px;cursor:pointer}.zhenshangyin-scroll-container{display:none;position:absolute;bottom:120%;left:0;width:100%;overflow-y:hidden;border:1px\x20solid#ebeef5;border-radius:4px;background-color:white;z-index:1;justify-content:space-between}.zhenshangyin-scroll-container.open{display:flex}.zhenshangyin-time-scroll{overflow-y:scroll;height:150px;width:50px}.zhenshangyin-confirm-confirm{width:100%;font-size:12px;color:rgb(64,158,255);background:transparent;border:transparent;cursor:pointer;border-top:1px\x20solid#00000012;text-align:right;padding:8px\x2010px}.zhenshangyin-time-scroll::-webkit-scrollbar{width:0px}.zhenshangyin-scroll-scroll{display:flex;position:relative}.zhenshangyin-scroll-scroll::after{content:\x22\x22;width:95%;height:1px;position:absolute;left:50%;transform:translateX(-50%);top:60px;background:linear-gradient(90deg,rgba(0,0,0,0)0%,rgba(0,0,0,0.2)50%,rgba(0,0,0,0)100%)}.zhenshangyin-scroll-scroll::before{content:\x22\x22;width:95%;height:1px;position:absolute;left:50%;transform:translateX(-50%);bottom:60px;background:linear-gradient(90deg,rgba(0,0,0,0)0%,rgba(0,0,0,0.2)50%,rgba(0,0,0,0)100%)}.zhenshangyin-scroll-item{line-height:30px;text-align:center;cursor:pointer;font-size:12px;color:rgb(0,0,0,0.3)}.zhenshangyin-scroll-item.selected{color:rgb(0,0,0)}.zhenshangyin-scroll-container::-webkit-scrollbar{display:none}.zhenshangyin-button-container{display:flex;justify-content:space-between;margin-top:10px;gap:10px}.zhenshangyin-button-container\x20button{flex:1;padding:5px\x2010px;background-color:rgb(64,158,255);color:white;border:none;border-radius:4px;cursor:pointer;position:relative;z-index:5}.zhenshangyin-button-container\x20button:hover{background-color:rgb(102,177,255)}.zhenshangyin-scroll-item.placeholder{height:30px;cursor:default;background-color:transparent}.zhenshangyin-scroll-item.placeholder:hover{background-color:transparent}.zhenshangyin-date-range-container{display:flex;justify-content:space-between;gap:20px}.zhenshangyin-year-picker-wrapper,.zhenshangyin-date-picker-wrapper{flex:1}.zhenshangyin-custom-calendar.date-range-calendar{width:600px}.zhenshangyin-custom-calendar.date-range-calendar::after{content:\x22\x22;width:1px;height:calc(100%-80px);background:#ebeef580;position:absolute;top:20px;left:50%;transform:translateX(-50%)}.zhenshangyin-selected-range{background-color:rgba(64,158,255,0.2);border-radius:4px}.zhenshangyin-month-picker-wrapper{flex:1}.zhenshangyin-hover-range{background-color:rgba(64,158,255,0.2);border-radius:4px}.zhenshengyin-dropdown-multiSelect{width:max-content;display:flex;align-items:center;gap:10px;font-size:12px;background:rgb(0,0,0,0.1);border:1px\x20solid\x20rgb(0,0,0,0.2);line-height:1;padding:5px;color:rgb(0,0,0,0.7)}.zhenshengyin-dropdown-multiSelect-Button{cursor:pointer;font-size:12px;color:rgb(0,0,0)}@media(max-width:768px){.zhenshangyin-custom-calendar{width:90%!important;left:5%!important}.zhenshangyin-date-range-container{flex-wrap:wrap}.zhenshangyin-custom-calendar.date-range-calendar::after,.zhenshangyin-custom-up::before,.zhenshangyin-custom-down::before{display:none}.zhenshangyin-custom-calendar.date-range-calendar\x20th,.zhenshangyin-custom-calendar.date-range-calendar\x20td{padding:5px!important;font-size:12px}.zhenshangyin-custom-calendar.zhenshangyin-custom-show{opacity:1}.zhenshangyin-year-picker-wrapper,.zhenshangyin-month-picker-wrapper{flex:inherit!important;width:100%!important}.zhenshangyin-custom-calendar.date-range-calendar.zhenshangyin-month-picker-wrapper\x20th,.zhenshangyin-custom-calendar.date-range-calendar.zhenshangyin-month-picker-wrapper\x20td,.zhenshangyin-custom-calendar.date-range-calendar.zhenshangyin-year-picker-wrapper\x20th,.zhenshangyin-custom-calendar.date-range-calendar.zhenshangyin-year-picker-wrapper\x20td{padding:10px!important}}.zhenshangyin-dropdown-menu{position:absolute;background:rgb(255,255,255);filter:drop-shadow(0\x202px\x2012px\x20rgba(0,0,0,0.25));border-radius:2px;z-index:9999999999999999999999999999999;opacity:0;transition:opacity\x200.3s\x20ease,transform\x200.3s\x20ease;display:flex}.zhenshangyin-dropdown-show{opacity:1}.zhenshangyin-dropdown-down{transform:translateY(5px)}.zhenshangyin-dropdown-up{transform:translateY(-5px)}.zhenshangyin-dropdown-list{width:max-content;overflow:hidden;padding:5px\x200;border-left:1px\x20solid#00000010;max-height:250px;overflow:auto}.zhenshangyin-dropdown-list::-webkit-scrollbar{width:0px}.zhenshangyin-dropdown-list:nth-child(1){border:transparent}.zhenshangyin-dropdown-list\x20li{width:120px;padding:8px\x2015px;cursor:pointer;font-size:12px;color:#868686}.zhenshangyin-dropdown-list\x20li:hover{background:#f0f0f0;color:rgb(64,158,255)}.zhenshangyin-dropdown-list\x20li.zhenshangyin-dropdown-selected{background:#f0f0f0;color:rgb(64,158,255)}','appendChild','findIndex','getDay','getBoundingClientRect','dateInput','搜索...','includes','onMonthSelect','value','zhenshengyin-dropdown-up','.zhenshangyin-prev-year[data-type=\x22','.zhenshangyin-message-container{position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:9999;width:auto;max-width:400px}.zhenshangyin-message{width:max-content;margin:auto;display:flex;align-items:center;gap:10px;margin-top:10px;padding:10px\x2020px;color:#000000;border-radius:4px;font-size:14px;line-height:1;box-shadow:0\x202px\x2012px\x20rgba(0,0,0,0.2);opacity:0;transform:translateY(-100%);transition:opacity\x200.3s\x20ease,transform\x200.3s\x20ease}.zhenshangyin-message.success{background-color:#ccf5e0}.zhenshangyin-message.warning{background-color:#ffebcc}.zhenshangyin-message.info{background-color:#d6ebff}.zhenshangyin-message.error{background-color:#ffd6cc}.zhenshangyin-message.zhenshangyin-message-show{opacity:1;transform:translateY(0)}.zhenshangyin-message.zhenshangyin-message-hide{opacity:0;transform:translateY(-20px);transition:opacity\x200.5s\x20ease,transform\x200.5s\x20ease}.zhenshangyin-message-icon{width:20px;height:20px}','zhenshangyin-dropdown-up','zhenshengyin-dropdown-group','replace','\x22><svg\x20viewBox=\x220\x200\x201024\x201024\x22xmlns=\x22http://www.w3.org/2000/svg\x22><path\x20d=\x22M896.4\x20496.5L505\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9l374.4\x20374.4L474\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7l388.5-388.5c9.3-9.3\x209.3-24.5-0.1-33.9z\x22fill=\x22#AAAAAA\x22></path></svg></button><button\x20class=\x22zhenshangyin-next-year\x22data-type=\x22','isMultiInputMode','#year-picker-body\x20td','<div\x20class=\x22zhenshangyin-scroll-item','display','zhenshengyin-dropdown-style-','createCalendar','groupTitle','head','innerHTML','zhenshangyin-message-style','zhenshangyin-hover-range','</div><div\x20class=\x22zhenshangyin-scroll-container\x22style=\x22display:\x20none;\x22><div\x20class=\x22zhenshangyin-scroll-scroll\x22><div\x20class=\x22zhenshangyin-time-scroll\x22id=\x22','month','formatDateOnly','</tbody></table></div>','</div><div\x20class=\x22zhenshangyin-time-scroll\x22id=\x22seconds-scroll\x22>','className','zhenshangyin-notification-container','selectedMonths','.zhenshangyin-scroll-item:not(.placeholder)','selectedTime','YYYY-MM','scrollTop','onclick','.zhenshangyin-next-year[data-type=\x22','createElement','YYYY','zhenshangyin-dropdown-down','centerScroll','\x22><svg\x20viewBox=\x220\x200\x201024\x201024\x22xmlns=\x22http://www.w3.org/2000/svg\x22><path\x20d=\x22M129.6\x20527.5L521\x20918.9c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L180.5\x20510.5\x20552\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L129.6\x20493.6c-9.4\x209.3-9.4\x2024.5\x200\x2033.9z\x22fill=\x22#AAAAAA\x22></path><path\x20d=\x22M464\x20510.5c0\x206.4\x202.5\x2012.5\x207\x2017l391.4\x20391.4c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L522\x20510.5\x20893.5\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L471.1\x20493.6c-4.5\x204.5-7.1\x2010.6-7.1\x2016.9z\x22fill=\x22#AAAAAA\x22></path></svg></button><button\x20class=\x22zhenshangyin-prev-month\x22data-type=\x22','classList','</div><div\x20class=\x22zhenshangyin-time-scroll\x22id=\x22','stopPropagation','dataset','getTime','defaultSelected','multiInputs','styleId','.prev-decade[data-type=\x22','selectItem','selectedValues'];(function(b,e){const f=function(g){while(--g){b['push'](b['shift']());}};f(++e);}(a,0x196));const b=function(c,d){c=c-0x0;let e=a[c];return e;};(function(){const c=b('0x128');const d=document[b('0x152')](b('0x16e'));d[b('0x141')]=c;document['head'][b('0x129')](d);}());class ZhenshangyinDatePicker{constructor(c,d={}){this[b('0x12d')]=document[b('0xbc')](c);this[b('0x11')]=new Date()[b('0x1e')]();this['currentMonth']=new Date()[b('0x32')]();this['dateFormat']=d[b('0x9b')]||'YYYY-MM-DD';this[b('0x61')]=d[b('0x61')]||function(){};this[b('0x45')]=null;this[b('0x117')]=this[b('0x9b')]['includes']('HH')||this[b('0x9b')]['includes']('mm')||this[b('0x9b')][b('0x12f')]('ss');this['selectedTime']={'hours':0x0,'minutes':0x0,'seconds':0x0};this[b('0x7')]=this[b('0x117')];this[b('0x112')]();}['init'](){this['dateInput']['addEventListener']('click',c=>{c['stopPropagation']();this[b('0x13e')]();this[b('0xeb')]();});document['addEventListener'](b('0xf9'),()=>{if(this[b('0x15')]){this[b('0x15')][b('0x157')][b('0x66')](b('0x177'));this[b('0x15')][b('0x157')][b('0x66')]('zhenshangyin-custom-down');this[b('0x15')][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this['calendar']['remove']();this[b('0x15')]=null;},0x12c);}});}[b('0xeb')](){const c=()=>{if(this[b('0x15')]){const d=this[b('0x12d')][b('0x12c')]();const e=this[b('0x12d')][b('0xd8')];const f=window[b('0x3a')]-d[b('0x95')];const g=d[b('0xfd')]+window['scrollY'];const h=d[b('0x10')];const i=window[b('0x88')]-d['right'];this[b('0x15')][b('0x157')]['add'](b('0x177'));const j=this[b('0x15')][b('0xd8')];const k=this[b('0x15')][b('0xc')];this[b('0x15')]['classList'][b('0x66')](b('0x84'));if(f<j&&g<j){this[b('0x15')][b('0x16e')][b('0xfd')]=g+e+'px';this['calendar'][b('0x157')][b('0x164')]('zhenshangyin-custom-down');this[b('0x15')][b('0x157')]['remove'](b('0x3d'));}else if(f<j){this[b('0x15')][b('0x16e')][b('0xfd')]=g-j+'px';this[b('0x15')][b('0x157')]['add'](b('0x3d'));this[b('0x15')][b('0x157')]['remove']('zhenshangyin-custom-down');}else{this[b('0x15')][b('0x16e')][b('0xfd')]=g+e+'px';this['calendar'][b('0x157')][b('0x164')](b('0x84'));this['calendar']['classList'][b('0x66')]('zhenshangyin-custom-up');}if(h+k<=window['innerWidth']){this[b('0x15')][b('0x16e')]['left']=d[b('0x10')]+window[b('0x18')]+'px';}else if(i+k<=window[b('0x88')]){this['calendar'][b('0x16e')][b('0x10')]=d['right']+window[b('0x18')]-k+'px';this['calendar']['classList'][b('0x164')](b('0xb0'));}else{this['calendar'][b('0x16e')][b('0x10')]=d[b('0x10')]+window[b('0x18')]+'px';}}};window[b('0x17a')](b('0x94'),c);window[b('0x17a')](b('0xac'),c);c();}[b('0x13e')](){if(this[b('0x15')])return;const c=document['createElement']('div');c[b('0x149')]='zhenshangyin-custom-calendar';c[b('0x141')]=b('0xd9')+this[b('0x11')]+'年'+(this['currentMonth']+0x1)+b('0xd1')+(this[b('0x117')]?this[b('0x126')]():'');document[b('0x99')]['appendChild'](c);this['calendar']=c;c[b('0x17a')](b('0xf9'),d=>{d[b('0x159')]();});c['querySelector'](b('0x123'))[b('0x17a')](b('0xf9'),()=>this[b('0x1a')](-0x1));c[b('0xbc')](b('0x11d'))[b('0x17a')]('click',()=>this[b('0x1a')](0x1));c[b('0xbc')](b('0xa2'))['addEventListener']('click',()=>this[b('0xa9')](-0x1));c['querySelector'](b('0x74'))[b('0x17a')](b('0xf9'),()=>this[b('0xa9')](0x1));if(this[b('0x117')]){this[b('0x3f')]();}if(this[b('0x7')]){this['calendar'][b('0xbc')]('.zhenshangyin-confirm-btn')['addEventListener'](b('0xf9'),()=>{if(this['selectedDate']){const d=this[b('0x11a')](this[b('0x11')],this['currentMonth'],this[b('0x45')][b('0x21')]());this['dateInput'][b('0x131')]=d;this[b('0x15')][b('0x157')][b('0x66')](b('0x177'));this[b('0x15')][b('0x157')]['remove'](b('0x84'));this[b('0x15')]['classList'][b('0x66')]('zhenshangyin-custom-up');setTimeout(()=>{this[b('0x15')][b('0x66')]();this['calendar']=null;this[b('0x61')](d);},0x12c);}});this[b('0x15')]['querySelector'](b('0x5d'))[b('0x17a')](b('0xf9'),()=>{const d=new Date();this['selectedTime'][b('0x71')]=d[b('0x4')]();this[b('0x14d')][b('0x76')]=d[b('0xef')]();this['selectedTime']['seconds']=d[b('0xb9')]();this[b('0x45')]=d;this[b('0x11')]=d[b('0x1e')]();this[b('0x9d')]=d[b('0x32')]();this['updateCalendar']();const e=this[b('0x11a')](this[b('0x11')],this[b('0x9d')],d[b('0x21')]());this[b('0x12d')]['value']=e;this[b('0x15')][b('0xbc')]('.zhenshangyin-dropdown-label')[b('0x6b')]=this[b('0x16d')]();this[b('0x61')](e);});}this[b('0xe9')]();}[b('0x126')](){return'<div\x20class=\x22zhenshangyin-time-picker\x22><div\x20class=\x22zhenshangyin-current-tame\x22>时间</div><div\x20class=\x22zhenshangyin-time-dropdown\x22id=\x22zhenshangyin-time-dropdown\x22><div\x20class=\x22zhenshangyin-dropdown-label\x22>'+this[b('0x16d')]()+'</div><div\x20class=\x22zhenshangyin-scroll-container\x22style=\x22display:\x20none;\x22><div\x20class=\x22zhenshangyin-scroll-scroll\x22><div\x20class=\x22zhenshangyin-time-scroll\x22id=\x22hours-scroll\x22>'+this['createPlaceholder']()+Array[b('0x1')]({'length':0x18},(c,d)=>'<div\x20class=\x22zhenshangyin-scroll-item'+(d===0x0?b('0x101'):'')+'\x22>'+String(d)[b('0xc8')](0x2,'0')+b('0xdb'))[b('0xa0')]('')+this['createPlaceholder']()+'</div><div\x20class=\x22zhenshangyin-time-scroll\x22id=\x22minutes-scroll\x22>'+this[b('0xa8')]()+Array[b('0x1')]({'length':0x3c},(c,d)=>b('0x13b')+(d===0x0?b('0x101'):'')+'\x22>'+String(d)[b('0xc8')](0x2,'0')+'</div>')['join']('')+this['createPlaceholder']()+b('0x148')+this['createPlaceholder']()+Array['from']({'length':0x3c},(c,d)=>b('0x13b')+(d===0x0?b('0x101'):'')+'\x22>'+String(d)[b('0xc8')](0x2,'0')+'</div>')[b('0xa0')]('')+this[b('0xa8')]()+'</div></div><button\x20class=\x22zhenshangyin-confirm-confirm\x22>确认</button></div></div><button\x20class=\x22zhenshangyin-current-time-btn\x22>此刻</button><button\x20class=\x22zhenshangyin-confirm-btn\x22>确认</button></div>';}['createPlaceholder'](){return Array[b('0x1')]({'length':0x2},()=>'<div\x20class=\x22zhenshangyin-scroll-item\x20placeholder\x22></div>')[b('0xa0')]('');}['formatTime'](){return String(this['selectedTime'][b('0x71')])[b('0xc8')](0x2,'0')+':'+String(this[b('0x14d')][b('0x76')])[b('0xc8')](0x2,'0')+':'+String(this[b('0x14d')][b('0x59')])[b('0xc8')](0x2,'0');}[b('0x3f')](){const c=this[b('0x15')][b('0xbc')](b('0xa7'));const d=c[b('0xbc')](b('0xb3'));const e=d['querySelector'](b('0x167'));const f=d[b('0xbc')](b('0xb2'));const g=d[b('0xbc')]('#seconds-scroll');const h=d[b('0xbc')](b('0x111'));c[b('0xbc')](b('0x171'))[b('0x17a')](b('0xf9'),i=>{i[b('0x159')]();d[b('0x16e')][b('0x13c')]=d['style'][b('0x13c')]===b('0xe0')?b('0x35'):b('0xe0');this[b('0x155')](e,this[b('0x14d')][b('0x71')]);this[b('0x155')](f,this[b('0x14d')]['minutes']);this['centerScroll'](g,this[b('0x14d')]['seconds']);});h[b('0x17a')](b('0xf9'),i=>{i[b('0x159')]();d['style'][b('0x13c')]='none';this[b('0x7d')]('start');this[b('0x7d')]('end');});document[b('0x17a')]('click',i=>{if(!c[b('0xb7')](i[b('0x48')])){d['style'][b('0x13c')]=b('0xe0');}});this[b('0x5a')](e,'hours');this[b('0x5a')](f,'minutes');this['setupScroll'](g,'seconds');}[b('0x155')](c,d){c[b('0x14f')]=(d+0x2)*0x1e-0x3c;}['setupScroll'](c,d){const e=c[b('0x110')]('.zhenshangyin-scroll-item:not(.placeholder)');let f;c['addEventListener'](b('0x94'),()=>{if(f)clearTimeout(f);f=setTimeout(()=>{const g=Math[b('0x96')]((c[b('0x14f')]+0x3c)/0x1e)-0x2;this[b('0x14d')][d]=g;e[b('0x93')]((h,j)=>{h[b('0x157')][b('0xe6')](b('0x166'),j===g);});this['calendar'][b('0xbc')]('.zhenshangyin-dropdown-label')[b('0x6b')]=this[b('0x16d')]();this[b('0x155')](c,g);},0x64);});e['forEach']((g,h)=>{g[b('0x17a')](b('0xf9'),()=>{this['selectedTime'][d]=h;this['centerScroll'](c,h);this[b('0x15')][b('0xbc')](b('0x171'))[b('0x6b')]=this['formatTime']();});});}[b('0x1a')](c){this[b('0x11')]+=c;this[b('0xe9')]();}[b('0xa9')](c){this['currentMonth']+=c;if(this[b('0x9d')]<0x0){this[b('0x9d')]=0xb;this[b('0x11')]--;}else if(this['currentMonth']>0xb){this[b('0x9d')]=0x0;this[b('0x11')]++;}this[b('0xe9')]();}[b('0xe9')](){const c=this['calendar']['querySelector']('.zhenshangyin-current-display');c[b('0x6b')]=this[b('0x11')]+'年'+(this[b('0x9d')]+0x1)+'月';this[b('0xf8')](this[b('0x11')],this[b('0x9d')]);}[b('0x11a')](c,d,e){const f=new Date(c,d,e,this['selectedTime']['hours'],this[b('0x14d')][b('0x76')],this[b('0x14d')][b('0x59')]);let g=this[b('0x9b')][b('0x137')](b('0x153'),f['getFullYear']())['replace']('MM',String(f[b('0x32')]()+0x1)[b('0xc8')](0x2,'0'))[b('0x137')]('DD',String(f[b('0x21')]())[b('0xc8')](0x2,'0'))['replace']('HH',String(f[b('0x4')]())['padStart'](0x2,'0'))['replace']('mm',String(f[b('0xef')]())[b('0xc8')](0x2,'0'))[b('0x137')]('ss',String(f[b('0xb9')]())['padStart'](0x2,'0'));return g;}['populateCalendar'](c,d){const e=this['calendar']['querySelector'](b('0x57'));e[b('0x141')]='';const f=new Date(c,d,0x1)[b('0x12b')]();const g=new Date(c,d+0x1,0x0)[b('0x21')]();const h=new Date(c,d,0x0)[b('0x21')]();const k=new Date();const l=k['getFullYear']()===c&&k[b('0x32')]()===d;let m=0x1;let n=0x1;for(let o=0x0;o<0x6;o++){const p=document[b('0x152')]('tr');for(let q=0x0;q<0x7;q++){const r=document['createElement']('td');if(o===0x0&&q<f){const s=h-f+q+0x1;r[b('0x141')]=s;r[b('0x16e')][b('0x3e')]=b('0x26');r['addEventListener']('click',()=>{this[b('0x65')](s,d===0x0?0xb:d-0x1,d===0x0?c-0x1:c);});}else if(m>g){r[b('0x141')]=n;r[b('0x16e')]['opacity']=b('0x26');const t=n;r[b('0x17a')](b('0xf9'),()=>{this[b('0x65')](t,d===0xb?0x0:d+0x1,d===0xb?c+0x1:c);});n++;}else{r[b('0x141')]=m;if(l&&m===k['getDate']()){r[b('0x157')]['add'](b('0x9c'));}if(this[b('0x45')]&&this[b('0x45')][b('0x21')]()===m&&this['selectedDate'][b('0x32')]()===d&&this[b('0x45')][b('0x1e')]()===c){r[b('0x157')][b('0x164')](b('0x37'));}const u=m;r[b('0x17a')](b('0xf9'),()=>{this[b('0x65')](u,d,c);});m++;}p[b('0x129')](r);}e['appendChild'](p);}}[b('0x65')](c,d,e){this[b('0x45')]=new Date(e,d,c);this['currentYear']=e;this['currentMonth']=d;this['calendar'][b('0x110')]('td')[b('0x93')](i=>i[b('0x157')][b('0x66')](b('0x37')));const f=Array['from'](this[b('0x15')][b('0x110')]('td'))[b('0x10b')](i=>parseInt(i[b('0x6b')],0xa)===c&&!i['style'][b('0x3e')]);if(f){f[b('0x157')][b('0x164')](b('0x37'));}const g=this[b('0x11a')](e,d,c);this[b('0x12d')][b('0x131')]=g;const h=this[b('0x15')]['querySelector'](b('0x7e'));h[b('0x6b')]=this[b('0x11')]+'年'+(this['currentMonth']+0x1)+'月';if(!this['showTime']){this[b('0x15')][b('0x157')][b('0x66')](b('0x177'));this[b('0x15')][b('0x157')]['remove']('zhenshangyin-custom-down');this['calendar'][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this['calendar'][b('0x66')]();this[b('0x15')]=null;this[b('0x61')](g);},0x12c);}}}class ZhenshangyinDateRangePicker{constructor(c,d={}){this[b('0x12d')]=document[b('0xbc')](c);this[b('0x10e')]=null;this[b('0xfb')]=null;this[b('0x9b')]=d[b('0x9b')]||b('0x4d');this[b('0xf6')]=d[b('0xf6')]||function(){};this['showTime']=this[b('0x9b')][b('0x12f')]('HH')||this[b('0x9b')]['includes']('mm')||this['dateFormat']['includes']('ss');const e=new Date();this['startYear']=e[b('0x1e')]();this[b('0xe8')]=e[b('0x32')]();this[b('0xe2')]=e[b('0x1e')]();this[b('0x70')]=e[b('0x32')]()+0x1;if(this['endMonth']>0xb){this[b('0x70')]=0x0;this['endYear']++;}this[b('0xa1')]={'hours':0x0,'minutes':0x0,'seconds':0x0};this[b('0x60')]={'hours':0x0,'minutes':0x0,'seconds':0x0};this['isSelectingStart']=!![];this[b('0xf7')]=d['separator']||b('0x16c');this[b('0x112')]();}['init'](){this[b('0x12d')][b('0x17a')](b('0xf9'),c=>{c[b('0x159')]();this[b('0x118')]();this['togglePicker']();if(this[b('0x10e')]&&this[b('0xfb')]){this[b('0x113')]();}});document[b('0x17a')]('click',()=>{if(this[b('0x105')]){this[b('0x105')][b('0x157')][b('0x66')](b('0x177'));this[b('0x105')][b('0x157')][b('0x66')](b('0x84'));this['picker']['classList']['remove'](b('0x3d'));setTimeout(()=>{this[b('0x105')][b('0x66')]();this[b('0x105')]=null;},0x12c);}});}['togglePicker'](){const c=()=>{if(this[b('0x105')]){const d=this[b('0x12d')][b('0x12c')]();const e=this[b('0x12d')][b('0xd8')];const f=window[b('0x3a')]-d[b('0x95')];const g=d['top']+window[b('0x13')];const h=d['left'];const i=window['innerWidth']-d[b('0x49')];this['picker']['classList'][b('0x164')]('zhenshangyin-custom-show');const j=this[b('0x105')][b('0xd8')];const k=this['picker'][b('0xc')];this['picker'][b('0x157')][b('0x66')](b('0x84'));if(f<j&&g<j){this[b('0x105')]['style'][b('0xfd')]=g+e+'px';this['picker'][b('0x157')]['add'](b('0x84'));this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));}else if(f<j&&g<j){this[b('0x105')]['style'][b('0xfd')]=g+e+'px';this[b('0x105')][b('0x157')][b('0x164')](b('0x84'));this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));}else if(f<j){this[b('0x105')][b('0x16e')][b('0xfd')]=g-j+'px';this['picker'][b('0x157')][b('0x164')](b('0x3d'));this[b('0x105')][b('0x157')][b('0x66')](b('0x84'));}else{this[b('0x105')][b('0x16e')][b('0xfd')]=g+e+'px';this[b('0x105')][b('0x157')][b('0x164')]('zhenshangyin-custom-down');this[b('0x105')]['classList'][b('0x66')](b('0x3d'));}if(h+k<=window[b('0x88')]){this['picker'][b('0x16e')][b('0x10')]=d['left']+window[b('0x18')]+'px';}else if(i+k<=window['innerWidth']){this[b('0x105')]['style']['left']=d[b('0x49')]+window[b('0x18')]-k+'px';this[b('0x105')][b('0x157')]['add']('zhenshangyin-custom-right');}else{this[b('0x105')][b('0x16e')][b('0x10')]=d[b('0x10')]+window['scrollX']+'px';}}};window[b('0x17a')]('scroll',c);window[b('0x17a')](b('0xac'),c);c();}[b('0x118')](){if(this['picker'])return;const c=document['createElement'](b('0x4e'));c[b('0x149')]=b('0x6a');c[b('0x141')]=b('0xf2')+this[b('0x108')]('start')+b('0xad')+this[b('0x108')](b('0x1c'))+b('0xae');document[b('0x99')][b('0x129')](c);this['picker']=c;c['addEventListener'](b('0xf9'),d=>{d[b('0x159')]();});this[b('0x176')]();this['setupButtons']();if(this[b('0x117')]){this[b('0x3f')]('start');this[b('0x3f')](b('0x1c'));}}[b('0x108')](c){const d=c==='start'?this[b('0x175')]:this[b('0xe2')];const e=c==='start'?this['startMonth']:this[b('0x70')];return b('0x86')+c+b('0x156')+c+b('0x100')+c+'\x22>'+d+'年'+(e+0x1)+b('0x10d')+c+b('0x138')+c+'\x22><svg\x20viewBox=\x220\x200\x201024\x201024\x22xmlns=\x22http://www.w3.org/2000/svg\x22><path\x20d=\x22M896.4\x20496.5L505\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9l374.4\x20374.4L474\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7l388.5-388.5c9.3-9.3\x209.3-24.5-0.1-33.9z\x22fill=\x22#AAAAAA\x22></path><path\x20d=\x22M561.9\x20513.5c0-6.4-2.5-12.5-7-17L163.5\x20105.1c-9.4-9.4-24.6-9.4-33.9\x200-9.4\x209.4-9.4\x2024.6\x200\x2033.9L504\x20513.5\x20132.5\x20885c-9.4\x209.4-9.4\x2024.6\x200\x2033.9\x204.7\x204.7\x2010.8\x207\x2017\x207s12.3-2.3\x2017-7L555\x20530.4c4.4-4.5\x206.9-10.6\x206.9-16.9z\x22fill=\x22#AAAAAA\x22></path></svg></button></div><table><thead\x20style=\x22border-bottom:\x201px\x20solid\x20#ebeef5;\x22><tr><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></tr></thead></table><div\x20class=\x22zhenshangyin-table-container\x22><table><tbody\x20id=\x22'+c+b('0xab')+(this[b('0x117')]?this[b('0x126')](c):'');}[b('0x126')](c){return b('0x17b')+c+'\x22>'+this[b('0x146')](c===b('0x53')?this['startDate']:this[b('0xfb')])+'</div><div\x20class=\x22zhenshangyin-time-dropdown\x22id=\x22'+c+b('0x87')+this[b('0x16d')](c)+b('0x144')+c+'-hours-scroll\x22>'+this[b('0xa8')]()+Array[b('0x1')]({'length':0x18},(d,e)=>b('0x13b')+(e===0x0?b('0x101'):'')+'\x22>'+String(e)[b('0xc8')](0x2,'0')+b('0xdb'))[b('0xa0')]('')+this[b('0xa8')]()+b('0x158')+c+b('0x72')+this[b('0xa8')]()+Array['from']({'length':0x3c},(d,e)=>b('0x13b')+(e===0x0?b('0x101'):'')+'\x22>'+String(e)[b('0xc8')](0x2,'0')+b('0xdb'))[b('0xa0')]('')+this['createPlaceholder']()+b('0x158')+c+'-seconds-scroll\x22>'+this[b('0xa8')]()+Array[b('0x1')]({'length':0x3c},(d,e)=>b('0x13b')+(e===0x0?'\x20selected':'')+'\x22>'+String(e)['padStart'](0x2,'0')+'</div>')[b('0xa0')]('')+this['createPlaceholder']()+b('0xa6');}[b('0x146')](c){if(!c)return'未选择日期';return c['getFullYear']()+'-'+String(c[b('0x32')]()+0x1)[b('0xc8')](0x2,'0')+'-'+String(c[b('0x21')]())[b('0xc8')](0x2,'0');}[b('0x16d')](c){const d=c===b('0x53')?this['startTime']:this['endTime'];return String(d[b('0x71')])[b('0xc8')](0x2,'0')+':'+String(d['minutes'])['padStart'](0x2,'0')+':'+String(d['seconds'])[b('0xc8')](0x2,'0');}[b('0x3f')](c){const d=this['picker'][b('0xbc')]('#'+c+b('0x56'));if(!d)return;const e=d[b('0xbc')](b('0xb3'));const f=e['querySelector']('#'+c+b('0xcb'));const g=e['querySelector']('#'+c+b('0x30'));const h=e[b('0xbc')]('#'+c+b('0xe5'));const i=d[b('0xbc')](b('0x171'));const j=e['querySelector'](b('0x111'));if(i){i[b('0x17a')]('click',k=>{k[b('0x159')]();e[b('0x16e')][b('0x13c')]=e['style'][b('0x13c')]===b('0xe0')?b('0x35'):b('0xe0');this[b('0x155')](f,this[c+b('0x77')][b('0x71')]);this[b('0x155')](g,this[c+b('0x77')]['minutes']);this[b('0x155')](h,this[c+'Time'][b('0x59')]);});}j['addEventListener'](b('0xf9'),k=>{k[b('0x159')]();e[b('0x16e')][b('0x13c')]=b('0xe0');});this[b('0x5a')](f,'hours',c);this[b('0x5a')](g,b('0x76'),c);this[b('0x5a')](h,'seconds',c);}['centerScroll'](c,d){c[b('0x14f')]=(d+0x2)*0x1e-0x3c;}[b('0x5a')](c,d,e){const f=c[b('0x110')](b('0x14c'));let g;c[b('0x17a')](b('0x94'),()=>{if(g)clearTimeout(g);g=setTimeout(()=>{const h=Math[b('0x96')]((c['scrollTop']+0x3c)/0x1e)-0x2;this[e+b('0x77')][d]=h;f[b('0x93')]((j,k)=>{j['classList'][b('0xe6')](b('0x166'),k===h);});this['picker'][b('0xbc')]('#'+e+'-zhenshangyin-time-dropdown.zhenshangyin-dropdown-label')[b('0x6b')]=this['formatTime'](e);this[b('0x155')](c,h);},0x64);});f[b('0x93')]((h,i)=>{h[b('0x17a')](b('0xf9'),()=>{this[e+b('0x77')][d]=i;this[b('0x155')](c,i);this[b('0x105')][b('0xbc')]('#'+e+b('0x81'))['textContent']=this['formatTime'](e);});});}[b('0x176')](){this[b('0xb6')](b('0x53'));this[b('0xb6')](b('0x1c'));}[b('0xb6')](c){const d=this[b('0x105')][b('0xbc')]('#'+c+b('0x47'));const e=c===b('0x53')?this[b('0x175')]:this[b('0xe2')];const f=c===b('0x53')?this[b('0xe8')]:this['endMonth'];this[b('0xf8')](d,e,f,c);this['picker']['querySelector'](b('0x133')+c+'\x22]')[b('0x17a')](b('0xf9'),()=>this[b('0x1a')](-0x1,c));this[b('0x105')][b('0xbc')](b('0x151')+c+'\x22]')['addEventListener'](b('0xf9'),()=>this[b('0x1a')](0x1,c));this[b('0x105')][b('0xbc')]('.zhenshangyin-prev-month[data-type=\x22'+c+'\x22]')[b('0x17a')]('click',()=>this[b('0xa9')](-0x1,c));this[b('0x105')][b('0xbc')](b('0xa4')+c+'\x22]')['addEventListener'](b('0xf9'),()=>this[b('0xa9')](0x1,c));d[b('0x17a')](b('0x5f'),g=>{if(this[b('0x10e')]&&!this[b('0xfb')]){const h=g['target'];if(h[b('0x79')]==='TD'&&!h[b('0x16e')][b('0x3e')]){const i=parseInt(h[b('0x6b')],0xa);const j=new Date(e,f,i);this['applyHoverRangeStyle'](j);}}});}[b('0xcd')](c){const d=this['isSelectingStart']?c:this[b('0x10e')];const e=this[b('0xd0')]?this['endDate']:c;const [f,g]=d<e?[d,e]:[e,d];[b('0x53'),'end'][b('0x93')](h=>{const i=h===b('0x53')?this[b('0x175')]:this[b('0xe2')];const j=h===b('0x53')?this['startMonth']:this[b('0x70')];const k=this[b('0x105')]['querySelector']('#'+h+b('0x47'));Array['from'](k['querySelectorAll']('td'))[b('0x93')](l=>{const m=parseInt(l[b('0x6b')],0xa);const n=new Date(i,j,m);l[b('0x157')][b('0x66')](b('0x143'));if(n>=f&&n<=g&&!l[b('0x16e')][b('0x3e')]){l[b('0x157')][b('0x164')](b('0x143'));}});});}['changeYear'](c,d){if(d===b('0x53')){this[b('0x175')]+=c;}else{this[b('0xe2')]+=c;}this['updateCalendar'](d);const e=this[b('0x105')]['querySelector']('#'+d+b('0x47'));e['addEventListener'](b('0x5f'),f=>{if(this['startDate']&&!this['endDate']){const g=f[b('0x48')];if(g[b('0x79')]==='TD'&&!g[b('0x16e')]['opacity']){const h=parseInt(g[b('0x6b')],0xa);const i=new Date(d===b('0x53')?this['startYear']:this[b('0xe2')],d===b('0x53')?this[b('0xe8')]:this[b('0x70')],h);this[b('0xcd')](i);}}});}[b('0xa9')](c,d){if(d===b('0x53')){this[b('0xe8')]+=c;if(this[b('0xe8')]<0x0){this[b('0xe8')]=0xb;this[b('0x175')]--;}else if(this[b('0xe8')]>0xb){this[b('0xe8')]=0x0;this['startYear']++;}}else{this[b('0x70')]+=c;if(this['endMonth']<0x0){this['endMonth']=0xb;this[b('0xe2')]--;}else if(this[b('0x70')]>0xb){this['endMonth']=0x0;this['endYear']++;}}this[b('0xe9')](d);const e=this['picker'][b('0xbc')]('#'+d+b('0x47'));e[b('0x17a')]('mouseover',f=>{if(this[b('0x10e')]&&!this[b('0xfb')]){const g=f[b('0x48')];if(g[b('0x79')]==='TD'&&!g[b('0x16e')][b('0x3e')]){const h=parseInt(g['textContent'],0xa);const i=new Date(d===b('0x53')?this[b('0x175')]:this[b('0xe2')],d===b('0x53')?this[b('0xe8')]:this[b('0x70')],h);this['applyHoverRangeStyle'](i);}}});}[b('0xe9')](c){const d=this[b('0x105')]['querySelector']('#'+c+b('0x47'));const e=c==='start'?this[b('0x175')]:this[b('0xe2')];const f=c===b('0x53')?this['startMonth']:this[b('0x70')];this[b('0xf8')](d,e,f,c);const g=this[b('0x105')][b('0xbc')](b('0x5e')+c+'\x22]');if(g){g[b('0x6b')]=e+'年'+(f+0x1)+'月';}if(this[b('0x10e')]&&this[b('0xfb')]){this[b('0x113')]();}}[b('0xf8')](c,d,e,f){c['innerHTML']='';const g=new Date(d,e,0x1)[b('0x12b')]();const h=new Date(d,e+0x1,0x0)['getDate']();const k=new Date(d,e,0x0)[b('0x21')]();const l=new Date();const m=l['getFullYear']()===d&&l['getMonth']()===e;let n=0x1;let o=0x1;for(let p=0x0;p<0x6;p++){const q=document[b('0x152')]('tr');for(let r=0x0;r<0x7;r++){const s=document['createElement']('td');if(p===0x0&&r<g){const t=k-g+r+0x1;s[b('0x141')]=t;s['style'][b('0x3e')]=b('0x26');}else if(n>h){s[b('0x141')]=o;s[b('0x16e')]['opacity']=b('0x26');o++;}else{s[b('0x141')]=n;if(m&&n===l[b('0x21')]()){s['classList'][b('0x164')]('zhenshangyin-custom-today');}const u=n;s['addEventListener'](b('0xf9'),()=>{this[b('0x65')](u,e,d,f);});n++;}q[b('0x129')](s);}c[b('0x129')](q);}Array[b('0x1')](c[b('0x110')]('td'))[b('0x93')](v=>{v[b('0x157')][b('0x66')]('zhenshangyin-hover-range',b('0x37'),b('0x68'));});}[b('0x65')](c,d,e,f){const g=new Date(e,d,c);if(this[b('0x10e')]&&this[b('0xfb')]){this[b('0x10e')]=null;this[b('0xfb')]=null;this[b('0xd0')]=!![];this[b('0x105')][b('0x110')]('td')['forEach'](h=>h[b('0x157')][b('0x66')](b('0x37'),b('0x68')));}if(this[b('0xd0')]){this[b('0x10e')]=g;this[b('0xea')](c,d,e,f);}else{this[b('0xfb')]=g;}this['isSelectingStart']=!this['isSelectingStart'];if(this['startDate']&&this['endDate']&&this['startDate']>this['endDate']){[this['startDate'],this[b('0xfb')]]=[this[b('0xfb')],this[b('0x10e')]];}this[b('0x7d')](b('0x53'));this['updateDateDisplay'](b('0x1c'));if(this['startDate']&&this[b('0xfb')]){this[b('0x113')]();}}[b('0xea')](c,d,e,f){const g=this[b('0x105')][b('0xbc')]('#'+f+b('0x47'));Array[b('0x1')](g[b('0x110')]('td'))[b('0x93')](h=>{const i=parseInt(h['textContent'],0xa);if(i===c&&!h[b('0x16e')][b('0x3e')]){h[b('0x157')][b('0x164')]('zhenshangyin-custom-selected');}});}[b('0x7d')](c){const d=this[b('0x146')](c==='start'?this[b('0x10e')]:this[b('0xfb')]);const e=this['picker'][b('0xbc')](b('0x33')+c+'\x22]');if(e){e[b('0x6b')]=d||b('0xb5');}}[b('0x113')](){if(!this[b('0x10e')]||!this[b('0xfb')])return;const c=this[b('0x10e')][b('0x15b')]();const d=this[b('0xfb')][b('0x15b')]();[b('0x53'),b('0x1c')][b('0x93')](e=>{const f=this[b('0x105')]['querySelector']('#'+e+b('0x47'));const g=e===b('0x53')?this[b('0x175')]:this[b('0xe2')];const h=e===b('0x53')?this[b('0xe8')]:this['endMonth'];Array['from'](f['querySelectorAll']('td'))['forEach'](i=>{if(i[b('0x16e')][b('0x3e')])return;const j=parseInt(i[b('0x6b')],0xa);const k=new Date(g,h,j);k[b('0x162')](0x0,0x0,0x0,0x0);const l=k[b('0x15b')]();i['classList'][b('0x66')]('zhenshangyin-custom-selected',b('0x68'));const m=this[b('0xfe')](k,this[b('0x10e')]);const n=this[b('0xfe')](k,this['endDate']);const o=l>=c&&l<=d;if(m||n){i[b('0x157')][b('0x164')](b('0x37'));}else if(o){i['classList'][b('0x164')](b('0x68'));}});});}['isSameDate'](c,d){return c['getFullYear']()===d[b('0x1e')]()&&c['getMonth']()===d[b('0x32')]()&&c[b('0x21')]()===d['getDate']();}[b('0x170')](){this[b('0x105')][b('0xbc')](b('0x3b'))['addEventListener'](b('0xf9'),()=>{if(this['startDate']&&this[b('0xfb')]){this[b('0x10e')][b('0x162')](this[b('0xa1')][b('0x71')],this[b('0xa1')]['minutes'],this['startTime'][b('0x59')]);this['endDate'][b('0x162')](this[b('0x60')][b('0x71')],this['endTime'][b('0x76')],this['endTime']['seconds']);const c=this['formatDate'](this[b('0x10e')]);const d=this[b('0x11a')](this['endDate']);const e=''+c+this[b('0xf7')]+d;this['dateInput'][b('0x131')]=e;this['picker'][b('0x157')]['remove'](b('0x177'));this[b('0x105')]['classList']['remove'](b('0x84'));this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this[b('0x105')]['remove']();this[b('0x105')]=null;this['onDateRangeSelect'](e);},0x12c);}});}['formatDate'](c){if(!c)return b('0xb5');let d=this[b('0x9b')]['replace']('YYYY',c[b('0x1e')]())[b('0x137')]('MM',String(c[b('0x32')]()+0x1)[b('0xc8')](0x2,'0'))[b('0x137')]('DD',String(c[b('0x21')]())['padStart'](0x2,'0'))[b('0x137')]('HH',String(c[b('0x4')]())[b('0xc8')](0x2,'0'))[b('0x137')]('mm',String(c[b('0xef')]())['padStart'](0x2,'0'))[b('0x137')]('ss',String(c[b('0xb9')]())[b('0xc8')](0x2,'0'));return d;}[b('0xa8')](){return Array[b('0x1')]({'length':0x2},()=>'<div\x20class=\x22zhenshangyin-scroll-item\x20placeholder\x22></div>')[b('0xa0')]('');}}class ZhenshangyinMonthPicker{constructor(c,d={}){this[b('0x12d')]=document[b('0xbc')](c);this[b('0x11')]=new Date()[b('0x1e')]();this[b('0x14b')]=[];this[b('0x9b')]=d[b('0x9b')]||b('0x14e');this[b('0x130')]=d[b('0x130')]||function(){};this['multiSelect']=d[b('0x85')]||![];this[b('0x112')]();}[b('0x112')](){this[b('0x12d')][b('0x17a')](b('0xf9'),c=>{c[b('0x159')]();this[b('0x104')]();this['togglePicker']();});document[b('0x17a')](b('0xf9'),()=>{if(this[b('0x105')]){this['picker']['classList']['remove'](b('0x177'));this[b('0x105')][b('0x157')]['remove']('zhenshangyin-custom-down');this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this['picker'][b('0x66')]();this[b('0x105')]=null;},0x12c);}});}[b('0x125')](){const c=()=>{if(this[b('0x105')]){const d=this[b('0x12d')]['getBoundingClientRect']();const e=this[b('0x12d')][b('0xd8')];const f=window[b('0x3a')]-d[b('0x95')];const g=d[b('0xfd')]+window[b('0x13')];const h=d[b('0x10')];const i=window[b('0x88')]-d[b('0x49')];this[b('0x105')][b('0x157')][b('0x164')](b('0x177'));const j=this['picker'][b('0xd8')];const k=this['picker'][b('0xc')];this[b('0x105')][b('0x157')][b('0x66')]('zhenshangyin-custom-down');if(f<j&&g<j){this[b('0x105')][b('0x16e')]['top']=g+e+'px';this['picker']['classList'][b('0x164')](b('0x84'));this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));}else if(f<j){this['picker']['style'][b('0xfd')]=g-j+'px';this[b('0x105')]['classList'][b('0x164')](b('0x3d'));this['picker'][b('0x157')][b('0x66')](b('0x84'));}else{this[b('0x105')][b('0x16e')][b('0xfd')]=g+e+'px';this[b('0x105')][b('0x157')][b('0x164')]('zhenshangyin-custom-down');this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));}if(h+k<=window[b('0x88')]){this[b('0x105')][b('0x16e')][b('0x10')]=d[b('0x10')]+window[b('0x18')]+'px';}else if(i+k<=window[b('0x88')]){this['picker'][b('0x16e')][b('0x10')]=d[b('0x49')]+window[b('0x18')]-k+'px';this['picker'][b('0x157')]['add'](b('0xb0'));}else{this[b('0x105')][b('0x16e')][b('0x10')]=d[b('0x10')]+window['scrollX']+'px';}}};window[b('0x17a')](b('0x94'),c);window[b('0x17a')]('resize',c);c();}['createMonthPicker'](){if(this[b('0x105')])return;const c=document[b('0x152')](b('0x4e'));c[b('0x149')]='zhenshangyin-custom-calendar';c[b('0x141')]='<div\x20class=\x22zhenshangyin-custom-navigation\x22><button\x20class=\x22zhenshangyin-prev-year\x22><svg\x20t=\x221732243173238\x22viewBox=\x220\x200\x201024\x201024\x22version=\x221.1\x22xmlns=\x22http://www.w3.org/2000/svg\x22p-id=\x228093\x22><path\x20d=\x22M129.6\x20527.5L521\x20918.9c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L180.5\x20510.5\x20552\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L129.6\x20493.6c-9.4\x209.3-9.4\x2024.5\x200\x2033.9z\x22fill=\x22#AAAAAA\x22p-id=\x228094\x22></path><path\x20d=\x22M464\x20510.5c0\x206.4\x202.5\x2012.5\x207\x2017l391.4\x20391.4c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L522\x20510.5\x20893.5\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L471.1\x20493.6c-4.5\x204.5-7.1\x2010.6-7.1\x2016.9z\x22fill=\x22#AAAAAA\x22p-id=\x228095\x22></path></svg></button><span\x20class=\x22zhenshangyin-current-display\x22>'+this[b('0x11')]+b('0xec')+(this[b('0x85')]?b('0x9f'):'');document[b('0x99')][b('0x129')](c);this['picker']=c;c[b('0x17a')](b('0xf9'),d=>{d[b('0x159')]();});c[b('0xbc')](b('0x123'))[b('0x17a')](b('0xf9'),()=>this[b('0x1a')](-0x1));c[b('0xbc')](b('0x11d'))[b('0x17a')](b('0xf9'),()=>this['changeYear'](0x1));if(this[b('0x85')]){c['querySelector'](b('0x3b'))[b('0x17a')](b('0xf9'),()=>{this[b('0xf')]();this[b('0x105')][b('0x157')][b('0x66')](b('0x177'));this[b('0x105')][b('0x157')][b('0x66')](b('0x84'));this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this[b('0x105')][b('0x66')]();this[b('0x105')]=null;},0x12c);});}this[b('0x6f')]();}[b('0x1a')](c){this[b('0x11')]+=c;this[b('0x105')][b('0xbc')](b('0x7e'))[b('0x6b')]=this[b('0x11')];this[b('0x6f')]();}['populateMonths'](){const c=this[b('0x105')][b('0x110')]('#month-picker-body\x20td');c[b('0x93')](d=>d[b('0x157')][b('0x66')](b('0x37')));c[b('0x93')]((d,e)=>{const f=e+0x1;if(this['selectedMonths'][b('0xc9')](h=>h[b('0x9a')]===this[b('0x11')]&&h['month']===f)){d[b('0x157')][b('0x164')](b('0x37'));}const g=d[b('0xd6')](!![]);d[b('0x91')](g);g[b('0x17a')](b('0xf9'),()=>{if(this[b('0x85')]){this[b('0x173')](f);}else{this['selectSingleMonth'](f);}});});}[b('0x173')](c){const d=this['selectedMonths'][b('0x12a')](e=>e[b('0x9a')]===this[b('0x11')]&&e[b('0x145')]===c);if(d>-0x1){this['selectedMonths'][b('0x168')](d,0x1);}else{this[b('0x14b')][b('0x19')]({'year':this[b('0x11')],'month':c});}this[b('0x6f')]();}[b('0xf1')](c){this['selectedMonths']=[{'year':this[b('0x11')],'month':c}];this[b('0xf')]();this[b('0x105')][b('0x157')][b('0x66')](b('0x177'));this[b('0x105')][b('0x157')][b('0x66')](b('0x84'));this['picker'][b('0x157')]['remove'](b('0x3d'));setTimeout(()=>{this[b('0x105')][b('0x66')]();this[b('0x105')]=null;},0x12c);}['updateInputValue'](){const c=this[b('0x14b')][b('0x165')](d=>this[b('0xce')](d[b('0x9a')],d[b('0x145')]))['join'](',\x20');this['dateInput'][b('0x131')]=c;this[b('0x130')](c);}[b('0xce')](c,d){return this['dateFormat'][b('0x137')](b('0x153'),c)[b('0x137')]('MM',String(d)[b('0xc8')](0x2,'0'));}}class ZhenshangyinYearPicker{constructor(c,d={}){this[b('0x12d')]=document[b('0xbc')](c);this[b('0x11')]=new Date()['getFullYear']();this['selectedYears']=[];this[b('0x1f')]=d[b('0x1f')]||function(){};this[b('0x85')]=d[b('0x85')]||![];this[b('0x112')]();}['init'](){this['dateInput']['addEventListener'](b('0xf9'),c=>{c['stopPropagation']();this[b('0x44')]();this[b('0x125')]();});document[b('0x17a')](b('0xf9'),()=>{if(this[b('0x105')]){this[b('0x105')][b('0x157')]['remove']('zhenshangyin-custom-show');this[b('0x105')][b('0x157')][b('0x66')]('zhenshangyin-custom-down');this['picker'][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this[b('0x105')][b('0x66')]();this['picker']=null;},0x12c);}});}[b('0x125')](){const c=()=>{if(this[b('0x105')]){const d=this[b('0x12d')]['getBoundingClientRect']();const e=this[b('0x12d')]['offsetHeight'];const f=window[b('0x3a')]-d[b('0x95')];const g=d[b('0xfd')]+window[b('0x13')];const h=d[b('0x10')];const i=window[b('0x88')]-d[b('0x49')];this[b('0x105')][b('0x157')][b('0x164')](b('0x177'));const j=this[b('0x105')][b('0xd8')];const k=this[b('0x105')][b('0xc')];this['picker'][b('0x157')][b('0x66')]('zhenshangyin-custom-down');if(f<j&&g<j){this[b('0x105')][b('0x16e')][b('0xfd')]=g+e+'px';this['picker'][b('0x157')][b('0x164')](b('0x84'));this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));}else if(f<j){this[b('0x105')][b('0x16e')]['top']=g-j+'px';this[b('0x105')][b('0x157')][b('0x164')](b('0x3d'));this[b('0x105')][b('0x157')][b('0x66')](b('0x84'));}else{this[b('0x105')][b('0x16e')]['top']=g+e+'px';this[b('0x105')]['classList'][b('0x164')](b('0x84'));this['picker'][b('0x157')][b('0x66')](b('0x3d'));}if(h+k<=window[b('0x88')]){this[b('0x105')]['style']['left']=d[b('0x10')]+window[b('0x18')]+'px';}else if(i+k<=window[b('0x88')]){this[b('0x105')]['style'][b('0x10')]=d[b('0x49')]+window[b('0x18')]-k+'px';this['picker']['classList'][b('0x164')](b('0xb0'));}else{this[b('0x105')]['style']['left']=d[b('0x10')]+window[b('0x18')]+'px';}}};window[b('0x17a')](b('0x94'),c);window[b('0x17a')](b('0xac'),c);c();}[b('0x44')](){if(this[b('0x105')])return;const c=document[b('0x152')](b('0x4e'));c['className']='zhenshangyin-custom-calendar';c['innerHTML']='<div\x20class=\x22zhenshangyin-custom-navigation\x22><button\x20class=\x22prev-decade\x22><svg\x20t=\x221732243173238\x22viewBox=\x220\x200\x201024\x201024\x22version=\x221.1\x22xmlns=\x22http://www.w3.org/2000/svg\x22p-id=\x228093\x22><path\x20d=\x22M129.6\x20527.5L521\x20918.9c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L180.5\x20510.5\x20552\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L129.6\x20493.6c-9.4\x209.3-9.4\x2024.5\x200\x2033.9z\x22fill=\x22#AAAAAA\x22p-id=\x228094\x22></path><path\x20d=\x22M464\x20510.5c0\x206.4\x202.5\x2012.5\x207\x2017l391.4\x20391.4c9.4\x209.4\x2024.6\x209.4\x2033.9\x200\x209.4-9.4\x209.4-24.6\x200-33.9L522\x20510.5\x20893.5\x20139c9.4-9.4\x209.4-24.6\x200-33.9-4.7-4.7-10.8-7-17-7s-12.3\x202.3-17\x207L471.1\x20493.6c-4.5\x204.5-7.1\x2010.6-7.1\x2016.9z\x22fill=\x22#AAAAAA\x22p-id=\x228095\x22></path></svg></button><span\x20class=\x22zhenshangyin-current-display\x22>'+(this['currentYear']-0x5)+'-'+(this[b('0x11')]+0x4)+b('0x83')+this[b('0x5c')]()+'</tbody></table></div>'+(this['multiSelect']?b('0x9f'):'');document['body']['appendChild'](c);this[b('0x105')]=c;c['addEventListener'](b('0xf9'),d=>{d[b('0x159')]();});c['querySelector']('.prev-decade')[b('0x17a')]('click',()=>this[b('0xe3')](-0xa));c[b('0xbc')](b('0x40'))[b('0x17a')](b('0xf9'),()=>this[b('0xe3')](0xa));if(this[b('0x85')]){c[b('0xbc')](b('0x3b'))[b('0x17a')](b('0xf9'),()=>{this[b('0xf')]();this['picker'][b('0x157')][b('0x66')](b('0x177'));this[b('0x105')][b('0x157')][b('0x66')]('zhenshangyin-custom-down');this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this['picker']['remove']();this[b('0x105')]=null;},0x12c);});}this[b('0x127')]();}[b('0xe3')](c){this[b('0x11')]+=c;this[b('0x105')][b('0xbc')](b('0x7e'))['textContent']=this[b('0x11')]-0x5+'-'+(this[b('0x11')]+0x4);this[b('0xa')]();}[b('0x5c')](){let c='';for(let d=0x0;d<0x4;d++){c+='<tr>';for(let e=0x0;e<0x3;e++){c+=b('0xb')+(this[b('0x11')]-0x5+d*0x3+e)+b('0x29');}c+=b('0x8a');}return c;}[b('0xa')](){const c=this['picker']['querySelector']('#year-picker-body');c[b('0x141')]=this[b('0x5c')]();this[b('0x127')]();}[b('0x127')](){const c=this[b('0x105')]['querySelectorAll'](b('0x13a'));c[b('0x93')](d=>d[b('0x157')][b('0x66')]('zhenshangyin-custom-selected'));c[b('0x93')](d=>{const e=parseInt(d[b('0x6b')],0xa);if(this[b('0xdf')][b('0x12f')](e)){d[b('0x157')][b('0x164')](b('0x37'));}const f=d[b('0xd6')](!![]);d[b('0x91')](f);f[b('0x17a')](b('0xf9'),()=>{if(this[b('0x85')]){this[b('0x8e')](e);}else{this[b('0xa3')](e);}});});}[b('0x8e')](c){const d=this[b('0xdf')][b('0xe7')](c);if(d>-0x1){this[b('0xdf')][b('0x168')](d,0x1);}else{this[b('0xdf')][b('0x19')](c);}this[b('0x127')]();}[b('0xa3')](c){this[b('0xdf')]=[c];this[b('0xf')]();this[b('0x105')]['classList'][b('0x66')](b('0x177'));this[b('0x105')][b('0x157')][b('0x66')](b('0x84'));this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this[b('0x105')][b('0x66')]();this['picker']=null;},0x12c);}[b('0xf')](){const c=this[b('0xdf')][b('0xa0')](',\x20');this[b('0x12d')][b('0x131')]=c;this[b('0x1f')](c);}}class ZhenshangyinMonthRangePicker{constructor(c,d={}){this[b('0x12d')]=document[b('0xbc')](c);this[b('0xe8')]=null;this[b('0x70')]=null;this['currentYear']=new Date()[b('0x1e')]();this['dateFormat']=d[b('0x9b')]||b('0x14e');this[b('0x16f')]=d[b('0x16f')]||function(){};this[b('0xf7')]=d['separator']||b('0x16c');this['isSelectingStart']=!![];this['endYear']=this[b('0x11')]+0x1;this['init']();}[b('0x112')](){this[b('0x12d')][b('0x17a')](b('0xf9'),c=>{c['stopPropagation']();this[b('0x17')]();this['togglePicker']();if(this[b('0xe8')]&&this[b('0x70')]){this[b('0x113')]();}});document[b('0x17a')](b('0xf9'),()=>{if(this[b('0x105')]){this[b('0x105')][b('0x157')]['remove']('zhenshangyin-custom-show');this['picker']['classList'][b('0x66')]('zhenshangyin-custom-down');this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this[b('0x105')]['remove']();this[b('0x105')]=null;},0x12c);}});}['togglePicker'](){const c=()=>{if(this['picker']){const d=this['dateInput']['getBoundingClientRect']();const e=this[b('0x12d')][b('0xd8')];const f=window['innerHeight']-d[b('0x95')];const g=d[b('0xfd')]+window[b('0x13')];const h=d['left'];const i=window[b('0x88')]-d[b('0x49')];this[b('0x105')][b('0x157')][b('0x164')](b('0x177'));const j=this[b('0x105')]['offsetHeight'];const k=this[b('0x105')][b('0xc')];this[b('0x105')]['classList']['remove'](b('0x84'));if(f<j&&g<j){this[b('0x105')][b('0x16e')]['top']=g+e+'px';this[b('0x105')][b('0x157')][b('0x164')](b('0x84'));this[b('0x105')]['classList'][b('0x66')](b('0x3d'));}else if(f<j){this[b('0x105')][b('0x16e')]['top']=g-j+'px';this[b('0x105')][b('0x157')][b('0x164')](b('0x3d'));this['picker'][b('0x157')]['remove']('zhenshangyin-custom-down');}else{this['picker'][b('0x16e')][b('0xfd')]=g+e+'px';this['picker'][b('0x157')]['add'](b('0x84'));this[b('0x105')][b('0x157')][b('0x66')]('zhenshangyin-custom-up');}if(h+k<=window['innerWidth']){this[b('0x105')][b('0x16e')][b('0x10')]=d[b('0x10')]+window[b('0x18')]+'px';}else if(i+k<=window['innerWidth']){this[b('0x105')]['style'][b('0x10')]=d[b('0x49')]+window[b('0x18')]-k+'px';this[b('0x105')]['classList'][b('0x164')](b('0xb0'));}else{this[b('0x105')][b('0x16e')][b('0x10')]=d[b('0x10')]+window[b('0x18')]+'px';}}};window[b('0x17a')](b('0x94'),c);window[b('0x17a')]('resize',c);c();}[b('0x17')](){if(this[b('0x105')])return;const c=document['createElement'](b('0x4e'));c[b('0x149')]='zhenshangyin-custom-calendar\x20date-range-calendar';c[b('0x141')]=b('0xcc')+this['createMonthPicker'](b('0x53'))+b('0x10c')+this[b('0x104')](b('0x1c'))+'</div></div><div\x20class=\x22zhenshangyin-button-container\x22><button\x20class=\x22zhenshangyin-confirm-btn\x22>确认</button></div>';document[b('0x99')][b('0x129')](c);this[b('0x105')]=c;c['addEventListener'](b('0xf9'),d=>{d[b('0x159')]();});this[b('0xbb')]();this['setupButtons']();}['createMonthPicker'](c){return b('0x86')+c+b('0x80')+c+'\x22>'+(c===b('0x53')?this['currentYear']:this[b('0xe2')])+b('0x36')+c+b('0x67')+c+'-month-picker-body\x22><tr><td>1月</td><td>2月</td><td>3月</td></tr><tr><td>4月</td><td>5月</td><td>6月</td></tr><tr><td>7月</td><td>8月</td><td>9月</td></tr><tr><td>10月</td><td>11月</td><td>12月</td></tr></tbody></table></div>';}['setupMonthPickers'](){this[b('0x7b')]('start');this[b('0x7b')](b('0x1c'));}[b('0x7b')](c){const d=this['picker'][b('0xbc')]('#'+c+'-month-picker-body');this[b('0x6f')](d,c);this['picker']['querySelector'](b('0x133')+c+'\x22]')[b('0x17a')](b('0xf9'),()=>this[b('0x1a')](-0x1,c));this[b('0x105')][b('0xbc')](b('0x151')+c+'\x22]')['addEventListener'](b('0xf9'),()=>this[b('0x1a')](0x1,c));d[b('0x17a')]('mouseover',e=>{if(this[b('0xe8')]&&!this[b('0x70')]){const f=e[b('0x48')];if(f[b('0x79')]==='TD'){const g=Array[b('0x1')](d[b('0x110')]('td'))['indexOf'](f);const h=new Date(c==='start'?this[b('0x11')]:this[b('0xe2')],g,0x1);this[b('0xcd')](h);}}});d[b('0x17a')]('mouseout',e=>{if(this[b('0xe8')]&&!this['endMonth']){this[b('0xcd')](null);}});}['applyHoverRangeStyle'](c){const d=this[b('0xe8')];const e=this[b('0x70')];this[b('0x105')][b('0x110')]('td')['forEach'](f=>{f[b('0x157')]['remove'](b('0x37'),b('0x68'),'zhenshangyin-hover-range');const g=parseInt(f[b('0x15a')][b('0x9a')],0xa);const h=parseInt(f['dataset'][b('0x145')],0xa);const i=new Date(g,h,0x1);if(d&&e){if(i>=d&&i<=e){f[b('0x157')][b('0x164')](b('0x68'));if(i[b('0x15b')]()===d['getTime']()||i[b('0x15b')]()===e[b('0x15b')]()){f[b('0x157')]['add']('zhenshangyin-custom-selected');}}}else if(d&&!e&&c){const [j,k]=d<c?[d,c]:[c,d];if(i>=j&&i<=k){f[b('0x157')][b('0x164')](b('0x143'));if(i[b('0x15b')]()===d[b('0x15b')]()){f['classList']['add'](b('0x37'));}}}else if(d&&!e){if(i[b('0x15b')]()===d[b('0x15b')]()){f[b('0x157')][b('0x164')]('zhenshangyin-custom-selected');}}});}['populateMonths'](c,d){const e=c[b('0x110')]('td');const f=d===b('0x53')?this[b('0x11')]:this[b('0xe2')];e[b('0x93')]((g,h)=>{g[b('0x157')][b('0x66')]('zhenshangyin-custom-selected','zhenshangyin-selected-range',b('0x143'));g[b('0x91')](g[b('0xd6')](!![]));const i=c[b('0x110')]('td')[h];const j=new Date(f,h,0x1);i[b('0x15a')][b('0x9a')]=f;i[b('0x15a')]['month']=h;if(this['startMonth']&&this[b('0x70')]&&j>=this['startMonth']&&j<=this[b('0x70')]){i[b('0x157')][b('0x164')](j[b('0x15b')]()===this[b('0xe8')][b('0x15b')]()||j[b('0x15b')]()===this[b('0x70')]['getTime']()?b('0x37'):'zhenshangyin-selected-range');}else if(this[b('0xe8')]&&!this[b('0x70')]&&j[b('0x15b')]()===this[b('0xe8')][b('0x15b')]()){i['classList'][b('0x164')]('zhenshangyin-custom-selected');}i['addEventListener'](b('0xf9'),()=>{this[b('0x54')](h,d);});});}['highlightMonth'](c,d){const e=d==='start'?this['currentYear']:this[b('0xe2')];const f=new Date(e,c,0x1);if(this[b('0xd0')]){this['startMonth']=f;this[b('0x70')]=null;}else{this[b('0x70')]=f;if(this[b('0xe8')]&&this[b('0xe8')]>this['endMonth']){[this['startMonth'],this[b('0x70')]]=[this[b('0x70')],this[b('0xe8')]];}}this[b('0xd0')]=!this[b('0xd0')];this[b('0x113')]();}[b('0x113')](){const c=this[b('0xe8')];const d=this['endMonth'];this[b('0x105')][b('0x110')]('td')[b('0x93')](e=>{e[b('0x157')]['remove'](b('0x37'),'zhenshangyin-selected-range');const f=parseInt(e[b('0x15a')]['year'],0xa);const g=parseInt(e['dataset'][b('0x145')],0xa);const h=new Date(f,g,0x1);if(c&&d){if(h>=c&&h<=d){e['classList'][b('0x164')]('zhenshangyin-selected-range');if(h[b('0x15b')]()===c[b('0x15b')]()||h[b('0x15b')]()===d[b('0x15b')]()){e[b('0x157')][b('0x164')](b('0x37'));}}}else if(c&&!d){if(h[b('0x15b')]()===c[b('0x15b')]()){e['classList'][b('0x164')](b('0x37'));}}});}[b('0x1a')](c,d){if(d===b('0x53')){this[b('0x11')]+=c;}else{this['endYear']+=c;}this[b('0x105')][b('0xbc')]('.zhenshangyin-current-display[data-type=\x22'+d+'\x22]')[b('0x6b')]=d===b('0x53')?this[b('0x11')]:this[b('0xe2')];const e=this[b('0x105')]['querySelector']('#'+d+b('0xbf'));this[b('0x6f')](e,d);if(this['startMonth']&&this['endMonth']){if(this[b('0xe8')]>this[b('0x70')]){[this[b('0xe8')],this[b('0x70')]]=[this['endMonth'],this['startMonth']];}}this[b('0x113')]();}[b('0x170')](){this[b('0x105')]['querySelector'](b('0x3b'))[b('0x17a')](b('0xf9'),()=>{if(this[b('0xe8')]&&this[b('0x70')]){if(this[b('0xe8')]>this['endMonth']){[this[b('0xe8')],this[b('0x70')]]=[this[b('0x70')],this[b('0xe8')]];}const c=this[b('0xce')](this['startMonth']);const d=this[b('0xce')](this[b('0x70')]);const e=''+c+this['separator']+d;this[b('0x12d')][b('0x131')]=e;this[b('0x105')][b('0x157')]['remove'](b('0x177'));this[b('0x105')][b('0x157')][b('0x66')]('zhenshangyin-custom-down');this[b('0x105')][b('0x157')]['remove'](b('0x3d'));setTimeout(()=>{this['picker'][b('0x66')]();this['picker']=null;this[b('0x16f')](e);},0x12c);}});}[b('0xce')](c){return this[b('0x9b')][b('0x137')](b('0x153'),c[b('0x1e')]())[b('0x137')]('MM',String(c['getMonth']()+0x1)['padStart'](0x2,'0'));}}class ZhenshangyinYearRangePicker{constructor(c,d={}){this[b('0x12d')]=document[b('0xbc')](c);this[b('0x175')]=null;this['endYear']=null;this[b('0x11')]=new Date()[b('0x1e')]();this[b('0xa5')]=d[b('0xa5')]||function(){};this['separator']=d[b('0xf7')]||b('0x16c');this[b('0xd0')]=!![];this[b('0x112')]();}['init'](){this[b('0x12d')][b('0x17a')]('click',c=>{c[b('0x159')]();this['createYearRangePicker']();this[b('0x125')]();if(this[b('0x175')]&&this['endYear']){this[b('0x113')]();}});document['addEventListener'](b('0xf9'),()=>{if(this[b('0x105')]){this[b('0x105')][b('0x157')]['remove'](b('0x177'));this[b('0x105')][b('0x157')]['remove']('zhenshangyin-custom-down');this[b('0x105')][b('0x157')]['remove'](b('0x3d'));setTimeout(()=>{this['picker'][b('0x66')]();this[b('0x105')]=null;},0x12c);}});}[b('0x125')](){const c=()=>{if(this[b('0x105')]){const d=this[b('0x12d')][b('0x12c')]();const e=this[b('0x12d')]['offsetHeight'];const f=window[b('0x3a')]-d['bottom'];const g=d['top']+window[b('0x13')];const h=d[b('0x10')];const i=window[b('0x88')]-d['right'];this[b('0x105')][b('0x157')]['add'](b('0x177'));const j=this[b('0x105')]['offsetHeight'];const k=this[b('0x105')][b('0xc')];this[b('0x105')][b('0x157')][b('0x66')](b('0x84'));if(f<j&&g<j){this['picker']['style'][b('0xfd')]=g+e+'px';this[b('0x105')][b('0x157')]['add'](b('0x84'));this['picker']['classList'][b('0x66')](b('0x3d'));}else if(f<j){this[b('0x105')]['style'][b('0xfd')]=g-j+'px';this[b('0x105')][b('0x157')]['add'](b('0x3d'));this[b('0x105')]['classList'][b('0x66')](b('0x84'));}else{this['picker'][b('0x16e')]['top']=g+e+'px';this[b('0x105')][b('0x157')]['add'](b('0x84'));this['picker'][b('0x157')][b('0x66')](b('0x3d'));}if(h+k<=window[b('0x88')]){this['picker'][b('0x16e')][b('0x10')]=d[b('0x10')]+window[b('0x18')]+'px';}else if(i+k<=window[b('0x88')]){this[b('0x105')][b('0x16e')]['left']=d[b('0x49')]+window[b('0x18')]-k+'px';this[b('0x105')][b('0x157')]['add']('zhenshangyin-custom-right');}else{this['picker'][b('0x16e')][b('0x10')]=d[b('0x10')]+window[b('0x18')]+'px';}}};window[b('0x17a')](b('0x94'),c);window[b('0x17a')]('resize',c);c();}[b('0x31')](){if(this[b('0x105')])return;const c=document[b('0x152')](b('0x4e'));c['className']=b('0x6a');c[b('0x141')]=b('0x11c')+this[b('0x44')](b('0x53'))+b('0x8c')+this[b('0x44')](b('0x1c'))+b('0xae');document[b('0x99')][b('0x129')](c);this[b('0x105')]=c;c[b('0x17a')](b('0xf9'),d=>{d['stopPropagation']();});this[b('0x39')]();this['setupButtons']();}[b('0x44')](c){const d=c===b('0x53')?this[b('0x175')]?Math[b('0x42')](this[b('0x175')]/0xa)*0xa:this[b('0x11')]-this[b('0x11')]%0xa:this['endYear']?Math[b('0x42')](this[b('0xe2')]/0xa)*0xa:this[b('0x11')]+0xc-this[b('0x11')]%0xa;return b('0x2')+c+b('0x80')+c+'\x22>'+d+'-'+(d+0xb)+b('0xc2')+c+b('0x67')+c+b('0x3c')+this[b('0x5c')](d)+b('0x147');}[b('0x5c')](c){let d='';for(let e=0x0;e<0x4;e++){d+=b('0x11f');for(let f=0x0;f<0x3;f++){d+=b('0xb')+(c+e*0x3+f)+b('0x29');}d+=b('0x8a');}return d;}[b('0xe3')](c,d){const e=parseInt(this['picker'][b('0xbc')](b('0x5e')+d+'\x22]')[b('0x6b')][b('0x179')]('\x20-\x20')[0x0]);const f=e+(c>0x0?0xc:-0xc);this['updateYearRows'](d,f);}[b('0xa')](c,d){const e=this[b('0x105')][b('0xbc')]('#'+c+'-year-picker-body');e[b('0x141')]=this['generateYearRows'](d);this[b('0x105')]['querySelector'](b('0x5e')+c+'\x22]')[b('0x6b')]=d+'-'+(d+0xb);this[b('0x127')](e,c);}['setupYearPickers'](){this[b('0xca')](b('0x53'));this['setupSingleYearPicker'](b('0x1c'));}['setupSingleYearPicker'](c){const d=this[b('0x105')][b('0xbc')]('#'+c+b('0x114'));this[b('0x127')](d,c);this[b('0x105')][b('0xbc')](b('0x15f')+c+'\x22]')['addEventListener'](b('0xf9'),()=>this[b('0xe3')](-0xc,c));this['picker'][b('0xbc')]('.next-decade[data-type=\x22'+c+'\x22]')[b('0x17a')](b('0xf9'),()=>this[b('0xe3')](0xc,c));d[b('0x17a')](b('0x5f'),e=>{if(this[b('0x175')]&&!this[b('0xe2')]){const f=e[b('0x48')];if(f[b('0x79')]==='TD'){const g=parseInt(f[b('0x6b')],0xa);this[b('0xcd')](g);}}});}[b('0xcd')](c){const d=this['isSelectingStart']?c:this[b('0x175')];const e=this[b('0xd0')]?this[b('0xe2')]:c;const [f,g]=d<e?[d,e]:[e,d];this[b('0x105')]['querySelectorAll']('td')[b('0x93')](h=>h['classList'][b('0x66')](b('0x143')));[b('0x53'),b('0x1c')][b('0x93')](h=>{const i=this[b('0x105')]['querySelector']('#'+h+b('0x114'));Array[b('0x1')](i[b('0x110')]('td'))[b('0x93')](j=>{const k=parseInt(j[b('0x6b')],0xa);if(k>=f&&k<=g){j[b('0x157')][b('0x164')](b('0x143'));}});});}[b('0x127')](c,d){const e=c[b('0x110')]('td');e[b('0x93')](f=>{f['classList'][b('0x66')]('zhenshangyin-custom-selected','zhenshangyin-selected-range');if(this[b('0x175')]&&this[b('0xe2')]){const g=parseInt(f[b('0x6b')],0xa);if(g>=this[b('0x175')]&&g<=this[b('0xe2')]){f[b('0x157')][b('0x164')](b('0x68'));}}f[b('0x17a')](b('0xf9'),()=>{this[b('0xaa')](parseInt(f[b('0x6b')],0xa),d);});});}[b('0xaa')](c,d){if(this[b('0x175')]&&this['endYear']){this[b('0x175')]=null;this[b('0xe2')]=null;this[b('0xd0')]=!![];this[b('0x105')][b('0x110')]('td')['forEach'](f=>f[b('0x157')][b('0x66')]('zhenshangyin-custom-selected','zhenshangyin-selected-range'));}if(this[b('0xd0')]){this['startYear']=c;}else{this[b('0xe2')]=c;}this[b('0xd0')]=!this[b('0xd0')];if(this[b('0x175')]&&this[b('0xe2')]&&this[b('0x175')]>this[b('0xe2')]){[this['startYear'],this[b('0xe2')]]=[this['endYear'],this['startYear']];}this[b('0x105')]['querySelectorAll']('#'+d+b('0x122'))[b('0x93')](f=>f[b('0x157')][b('0x66')](b('0x37'),'zhenshangyin-selected-range'));const e=Array[b('0x1')](this[b('0x105')][b('0x110')]('#'+d+b('0x122')))[b('0x10b')](f=>parseInt(f[b('0x6b')],0xa)===c);if(e){e[b('0x157')][b('0x164')]('zhenshangyin-custom-selected');}if(this[b('0x175')]&&this[b('0xe2')]){this['applyRangeStyle']();}}[b('0x113')](){if(this[b('0x175')]>this[b('0xe2')]){[this[b('0x175')],this[b('0xe2')]]=[this[b('0xe2')],this[b('0x175')]];}const c=this[b('0x175')];const d=this[b('0xe2')];[b('0x53'),b('0x1c')][b('0x93')](e=>{const f=this[b('0x105')][b('0xbc')]('#'+e+b('0x114'));Array[b('0x1')](f[b('0x110')]('td'))['forEach'](g=>{const h=parseInt(g[b('0x6b')],0xa);g['classList'][b('0x66')](b('0x37'),b('0x68'));if(h>=c&&h<=d){if(h===c||h===d){g['classList'][b('0x164')](b('0x37'));}else{g['classList'][b('0x164')](b('0x68'));}}});});}[b('0x170')](){this[b('0x105')][b('0xbc')](b('0x3b'))[b('0x17a')](b('0xf9'),()=>{if(this[b('0x175')]&&this['endYear']){if(this[b('0x175')]>this[b('0xe2')]){[this[b('0x175')],this['endYear']]=[this['endYear'],this[b('0x175')]];}const c=''+this[b('0x175')]+this[b('0xf7')]+this['endYear'];this[b('0x12d')][b('0x131')]=c;this[b('0x105')]['classList']['remove'](b('0x177'));this[b('0x105')]['classList'][b('0x66')](b('0x84'));this[b('0x105')][b('0x157')][b('0x66')](b('0x3d'));setTimeout(()=>{this[b('0x105')]['remove']();this[b('0x105')]=null;this[b('0xa5')](c);},0x12c);}});}}class ZhenshangyinNotification{constructor({title,message,type=b('0x124'),duration=0x7d0}){this[b('0x8b')]=title;this[b('0xb4')]=message;this[b('0x16')]=type;this[b('0x106')]=duration;this[b('0x112')]();}[b('0x112')](){this['createStyle']();this[b('0x115')]();this[b('0x75')]();}[b('0x23')](){if(!document[b('0xc7')](b('0xfc'))){const c=document['createElement'](b('0x16e'));c['id']=b('0xfc');c[b('0x141')]='.zhenshangyin-notification-container{position:fixed;top:10px;right:20px;z-index:9999;width:300px}.zhenshangyin-notification{margin-top:10px;padding:15px;color:#000;border-radius:4px;box-shadow:0\x202px\x2012px\x20rgba(0,0,0,0.2);opacity:0;transform:translateX(100%);transition:opacity\x200.3s\x20ease,transform\x200.3s\x20ease}.zhenshangyin-notification.success{background-color:#ccf5e0}.zhenshangyin-notification.warning{background-color:#ffebcc}.zhenshangyin-notification.info{background-color:#d6ebff}.zhenshangyin-notification.error{background-color:#ffd6cc}.zhenshangyin-notification-show{opacity:1;transform:translateX(0)}.zhenshangyin-notification-hide{opacity:0;transform:translateX(0px)translateY(-20px);transition:opacity\x200.5s\x20ease,transform\x200.5s\x20ease}.zhenshangyin-notification-icon{width:20px;height:auto;display:flex}.zhenshangyin-notification-icon\x20svg{width:100%;height:auto}.zhenshangyin-notification-title{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:bold}.zhenshangyin-notification-title\x20h2{flex:1;font-size:16px;line-height:1;font-weight:bold}.zhenshangyin-notification-message{margin-top:10px;font-size:14px;padding-left:30px}.zhenshangyin-notification-close{width:18px;cursor:pointer;display:flex}';document[b('0x140')][b('0x129')](c);}}[b('0x115')](){if(!document[b('0xc7')](b('0x14a'))){const c=document[b('0x152')](b('0x4e'));c['id']=b('0x14a');c[b('0x149')]='zhenshangyin-notification-container';document[b('0x99')][b('0x129')](c);}}[b('0x75')](){const c=document[b('0xc7')](b('0x14a'));const d=document[b('0x152')](b('0x4e'));d[b('0x149')]=b('0x55')+this[b('0x16')];d[b('0x141')]=b('0x89')+this[b('0x11e')]()+b('0xd5')+this[b('0x8b')]+'</h2><div\x20class=\x22zhenshangyin-notification-close\x22><svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22viewBox=\x220\x200\x201024\x201024\x22><path\x20fill=\x22currentColor\x22d=\x22M764.288\x20214.592\x20512\x20466.88\x20259.712\x20214.592a31.936\x2031.936\x200\x200\x200-45.12\x2045.12L466.752\x20512\x20214.528\x20764.224a31.936\x2031.936\x200\x201\x200\x2045.12\x2045.184L512\x20557.184l252.288\x20252.288a31.936\x2031.936\x200\x200\x200\x2045.12-45.12L557.12\x20512.064l252.288-252.352a31.936\x2031.936\x200\x201\x200-45.12-45.184z\x22></path></svg></div></div><div\x20class=\x22zhenshangyin-notification-message\x22>'+this[b('0xb4')]+b('0xdb');d[b('0xbc')]('.zhenshangyin-notification-close')[b('0x17a')](b('0xf9'),()=>{this[b('0x163')](d);});c[b('0x129')](d);setTimeout(()=>d[b('0x157')][b('0x164')](b('0x98')),0x32);if(this['duration']){setTimeout(()=>this['hideNotification'](d),this[b('0x106')]);}}['getIcon'](){switch(this[b('0x16')]){case'error':return b('0x9e');case b('0xf4'):return b('0xaf');case b('0x124'):return b('0xe1');case b('0xf3'):return b('0x63');default:return'';}}[b('0x163')](c){c[b('0x157')][b('0x164')](b('0xcf'));setTimeout(()=>c[b('0x66')](),0x1f4);}}class ZhenshangyinMessage{constructor({message,type=b('0x124'),duration=0x7d0}){this[b('0xb4')]=message;this[b('0x16')]=type;this[b('0x106')]=duration;this[b('0x112')]();}['init'](){this[b('0x23')]();this[b('0x115')]();this[b('0x11b')]();}[b('0x23')](){if(!document['getElementById'](b('0x169'))){const c=document[b('0x152')]('style');c['id']='zhenshangyin-message-style';c[b('0x141')]=b('0x134');document[b('0x140')][b('0x129')](c);}}[b('0x115')](){if(!document[b('0xc7')](b('0x97'))){const c=document[b('0x152')](b('0x4e'));c['id']=b('0x97');c[b('0x149')]=b('0x97');document[b('0x99')][b('0x129')](c);}}[b('0x11b')](){const c=document['getElementById']('zhenshangyin-message-container');const d=document[b('0x152')](b('0x4e'));d[b('0x149')]=b('0x109')+this[b('0x16')];d[b('0x141')]=''+this[b('0x11e')]()+this[b('0xb4')];c[b('0x129')](d);setTimeout(()=>d[b('0x157')][b('0x164')]('zhenshangyin-message-show'),0x32);if(this[b('0x106')]){setTimeout(()=>this['hideMessage'](d),this[b('0x106')]);}}[b('0x11e')](){switch(this[b('0x16')]){case b('0x46'):return'<svg\x20class=\x22zhenshangyin-message-icon\x22xmlns=\x22http://www.w3.org/2000/svg\x22viewBox=\x220\x200\x201024\x201024\x22><path\x20fill=\x22currentColor\x22d=\x22M512\x2064a448\x20448\x200\x201\x201\x200\x20896\x20448\x20448\x200\x200\x201\x200-896m0\x20393.664L407.936\x20353.6a38.4\x2038.4\x200\x201\x200-54.336\x2054.336L457.664\x20512\x20353.6\x20616.064a38.4\x2038.4\x200\x201\x200\x2054.336\x2054.336L512\x20566.336\x20616.064\x20670.4a38.4\x2038.4\x200\x201\x200\x2054.336-54.336L566.336\x20512\x20670.4\x20407.936a38.4\x2038.4\x200\x201\x200-54.336-54.336z\x22></path></svg>';case b('0xf4'):return b('0xf0');case b('0x124'):return'<svg\x20class=\x22zhenshangyin-message-icon\x22xmlns=\x22http://www.w3.org/2000/svg\x22viewBox=\x220\x200\x201024\x201024\x22><path\x20fill=\x22currentColor\x22d=\x22M512\x2064a448\x20448\x200\x201\x201\x200\x20896\x20448\x20448\x200\x200\x201\x200-896m0\x20192a58.432\x2058.432\x200\x200\x200-58.24\x2063.744l23.36\x20256.384a35.072\x2035.072\x200\x200\x200\x2069.76\x200l23.296-256.384A58.432\x2058.432\x200\x200\x200\x20512\x20256m0\x20512a51.2\x2051.2\x200\x201\x200\x200-102.4\x2051.2\x2051.2\x200\x200\x200\x200\x20102.4\x22></path></svg>';case'success':return b('0xc4');default:return'';}}[b('0x52')](c){c['classList']['add'](b('0x12'));setTimeout(()=>{const d=document['getElementById'](b('0x97'));d[b('0x120')](c);if(!d[b('0x62')]()){document['body'][b('0x120')](d);const e=document[b('0xc7')](b('0x142'));if(e)document[b('0x140')][b('0x120')](e);}},0x258);}}class ZhenshangyinDropdown{constructor({container,data,customParams,onSelect,searchEnabled=![],inputSearchEnabled=![],defaultSelected=null,grouped=![],multiSelect=![],inputMultiSelect=![]}){this['container']=document['querySelector'](container);this[b('0x27')]=data;this[b('0x28')]=customParams||{};this[b('0xff')]=onSelect||(()=>{});this[b('0x38')]=searchEnabled;this['inputSearchEnabled']=inputSearchEnabled;this[b('0x15c')]=defaultSelected;this[b('0x7f')]=grouped;this['multiSelect']=multiSelect;this[b('0xee')]=inputMultiSelect;this[b('0x34')]=null;this['selectedItems']=multiSelect?[]:null;this['styleId']=b('0x13d')+Math[b('0xe')]()[b('0x0')](0x24)['substr'](0x2,0x9);this[b('0x112')]();}[b('0x112')](){this[b('0x178')]['onclick']=c=>this[b('0x73')](c);if(this['inputSearchEnabled']){this['container']['addEventListener']('input',c=>this[b('0xba')](c[b('0x48')][b('0x131')]));}if(this[b('0x15c')]){const c=this[b('0x7f')]?this[b('0x6c')](this['items']):this[b('0x27')];if(this[b('0x85')]){this[b('0x58')]=c['filter'](d=>this[b('0x15c')][b('0x12f')](d[b('0x8b')]));this['updateInput']();}else{this[b('0x58')]=c['find'](d=>d['title']===this[b('0x15c')]);this[b('0x178')][b('0x131')]=this['selectedItems']?this[b('0x58')][b('0x8b')]:'';}}}[b('0x6c')](c){return c[b('0x78')]((d,e)=>d['concat'](e['children']||[]),[]);}[b('0x73')](c){if(this[b('0x34')]){this['dropdown'][b('0x66')]();this['removeStyles']();}this['createStyles']();this['dropdown']=document[b('0x152')](b('0x4e'));this['dropdown'][b('0x149')]=b('0x5');if(this['searchEnabled']&&!this['inputSearchEnabled']){const j=document['createElement'](b('0x82'));j[b('0x16')]=b('0x116');j[b('0x149')]=b('0x2d');j[b('0x121')]=b('0x12e');j[b('0x50')]=k=>this['filterItems'](k['target'][b('0x131')]);this[b('0x34')][b('0x129')](j);}this['dropdown']['style'][b('0xb8')]=this['container']['offsetWidth']+'px';if(this[b('0x7f')]){this['items'][b('0x93')](k=>this[b('0x16b')](k));}else{this['createItems'](this[b('0x27')]);}const d=this['container'][b('0x12c')]();const e=this[b('0x178')]['offsetHeight'];const f=window[b('0x3a')]-d[b('0x95')];const g=d[b('0xfd')]+window[b('0x13')];document[b('0x99')][b('0x129')](this['dropdown']);const h=this[b('0x34')]['offsetHeight'];const i=this['dropdown'][b('0xc')];this[b('0x34')]['classList'][b('0x164')](b('0xd'));if(f>=h){this[b('0x34')][b('0x157')][b('0x164')]('zhenshengyin-dropdown-down');this[b('0x34')]['style'][b('0xfd')]=d['bottom']+window['scrollY']+'px';}else if(g>=h){this[b('0x34')][b('0x157')]['add'](b('0x132'));this[b('0x34')][b('0x16e')][b('0xfd')]=g-h+'px';}else{this[b('0x34')][b('0x157')]['add'](b('0x16a'));this[b('0x34')][b('0x16e')][b('0xfd')]=d[b('0x95')]+window[b('0x13')]+'px';}if(d[b('0x10')]+i<=window[b('0x88')]){this[b('0x34')][b('0x16e')][b('0x10')]=d[b('0x10')]+window[b('0x18')]+'px';}else if(window[b('0x88')]-d['right']>=i){this[b('0x34')][b('0x16e')][b('0x10')]=d['right']+window[b('0x18')]-i+'px';}else{this[b('0x34')][b('0x16e')][b('0x10')]=d['left']+window[b('0x18')]+'px';}document[b('0xda')](b('0xf9'),this[b('0xde')][b('0x90')](this));document[b('0x17a')](b('0xf9'),this['removeDropdown']['bind'](this));}[b('0x16b')](c){const d=document['createElement'](b('0x4e'));d[b('0x149')]=b('0x136');const e=document['createElement'](b('0x4e'));e['className']='zhenshengyin-dropdown-group-title';e[b('0x6b')]=c[b('0x13f')]||'分组';d[b('0x129')](e);this[b('0x4f')](c[b('0x4c')],d);this[b('0x34')][b('0x129')](d);}[b('0x4f')](c,d=this[b('0x34')]){c[b('0x93')](e=>{const f=document['createElement'](b('0x4e'));f['className']=b('0xd3');f[b('0x6b')]=e['title'];f[b('0x150')]=()=>this[b('0x160')](e);d[b('0x129')](f);if(this[b('0x85')]&&this[b('0x58')][b('0xc9')](g=>g[b('0x8b')]===e[b('0x8b')])||!this[b('0x85')]&&this['selectedItems']&&this['selectedItems'][b('0x8b')]===e['title']){f[b('0x157')][b('0x164')](this[b('0x85')]?b('0x6d'):b('0xe4'));}});}[b('0xba')](c){if(this[b('0x7f')]){const d=this[b('0x27')]['map'](e=>{const f=e[b('0x4c')][b('0x20')](g=>g[b('0x8b')]['toLowerCase']()[b('0x12f')](c[b('0x41')]()));return{...e,'children':f};})['filter'](e=>e['children'][b('0x69')]>0x0);this[b('0x3')](d);}else{const e=this[b('0x27')][b('0x20')](f=>f[b('0x8b')][b('0x41')]()[b('0x12f')](c[b('0x41')]()));this[b('0x1d')](e);}}[b('0x3')](c){const d=this[b('0x34')]['querySelectorAll'](b('0x22'));d[b('0x93')](e=>e[b('0x66')]());c[b('0x93')](e=>this[b('0x16b')](e));}[b('0x1d')](c){const d=this[b('0x34')]['querySelectorAll']('.zhenshengyin-dropdown-item');d[b('0x93')](e=>e[b('0x66')]());this[b('0x4f')](c);}['selectItem'](c){if(this['multiSelect']){const d=this['selectedItems'][b('0xc9')](f=>f['title']===c[b('0x8b')]);if(d){this['selectedItems']=this[b('0x58')][b('0x20')](f=>f[b('0x8b')]!==c[b('0x8b')]);}else{this[b('0x58')]['push'](c);}this[b('0x51')]();const e=this[b('0x34')][b('0x110')](b('0xed'));e[b('0x93')](f=>{if(this['selectedItems']['some'](g=>g[b('0x8b')]===f[b('0x6b')])){f[b('0x157')][b('0x164')]('zhenshengyin-dropdown-item-selected-multiSelect');}else{f[b('0x157')][b('0x66')](b('0x6d'));}});}else{this['container']['value']=c[b('0x8b')];const f=this[b('0x34')][b('0x110')](b('0x5b'));f[b('0x93')](h=>{h[b('0x157')][b('0x66')](b('0xe4'));});const g=[...this[b('0x34')]['children']][b('0x10b')](h=>h['textContent']===c[b('0x8b')]);if(g){g[b('0x157')][b('0x164')](b('0xe4'));}this[b('0x58')]=c;this[b('0x34')][b('0x157')][b('0x66')](b('0xd'));this[b('0x34')]['classList'][b('0x66')](b('0x16a'));this['dropdown'][b('0x157')][b('0x66')](b('0x132'));setTimeout(()=>{this[b('0x34')][b('0x66')]();this[b('0x8d')]();},0x12c);}this[b('0xff')](c);}['updateInput'](){if(this[b('0xee')]){this[b('0x178')]['value']=this[b('0x58')]['map'](c=>c['title'])[b('0xa0')](',\x20');}else{this['container'][b('0x141')]='';this[b('0x58')][b('0x93')]((c,d)=>{const e=c[b('0x8b')];const f=this[b('0x10f')](c);const g=document[b('0x152')]('div');g[b('0x157')]['add'](b('0x6'));g[b('0x6b')]=e;g[b('0x129')](f);this[b('0x178')]['appendChild'](g);});}}[b('0x10f')](c){const d=document[b('0x152')]('div');d[b('0x157')][b('0x164')](b('0xbe'));d[b('0x6b')]='\x20×';d[b('0x150')]=e=>{e[b('0x159')]();this[b('0x10a')](c);};return d;}[b('0x10a')](c){this[b('0x58')]=this[b('0x58')][b('0x20')](d=>d[b('0x8b')]!==c[b('0x8b')]);this[b('0x51')]();}[b('0xde')](c){if(!this[b('0x34')][b('0xb7')](c[b('0x48')])&&c[b('0x48')]!==this[b('0x178')]){this[b('0x34')][b('0x157')][b('0x66')](b('0xd'));this[b('0x34')]['classList'][b('0x66')](b('0x16a'));this['dropdown'][b('0x157')][b('0x66')](b('0x132'));setTimeout(()=>{this['dropdown'][b('0x66')]();this[b('0x8d')]();},0x12c);}}[b('0x8d')](){const c=document[b('0xc7')](this['styleId']);if(c){c['remove']();}}['createStyles'](){if(document[b('0xc7')](this[b('0x15e')])){return;}const c=document[b('0x152')](b('0x16e'));c['id']=this[b('0x15e')];c[b('0x141')]=b('0x172');document['head'][b('0x129')](c);}}class ZhenshangyinLinkage{constructor(c){this['inputElements']=c[b('0x15d')]?c[b('0x15d')][b('0x165')](d=>document['querySelector'](d)):[document[b('0xbc')](c[b('0x178')])];this[b('0x92')]=c[b('0x92')];this[b('0xbd')]=c[b('0xbd')]||function(){};this[b('0xf7')]=c[b('0xf7')]||b('0x119');this[b('0x2f')]=null;this[b('0x139')]=c[b('0x15d')]&&c['multiInputs'][b('0x69')]>0x1;this[b('0x161')]=[];this[b('0x112')]();}[b('0x112')](){this['inputElements']['forEach']((c,d)=>{if(!c||c[b('0x79')][b('0x41')]()!=='input')return;this[b('0xfa')](c,d);});}['createDropdownMenu'](){if(this[b('0x2f')])return;this[b('0x2f')]=document[b('0x152')](b('0x4e'));this['menu'][b('0x149')]='zhenshangyin-dropdown-menu';this['menu']['innerHTML']=b('0x2e');document[b('0x99')][b('0x129')](this[b('0x2f')]);}[b('0xfa')](c,d){c[b('0x17a')]('click',e=>{e[b('0x159')]();if(!this[b('0x2f')]){this[b('0x2b')]();}const f=this[b('0x2f')][b('0xbc')](b('0x8'));let g;if(this[b('0x139')]){if(d===0x0){g=this[b('0x92')];}else{let h=this['data'];for(let j=0x0;j<d;j++){const k=this['selectedValues'][j];const l=h[b('0x10b')](m=>m[b('0x25')]===k);if(l&&l['children']){h=l[b('0x4c')];}else{h=[];break;}}g=h;}}else{g=d===0x0?this[b('0x92')]:this['getSubData'](d);}this[b('0x73')](c,f,g,d);});document['addEventListener'](b('0xf9'),e=>{if(this['menu']&&!this[b('0x2f')]['contains'](e['target'])&&!c[b('0xb7')](e[b('0x48')])){this[b('0x8f')]();}});}['showDropdown'](c,d,e,f){this[b('0x2f')][b('0x141')]='';const g=document[b('0x152')]('ul');g[b('0x149')]=b('0xb1');this[b('0x2f')][b('0x129')](g);if(this[b('0x139')]){this[b('0x24')](e,g,f);this[b('0x102')](g,f);}else{this[b('0x24')](this[b('0x92')],g,0x0);this['bindListEvents'](g,0x0);if(this[b('0x161')]['length']>0x0){let h=this[b('0x92')];for(let j=0x0;j<this['selectedValues']['length']-0x1;j++){const k=h['find'](l=>l['name']===this[b('0x161')][j]);if(k&&k[b('0x4c')]){h=k[b('0x4c')];const l=document[b('0x152')]('ul');l['className']=b('0xb1');this[b('0x2f')][b('0x129')](l);this[b('0x24')](h,l,j+0x1);this[b('0x102')](l,j+0x1);}}}}requestAnimationFrame(()=>{const m=c[b('0x12c')]();const n=c[b('0xd8')];const o=window[b('0x3a')]-m[b('0x95')];const p=m[b('0xfd')]+window[b('0x13')];const q=this[b('0x2f')][b('0xd8')];this[b('0x2f')][b('0x157')][b('0x164')](b('0xd4'));this[b('0x2f')][b('0x16e')][b('0x10')]=m['left']+window['scrollX']+'px';if(o<q&&p<q){this['menu']['style']['top']=p+n+'px';this[b('0x2f')]['classList']['add'](b('0x154'));}else if(o<q){this[b('0x2f')][b('0x16e')][b('0xfd')]=p-q+'px';this['menu'][b('0x157')]['add'](b('0x135'));}else{this['menu'][b('0x16e')][b('0xfd')]=p+n+'px';this[b('0x2f')][b('0x157')]['add'](b('0x154'));}});}[b('0x102')](c,d){c[b('0x17a')](b('0xf9'),e=>{const f=e[b('0x48')][b('0x4b')]('li');if(!f)return;[...c[b('0x4c')]][b('0x93')](h=>h['classList'][b('0x66')](b('0x7a')));f[b('0x157')]['add'](b('0x7a'));const g=f[b('0x15a')]['children']?JSON[b('0x9')](f['dataset'][b('0x4c')]):[];this[b('0xd2')](d,f[b('0x2a')]);if(this[b('0x139')]){this[b('0x8f')]();}else{this[b('0x43')](d+0x1);if(g[b('0x69')]>0x0){const h=document['createElement']('ul');h['className']=b('0xb1');this[b('0x2f')][b('0x129')](h);this[b('0x24')](g,h,d+0x1);this[b('0x102')](h,d+0x1);}else{this['closeDropdown']();}}});}[b('0x24')](c,d,e){d[b('0x141')]=c[b('0x165')](f=>{const g=this[b('0x161')][e]===f[b('0x25')];return'<li\x20data-children=\x27'+(f['children']?JSON['stringify'](f[b('0x4c')]):'')+'\x27class=\x22'+(g?b('0x7a'):'')+'\x22>'+f[b('0x25')]+b('0xdc');})['join']('');}[b('0xd2')](c,d){this[b('0x161')][c]=d;for(let e=c+0x1;e<this[b('0x161')]['length'];e++){this[b('0x161')][e]=null;}if(this[b('0x139')]){const f=this[b('0xf5')][c];if(f)f[b('0x131')]=d;for(let g=c+0x1;g<this[b('0xf5')][b('0x69')];g++){this[b('0xf5')][g][b('0x131')]='';}}else{const h=this[b('0xf5')][0x0];h[b('0x131')]=this[b('0x161')][b('0x20')](Boolean)[b('0xa0')](this[b('0xf7')]);}this['callback'](this[b('0xc6')]());}['getSubData'](c){let d=this[b('0x92')];for(let e=0x0;e<c;e++){const f=this[b('0x161')][e];const g=d[b('0x10b')](h=>h['name']===f);d=g?g[b('0x4c')]||[]:[];}return d;}[b('0xc6')](){return this[b('0x161')][b('0x20')](Boolean)[b('0xa0')](this[b('0xf7')]);}[b('0x43')](c){const d=document[b('0x110')](b('0x8'));for(let e=c;e<d[b('0x69')];e++){d[e][b('0xdd')]['removeChild'](d[e]);}}[b('0x8f')](){if(this['menu']){this[b('0x2f')][b('0x157')]['remove'](b('0xd4'));setTimeout(()=>{if(this[b('0x2f')]){this[b('0x2f')][b('0x66')]();this[b('0x2f')]=null;}},0x12c);}}}class ZhenshangyinLoadingBar{constructor({height=b('0x2c'),backgroundColor=b('0x103')}={}){this['element']=document[b('0x152')]('div');this[b('0x14')]['id']=b('0x7c');this['element'][b('0x16e')]['height']=height;this['element'][b('0x16e')][b('0xc3')]=b('0x6e');this[b('0x14')][b('0x16e')][b('0xfd')]='0';this[b('0x14')]['style'][b('0x10')]='0';this['element'][b('0x16e')][b('0x4a')]=backgroundColor;this['element'][b('0x16e')][b('0x64')]=b('0x1b');this['element']['style'][b('0xb8')]='0';document['body']['appendChild'](this[b('0x14')]);}[b('0x107')](){this[b('0x14')]['style']['width']='0%';}['updateProgress'](c){this[b('0x14')][b('0x16e')][b('0xb8')]=c+'%';}[b('0xd7')](){window[b('0x17a')](b('0x94'),()=>{this[b('0xc1')]();});}[b('0xc1')](){const c=document['documentElement']['scrollHeight']-document[b('0xc0')][b('0x174')];const d=window[b('0x13')];const e=d/c*0x64;this[b('0xc5')](e);}}
+(function () {
+    const styles = `
+            .zhenshangyin-custom-calendar {
+                position: absolute;
+                background: rgb(255, 255, 255);
+                filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.25));
+                border-radius: 6px;
+                z-index: 9999999999999999999999999999999;
+                opacity: 0;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                padding: 20px 15px;
+                width: 300px;
+            }
+            .zhenshangyin-custom-calendar * {
+                line-height: 1;
+            }
+            .zhenshangyin-custom-calendar.zhenshangyin-custom-show{
+                opacity: 1;
+            }
+            .zhenshangyin-custom-calendar.zhenshangyin-custom-down {
+                transform: translateY(15px);
+            }
+            .zhenshangyin-custom-calendar.zhenshangyin-custom-up {
+                transform: translateY(-15px);
+            }
+            .zhenshangyin-custom-down::before{
+                content: "";
+                width: 0px;
+                height: 0px;
+                border-bottom: 6px solid rgb(255, 255, 255);
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                position: absolute;
+                top: -6px;
+                left: 50px;
+            }
+            .zhenshangyin-custom-up::before{
+                content: "";
+                width: 0px;
+                height: 0px;
+                border-top: 6px solid rgb(255, 255, 255);
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                position: absolute;
+                bottom: -6px;
+                left: 50px;
+            }
+            .zhenshangyin-custom-right::before{
+                left: auto;
+                right: 50px;
+            }
+            .zhenshangyin-custom-calendar table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .zhenshangyin-custom-calendar th,
+            .zhenshangyin-custom-calendar td {
+                padding: 10px;
+                line-height: 1;
+                text-align: center;
+                cursor: pointer;
+                font-size: 12px;
+                color: rgb(96, 98, 102);
+                border: 2px solid #ffffff;
+                border-radius: 10px;
+            }
+            .zhenshangyin-custom-calendar th {
+                font-weight: 500;
+                color: rgb(144, 147, 153);
+            }
+            .zhenshangyin-custom-calendar td:hover {
+                background-color: rgb(242, 246, 252);
+            }
+            .zhenshangyin-custom-calendar td.zhenshangyin-custom-selected {
+                background-color: rgb(64, 158, 255);
+                color: rgb(255, 255, 255) !important;
+            }
+            .zhenshangyin-custom-calendar td.zhenshangyin-custom-today {
+                color: rgb(64, 158, 255);
+                font-weight: bold;
+            }
+            .zhenshangyin-custom-navigation {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ebeef5;
+            }
+            .zhenshangyin-custom-navigation button {
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            .zhenshangyin-next-month,
+            .zhenshangyin-prev-month{
+                margin: 0 15px;
+            }
+            .zhenshangyin-custom-navigation svg {
+                width: 16px;
+                height: auto;
+                display: block;
+            }
+            .zhenshangyin-custom-navigation button:hover svg path {
+                fill: rgb(64, 158, 255);
+            }
+            .zhenshangyin-custom-navigation button:hover {
+                color: rgb(102, 177, 255);
+            }
+            .zhenshangyin-current-display {
+                font-size: 14px;
+                color: rgb(94, 94, 94);
+                margin: 0 auto;
+            }
+            .zhenshangyin-time-picker {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+                gap: 10px;
+            }
+            .zhenshangyin-time-dropdown {
+                flex: 1;
+                position: relative;
+            }
+            .zhenshangyin-current-tame {
+                font-size: 12px;
+                color: rgb(0, 0, 0, 0.5);
+                margin-right: 10px;
+            }
+            .zhenshangyin-date-label {
+                flex: 1;
+                border-radius: 4px;
+                text-align: center;
+                cursor: pointer;
+                line-height: 30px;
+                font-size: 12px;
+                letter-spacing: 1px;
+                border: 1px solid #c1c1c1;
+                color: #c1c1c1;
+            }
+            .zhenshangyin-dropdown-label {
+                width: 100%;
+                border-radius: 4px;
+                text-align: center;
+                cursor: pointer;
+                line-height: 30px;
+                font-size: 12px;
+                letter-spacing: 1px;
+                border: 1px solid #c1c1c1;
+                color: #c1c1c1;
+            }
+            .zhenshangyin-current-time-btn {
+                font-size: 12px;
+                color: rgb(64, 158, 255);
+                background: transparent;
+                border: transparent;
+                margin: 0px 10px 0px 10px;
+                cursor: pointer;
+            }
+            .zhenshangyin-confirm-btn {
+                width: 50px;
+                height: 30px;
+                background: rgb(64, 158, 255);
+                border: transparent;
+                color: rgb(255, 255, 255);
+                font-size: 12px;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+            .zhenshangyin-scroll-container {
+                display: none;
+                position: absolute;
+                bottom: 120%;
+                left: 0;
+                width: 100%;
+                overflow-y: hidden;
+                border: 1px solid #ebeef5;
+                border-radius: 4px;
+                background-color: white;
+                z-index: 1;
+                justify-content: space-between;
+            }
+            .zhenshangyin-scroll-container.open {
+                display: flex;
+            }
+            .zhenshangyin-time-scroll {
+                overflow-y: scroll;
+                height: 150px;
+                width: 50px;
+            }
+            .zhenshangyin-confirm-confirm{
+                width: 100%;
+                font-size: 12px;
+                color: rgb(64, 158, 255);
+                background: transparent;
+                border: transparent;
+                cursor: pointer;
+                border-top: 1px solid #00000012;
+                text-align: right;
+                padding: 8px 10px;
+            }
+            .zhenshangyin-time-scroll::-webkit-scrollbar {
+                width: 0px;
+            }
+            .zhenshangyin-scroll-scroll{
+                display: flex;
+                position: relative;
+            }
+            .zhenshangyin-scroll-scroll::after {
+                content: "";
+                width: 95%;
+                height: 1px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 60px;
+                background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
+            }
+            .zhenshangyin-scroll-scroll::before {
+                content: "";
+                width: 95%;
+                height: 1px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 60px;
+                background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
+            }
+            .zhenshangyin-scroll-item {
+                line-height: 30px;
+                text-align: center;
+                cursor: pointer;
+                font-size: 12px;
+                color: rgb(0, 0, 0, 0.3);
+            }
+            .zhenshangyin-scroll-item.selected {
+                color: rgb(0, 0, 0);
+            }
+            .zhenshangyin-scroll-container::-webkit-scrollbar {
+                display: none;
+            }
+            .zhenshangyin-button-container {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+                gap: 10px;
+            }
+            .zhenshangyin-button-container button {
+                flex: 1;
+                padding: 5px 10px;
+                background-color: rgb(64, 158, 255);
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                position: relative;
+                z-index: 5;
+            }
+            .zhenshangyin-button-container button:hover {
+                background-color: rgb(102, 177, 255);
+            }
+            .zhenshangyin-scroll-item.placeholder {
+                height: 30px;
+                cursor: default;
+                background-color: transparent;
+            }
+            .zhenshangyin-scroll-item.placeholder:hover {
+                background-color: transparent;
+            }
+            .zhenshangyin-date-range-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+            }
+            .zhenshangyin-year-picker-wrapper,
+            .zhenshangyin-date-picker-wrapper {
+                flex: 1;
+            }
+            .zhenshangyin-custom-calendar.date-range-calendar {
+                width: 600px;
+            }
+            .zhenshangyin-custom-calendar.date-range-calendar::after {
+                content: "";
+                width: 1px;
+                height: calc(100% - 80px);
+                background: #ebeef580;
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .zhenshangyin-selected-range {
+                background-color: rgba(64, 158, 255, 0.2);
+                border-radius: 4px;
+            }
+            .zhenshangyin-month-picker-wrapper {
+                flex: 1;
+            }
+            .zhenshangyin-hover-range {
+                background-color: rgba(64, 158, 255, 0.2);
+                border-radius: 4px;
+            }
+            .zhenshengyin-dropdown-multiSelect {
+                width: max-content;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 12px;
+                background: rgb(0, 0, 0, 0.1);
+                border: 1px solid rgb(0, 0, 0, 0.2);
+                line-height: 1;
+                padding: 5px;
+                color: rgb(0, 0, 0, 0.7);
+            }
+            .zhenshengyin-dropdown-multiSelect-Button {
+                cursor: pointer;
+                font-size: 12px;
+                color: rgb(0, 0, 0);
+            }
+            @media (max-width: 768px) {
+                .zhenshangyin-custom-calendar{
+                    width: 90% !important;
+                    left: 5% !important;
+                }
+                .zhenshangyin-date-range-container{
+                    flex-wrap: wrap;
+                }
+                .zhenshangyin-custom-calendar.date-range-calendar::after,
+                .zhenshangyin-custom-up::before,
+                .zhenshangyin-custom-down::before{
+                    display: none
+                }
+                .zhenshangyin-custom-calendar.date-range-calendar th, .zhenshangyin-custom-calendar.date-range-calendar td{
+                    padding: 5px !important;
+                    font-size: 12px;
+                }
+                .zhenshangyin-custom-calendar.zhenshangyin-custom-show{
+                    opacity: 1;
+                }
+                .zhenshangyin-year-picker-wrapper,
+                .zhenshangyin-month-picker-wrapper{
+                    flex: inherit !important;
+                    width: 100% !important;
+                }
+                .zhenshangyin-custom-calendar.date-range-calendar .zhenshangyin-month-picker-wrapper th,
+                .zhenshangyin-custom-calendar.date-range-calendar .zhenshangyin-month-picker-wrapper td,
+                .zhenshangyin-custom-calendar.date-range-calendar .zhenshangyin-year-picker-wrapper th,
+                .zhenshangyin-custom-calendar.date-range-calendar .zhenshangyin-year-picker-wrapper td{
+                    padding: 10px !important;
+                }
+            }
+            .zhenshangyin-dropdown-menu {
+                position: absolute;
+                background: rgb(255, 255, 255);
+                filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.25));
+                border-radius: 2px;
+                z-index: 9999999999999999999999999999999;
+                opacity: 0;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                display: flex;
+            }
+            .zhenshangyin-dropdown-show{
+                opacity: 1;
+            }
+            .zhenshangyin-dropdown-down{
+                transform: translateY(5px);
+            }
+            .zhenshangyin-dropdown-up{
+                transform: translateY(-5px);
+            }
+
+            .zhenshangyin-dropdown-list{
+                width: max-content;
+                overflow: hidden;
+                padding: 5px 0;
+                border-left: 1px solid #00000010;
+                max-height: 250px;
+                overflow: auto;
+            }
+            .zhenshangyin-dropdown-list::-webkit-scrollbar {
+                width: 0px;
+            }
+
+            .zhenshangyin-dropdown-list:nth-child(1){
+                border: transparent;
+            }
+            .zhenshangyin-dropdown-list li{
+                width: 120px;
+                padding: 8px 15px;
+                cursor: pointer;
+                font-size: 12px;
+                color: #868686;
+            }
+            .zhenshangyin-dropdown-list li:hover{
+                background: #f0f0f0;
+                color: rgb(64, 158, 255);
+            }
+            .zhenshangyin-dropdown-list li.zhenshangyin-dropdown-selected{
+                background: #f0f0f0;
+                color: rgb(64, 158, 255);
+            }
+            .zhenshangyin-time-scroll-container {
+                display: flex;
+                position: relative;
+            }
+            .zhenshangyin-itm-current-time-btn {
+                margin: 0;
+            }
+            .zhenshangyin-time-picker-wrapper,
+            .zhenshangyin-time-scroll-container .zhenshangyin-time-scroll {
+                width: initial;
+                flex: 1
+            }
+            .zhenshangyin-time-scroll-container::after {
+                content: "";
+                width: 95%;
+                height: 1px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 60px;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+            }
+            .zhenshangyin-time-scroll-container::before {
+                content: "";
+                width: 95%;
+                height: 1px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 60px;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+            }
+            .zhenshengyin-dropdown {
+                position: absolute;
+                border: 1px solid #f0f0f0;
+                background: rgb(255, 255, 255);
+                box-sizing: border-box;
+                z-index: 999999999999999;
+                max-height: 250px;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+                overflow: auto;
+                opacity: 0;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .zhenshengyin-dropdown::-webkit-scrollbar {
+                width: 3px;
+            }
+            .zhenshengyin-dropdown::-webkit-scrollbar-thumb {
+                border-radius: 3px;
+                background: #00000040;
+            }
+            .zhenshengyin-dropdown::-webkit-scrollbar-track {
+                border-radius: 3px;
+                background: #00000020;
+            }
+            .zhenshengyin-dropdown-show {
+                opacity: 1;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .zhenshengyin-dropdown-up {
+                transform: translateY(-5px);
+            }
+            .zhenshengyin-dropdown-down {
+                transform: translateY(5px);
+            }
+            .zhenshengyin-dropdown-item {
+                padding: 10px 15px;
+                font-size: 12px;
+                cursor: pointer;
+                color: #868686;
+                position: relative;
+            }
+            .zhenshengyin-dropdown-item:hover {
+                background: #f0f0f0;
+            }
+            .zhenshengyin-dropdown-item-selected {
+                background: rgb(64, 158, 255) !important;
+                color: #fff;
+            }
+            .zhenshengyin-dropdown-item-selected-multiSelect {
+                padding-right: 25px;
+                color: rgb(64, 158, 255);
+            }
+            .zhenshengyin-dropdown-item-selected-multiSelect::after{
+                content: "✔";
+                color: rgb(64, 158, 255);
+                font-size: 12px;
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                font-weight: bold;
+                line-height: 1;
+            }
+            .zhenshengyin-dropdown-search {
+                width: calc(100% - 10px);
+                margin: 5px auto;
+                display: block;
+                height: 36px;
+                border: 1px solid #868686;
+                color: #868686;
+                padding: 0 10px;
+                font-size: 12px;
+            }
+            .zhenshengyin-dropdown-group{
+                width: 100%;
+                overflow: hidden;
+                border-bottom: 1px solid #00000010;
+                padding-bottom: 5px;
+            }
+            .zhenshengyin-dropdown-group-title {
+                width: 100%;
+                padding: 10px 10px 5px 10px;
+                font-size: 12px;
+                cursor: pointer;
+                color: #303030;
+            }
+            .zhenshangyin-notification-container {
+                position: fixed;
+                top: 10px;
+                right: 20px;
+                z-index: 9999;
+                width: 300px;
+            }
+            .zhenshangyin-notification {
+                margin-top: 10px;
+                padding: 15px;
+                color: #000;
+                border-radius: 4px;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+                opacity: 0;
+                transform: translateX(100%);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .zhenshangyin-notification.success {
+                background-color: #ccf5e0;
+            }
+            .zhenshangyin-notification.warning {
+                background-color: #ffebcc;
+            }
+            .zhenshangyin-notification.info {
+                background-color: #d6ebff;
+            }
+            .zhenshangyin-notification.error {
+                background-color: #ffd6cc;
+            }
+            .zhenshangyin-notification-show {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            .zhenshangyin-notification-hide {
+                opacity: 0;
+                transform: translateX(0px) translateY(-20px); 
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+            .zhenshangyin-notification-icon {
+                width: 20px;
+                height: auto;
+                display: flex;
+            }
+            .zhenshangyin-notification-icon svg{
+                width: 100%;
+                height: auto;
+            }
+            .zhenshangyin-notification-title {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+                font-weight: bold;
+            }
+            .zhenshangyin-notification-title h2{
+                flex: 1;
+                font-size: 16px;
+                line-height: 1;
+                font-weight: bold;
+            }
+            .zhenshangyin-notification-message {
+                margin-top: 10px;
+                font-size: 14px;
+                padding-left: 30px;
+            }
+            .zhenshangyin-notification-close {
+                width: 18px;
+                cursor: pointer;
+                display: flex;
+            }
+                .zhenshangyin-message-container {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            width: auto;
+            max-width: 400px; 
+        }
+        .zhenshangyin-message {
+            width: max-content;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: #000000;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .zhenshangyin-message.success {
+            background-color: #ccf5e0;
+        }
+        .zhenshangyin-message.warning {
+            background-color: #ffebcc;
+        }
+        .zhenshangyin-message.info {
+            background-color: #d6ebff;
+        }
+        .zhenshangyin-message.error {
+            background-color: #ffd6cc;
+        }
+        .zhenshangyin-message.zhenshangyin-message-show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .zhenshangyin-message.zhenshangyin-message-hide {
+            opacity: 0;
+            transform: translateY(-20px); 
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .zhenshangyin-message-icon {
+            width: 20px;
+            height: 20px;
+        }
+        `;
+    const styleElement = document.createElement("style");
+    styleElement.innerHTML = styles;
+    document.head.appendChild(styleElement);
+})();
+
+class ZhenshangyinDatePicker {
+    constructor(inputSelector, options = {}) {
+        this.dateInput = document.querySelector(inputSelector);
+        this.currentYear = new Date().getFullYear();
+        this.currentMonth = new Date().getMonth();
+        this.dateFormat = options.dateFormat || 'YYYY-MM-DD';
+        this.onDateSelect = options.onDateSelect || function () { };
+        this.selectedDate = null;
+        this.showTime = this.dateFormat.includes('HH') || this.dateFormat.includes('mm') || this.dateFormat.includes('ss');
+        this.selectedTime = { hours: 0, minutes: 0, seconds: 0 };
+        this.showButtons = this.showTime;
+        this.init();
+    }
+    init() {
+        this.dateInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            this.createCalendar();
+            this.toggleCalendar();
+        });
+        document.addEventListener('click', () => {
+            if (this.calendar) {
+                this.calendar.classList.remove('zhenshangyin-custom-show');
+                this.calendar.classList.remove('zhenshangyin-custom-down');
+                this.calendar.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.calendar.remove();
+                    this.calendar = null;
+                }, 300);
+            }
+        });
+    }
+    toggleCalendar() {
+        const updateCalendarPosition = () => {
+            if (this.calendar) {
+                const rect = this.dateInput.getBoundingClientRect();
+                const rectheight = this.dateInput.offsetHeight;
+                const spaceBelow = window.innerHeight - rect.bottom;
+                const distanceFromTop = rect.top + window.scrollY;
+                const spaceLeft = rect.left;
+                const spaceRight = window.innerWidth - rect.right;
+                this.calendar.classList.add('zhenshangyin-custom-show');
+                const pickerHeight = this.calendar.offsetHeight;
+                const pickerWidth = this.calendar.offsetWidth;
+                this.calendar.classList.remove('zhenshangyin-custom-down');
+
+                if (spaceBelow < pickerHeight && distanceFromTop < pickerHeight) {
+                    this.calendar.style.top = `${distanceFromTop + rectheight}px`;
+                    this.calendar.classList.add('zhenshangyin-custom-down');
+                    this.calendar.classList.remove('zhenshangyin-custom-up');
+                } else if (spaceBelow < pickerHeight) {
+                    this.calendar.style.top = `${distanceFromTop - pickerHeight}px`;
+                    this.calendar.classList.add('zhenshangyin-custom-up');
+                    this.calendar.classList.remove('zhenshangyin-custom-down');
+                } else {
+                    this.calendar.style.top = `${distanceFromTop + rectheight}px`;
+                    this.calendar.classList.add('zhenshangyin-custom-down');
+                    this.calendar.classList.remove('zhenshangyin-custom-up');
+                }
+                if (spaceLeft + pickerWidth <= window.innerWidth) {
+                    this.calendar.style.left = `${rect.left + window.scrollX}px`;
+                } else if (spaceRight + pickerWidth <= window.innerWidth) {
+                    this.calendar.style.left = `${rect.right + window.scrollX - pickerWidth}px`;
+                    this.calendar.classList.add('zhenshangyin-custom-right');
+                } else {
+                    this.calendar.style.left = `${rect.left + window.scrollX}px`;
+                }
+            }
+        };
+        window.addEventListener('scroll', updateCalendarPosition);
+        window.addEventListener('resize', updateCalendarPosition);
+        updateCalendarPosition();
+    }
+    createCalendar() {
+        if (this.calendar) return;
+        const calendar = document.createElement('div');
+        calendar.className = 'zhenshangyin-custom-calendar';
+        calendar.innerHTML = `
+                <div class="zhenshangyin-custom-navigation">
+                    <button class="zhenshangyin-prev-year"><svg t="1732243173238" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8093"><path d="M129.6 527.5L521 918.9c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L180.5 510.5 552 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L129.6 493.6c-9.4 9.3-9.4 24.5 0 33.9z" fill="#AAAAAA" p-id="8094"></path><path d="M464 510.5c0 6.4 2.5 12.5 7 17l391.4 391.4c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L522 510.5 893.5 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L471.1 493.6c-4.5 4.5-7.1 10.6-7.1 16.9z" fill="#AAAAAA" p-id="8095"></path></svg></button>
+                    <button class="zhenshangyin-prev-month"><svg t="1732243173238" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8093"><path d="M129.6 527.5L521 918.9c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L180.5 510.5 552 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L129.6 493.6c-9.4 9.3-9.4 24.5 0 33.9z" fill="#AAAAAA" p-id="8094"></path></svg></button>
+                    <span class="zhenshangyin-current-display">${this.currentYear}年 ${this.currentMonth + 1}月</span>
+                    <button class="zhenshangyin-next-month"><svg t="1732243152928" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7738"><path d="M896.4 496.5L505 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9l374.4 374.4L474 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7l388.5-388.5c9.3-9.3 9.3-24.5-0.1-33.9z" fill="#AAAAAA" p-id="7739"></path></svg></button>
+                    <button class="zhenshangyin-next-year"><svg t="1732243152928" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7738"><path d="M896.4 496.5L505 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9l374.4 374.4L474 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7l388.5-388.5c9.3-9.3 9.3-24.5-0.1-33.9z" fill="#AAAAAA" p-id="7739"></path><path d="M561.9 513.5c0-6.4-2.5-12.5-7-17L163.5 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9L504 513.5 132.5 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7L555 530.4c4.4-4.5 6.9-10.6 6.9-16.9z" fill="#AAAAAA" p-id="7740"></path></svg></button>
+                </div>
+                <table>
+                    <thead style="border-bottom: 1px solid #ebeef5;">
+                        <tr>
+                            <th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="zhenshangyin-table-container">
+                    <table>
+                        <tbody id="calendar-body"></tbody>
+                    </table>
+                </div>
+                ${this.showTime ? this.createTimePicker() : ''}
+            `;
+        document.body.appendChild(calendar);
+        this.calendar = calendar;
+        calendar.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+        calendar.querySelector('.zhenshangyin-prev-year').addEventListener('click', () => this.changeYear(-1));
+        calendar.querySelector('.zhenshangyin-next-year').addEventListener('click', () => this.changeYear(1));
+        calendar.querySelector('.zhenshangyin-prev-month').addEventListener('click', () => this.changeMonth(-1));
+        calendar.querySelector('.zhenshangyin-next-month').addEventListener('click', () => this.changeMonth(1));
+        if (this.showTime) {
+            this.setupTimeDropdowns();
+        }
+        if (this.showButtons) {
+            this.calendar.querySelector('.zhenshangyin-confirm-btn').addEventListener('click', () => {
+                if (this.selectedDate) {
+                    const formattedDate = this.formatDate(this.currentYear, this.currentMonth, this.selectedDate.getDate());
+                    this.dateInput.value = formattedDate;
+                    this.calendar.classList.remove('zhenshangyin-custom-show');
+                    this.calendar.classList.remove('zhenshangyin-custom-down');
+                    this.calendar.classList.remove('zhenshangyin-custom-up');
+                    setTimeout(() => {
+                        this.calendar.remove();
+                        this.calendar = null;
+                        this.onDateSelect(formattedDate);
+                    }, 300);
+                }
+            });
+            this.calendar.querySelector('.zhenshangyin-current-time-btn').addEventListener('click', () => {
+                const now = new Date();
+                this.selectedTime.hours = now.getHours();
+                this.selectedTime.minutes = now.getMinutes();
+                this.selectedTime.seconds = now.getSeconds();
+                this.selectedDate = now;
+                this.currentYear = now.getFullYear();
+                this.currentMonth = now.getMonth();
+                this.updateCalendar();
+                const formattedDate = this.formatDate(this.currentYear, this.currentMonth, now.getDate());
+                this.dateInput.value = formattedDate;
+                this.calendar.querySelector('.zhenshangyin-dropdown-label').textContent = this.formatTime();
+                this.onDateSelect(formattedDate);
+            });
+        }
+        this.updateCalendar();
+    }
+    createTimePicker() {
+        return `
+                <div class="zhenshangyin-time-picker">
+                    <div class="zhenshangyin-current-tame">时间</div>
+                    <div class="zhenshangyin-time-dropdown" id="zhenshangyin-time-dropdown">
+                        <div class="zhenshangyin-dropdown-label">${this.formatTime()}</div>
+                        <div class="zhenshangyin-scroll-container" style="display: none;">
+                            <div class="zhenshangyin-scroll-scroll">
+                                <div class="zhenshangyin-time-scroll" id="hours-scroll">
+                                    ${this.createPlaceholder()}
+                                    ${Array.from({ length: 24 }, (_, i) => `<div class="zhenshangyin-scroll-item${i === 0 ? ' selected' : ''}">${String(i).padStart(2, '0')}</div>`).join('')}
+                                    ${this.createPlaceholder()}
+                                </div>
+                                <div class="zhenshangyin-time-scroll" id="minutes-scroll">
+                                    ${this.createPlaceholder()}
+                                    ${Array.from({ length: 60 }, (_, i) => `<div class="zhenshangyin-scroll-item${i === 0 ? ' selected' : ''}">${String(i).padStart(2, '0')}</div>`).join('')}
+                                    ${this.createPlaceholder()}
+                                </div>
+                                <div class="zhenshangyin-time-scroll" id="seconds-scroll">
+                                    ${this.createPlaceholder()}
+                                    ${Array.from({ length: 60 }, (_, i) => `<div class="zhenshangyin-scroll-item${i === 0 ? ' selected' : ''}">${String(i).padStart(2, '0')}</div>`).join('')}
+                                    ${this.createPlaceholder()}
+                                </div>
+                            </div>
+                            <button class="zhenshangyin-confirm-confirm">确认</button>
+                        </div>
+                    </div>
+                    <button class="zhenshangyin-current-time-btn">此刻</button>
+                    <button class="zhenshangyin-confirm-btn">确认</button>
+                </div>
+            `;
+    }
+    createPlaceholder() {
+        return Array.from({ length: 2 }, () => `<div class="zhenshangyin-scroll-item placeholder"></div>`).join('');
+    }
+    formatTime() {
+        return `${String(this.selectedTime.hours).padStart(2, '0')}:${String(this.selectedTime.minutes).padStart(2, '0')}:${String(this.selectedTime.seconds).padStart(2, '0')}`;
+    }
+    setupTimeDropdowns() {
+        const dropdown = this.calendar.querySelector('#zhenshangyin-time-dropdown');
+        const scrollContainer = dropdown.querySelector('.zhenshangyin-scroll-container');
+        const hoursScroll = scrollContainer.querySelector('#hours-scroll');
+        const minutesScroll = scrollContainer.querySelector('#minutes-scroll');
+        const secondsScroll = scrollContainer.querySelector('#seconds-scroll');
+        const confirm = scrollContainer.querySelector('.zhenshangyin-confirm-confirm');
+        dropdown.querySelector('.zhenshangyin-dropdown-label').addEventListener('click', (event) => {
+            event.stopPropagation();
+            scrollContainer.style.display = scrollContainer.style.display === 'none' ? 'block' : 'none';
+            this.centerScroll(hoursScroll, this.selectedTime.hours);
+            this.centerScroll(minutesScroll, this.selectedTime.minutes);
+            this.centerScroll(secondsScroll, this.selectedTime.seconds);
+        });
+        confirm.addEventListener('click', (event) => {
+            event.stopPropagation();
+            scrollContainer.style.display = 'none';
+            this.updateDateDisplay('start');
+            this.updateDateDisplay('end');
+        });
+        document.addEventListener('click', (event) => {
+            if (!dropdown.contains(event.target)) {
+                scrollContainer.style.display = 'none';
+            }
+        });
+        this.setupScroll(hoursScroll, 'hours');
+        this.setupScroll(minutesScroll, 'minutes');
+        this.setupScroll(secondsScroll, 'seconds');
+    }
+    centerScroll(scrollElement, value) {
+        scrollElement.scrollTop = (value + 2) * 30 - 60;
+    }
+    setupScroll(scrollElement, timeUnit) {
+        const items = scrollElement.querySelectorAll('.zhenshangyin-scroll-item:not(.placeholder)');
+        let scrollTimeout;
+        scrollElement.addEventListener('scroll', () => {
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const index = Math.round((scrollElement.scrollTop + 60) / 30) - 2;
+                this.selectedTime[timeUnit] = index;
+                items.forEach((item, i) => {
+                    item.classList.toggle('selected', i === index);
+                });
+                this.calendar.querySelector('.zhenshangyin-dropdown-label').textContent = this.formatTime();
+                this.centerScroll(scrollElement, index);
+            }, 100);
+        });
+        items.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                this.selectedTime[timeUnit] = index;
+                this.centerScroll(scrollElement, index);
+                this.calendar.querySelector('.zhenshangyin-dropdown-label').textContent = this.formatTime();
+            });
+        });
+    }
+    changeYear(direction) {
+        this.currentYear += direction;
+        this.updateCalendar();
+    }
+    changeMonth(direction) {
+        this.currentMonth += direction;
+        if (this.currentMonth < 0) {
+            this.currentMonth = 11;
+            this.currentYear--;
+        } else if (this.currentMonth > 11) {
+            this.currentMonth = 0;
+            this.currentYear++;
+        }
+        this.updateCalendar();
+    }
+    updateCalendar() {
+        const currentMonthYear = this.calendar.querySelector('.zhenshangyin-current-display');
+        currentMonthYear.textContent = `${this.currentYear}年 ${this.currentMonth + 1}月`;
+        this.populateCalendar(this.currentYear, this.currentMonth);
+    }
+    formatDate(year, month, day) {
+        const date = new Date(year, month, day, this.selectedTime.hours, this.selectedTime.minutes, this.selectedTime.seconds);
+        let formattedDate = this.dateFormat
+            .replace('YYYY', date.getFullYear())
+            .replace('MM', String(date.getMonth() + 1).padStart(2, '0'))
+            .replace('DD', String(date.getDate()).padStart(2, '0'))
+            .replace('HH', String(date.getHours()).padStart(2, '0'))
+            .replace('mm', String(date.getMinutes()).padStart(2, '0'))
+            .replace('ss', String(date.getSeconds()).padStart(2, '0'));
+        return formattedDate;
+    }
+    populateCalendar(year, month) {
+        const calendarBody = this.calendar.querySelector('#calendar-body');
+        calendarBody.innerHTML = '';
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const daysInPrevMonth = new Date(year, month, 0).getDate();
+        const today = new Date();
+        const isCurrentMonth = today.getFullYear() === year && today.getMonth() === month;
+        let date = 1;
+        let nextMonthDate = 1;
+        for (let i = 0; i < 6; i++) {
+            const row = document.createElement('tr');
+            for (let j = 0; j < 7; j++) {
+                const cell = document.createElement('td');
+                if (i === 0 && j < firstDay) {
+                    const prevMonthDate = daysInPrevMonth - firstDay + j + 1;
+                    cell.innerHTML = prevMonthDate;
+                    cell.style.opacity = '0.5';
+                    cell.addEventListener('click', () => {
+                        this.highlightDate(prevMonthDate, month === 0 ? 11 : month - 1, month === 0 ? year - 1 : year);
+                    });
+                } else if (date > daysInMonth) {
+                    cell.innerHTML = nextMonthDate;
+                    cell.style.opacity = '0.5';
+                    const currentNextMonthDate = nextMonthDate;
+                    cell.addEventListener('click', () => {
+                        this.highlightDate(currentNextMonthDate, month === 11 ? 0 : month + 1, month === 11 ? year + 1 : year);
+                    });
+                    nextMonthDate++;
+                } else {
+                    cell.innerHTML = date;
+                    if (isCurrentMonth && date === today.getDate()) {
+                        cell.classList.add('zhenshangyin-custom-today');
+                    }
+                    if (this.selectedDate && this.selectedDate.getDate() === date && this.selectedDate.getMonth() === month && this.selectedDate.getFullYear() === year) {
+                        cell.classList.add('zhenshangyin-custom-selected');
+                    }
+                    const selectedDate = date;
+                    cell.addEventListener('click', () => {
+                        this.highlightDate(selectedDate, month, year);
+                    });
+                    date++;
+                }
+                row.appendChild(cell);
+            }
+            calendarBody.appendChild(row);
+        }
+    }
+    highlightDate(day, month, year) {
+        this.selectedDate = new Date(year, month, day);
+        this.currentYear = year;
+        this.currentMonth = month;
+        this.calendar.querySelectorAll('td').forEach(td => td.classList.remove('zhenshangyin-custom-selected'));
+        const selectedCell = Array.from(this.calendar.querySelectorAll('td')).find(td => parseInt(td.textContent, 10) === day && !td.style.opacity);
+        if (selectedCell) {
+            selectedCell.classList.add('zhenshangyin-custom-selected');
+        }
+        const formattedDate = this.formatDate(year, month, day);
+        this.dateInput.value = formattedDate;
+        const currentMonthYear = this.calendar.querySelector('.zhenshangyin-current-display');
+        currentMonthYear.textContent = `${this.currentYear}年 ${this.currentMonth + 1}月`;
+        if (!this.showTime) {
+            this.calendar.classList.remove('zhenshangyin-custom-show');
+            this.calendar.classList.remove('zhenshangyin-custom-down');
+            this.calendar.classList.remove('zhenshangyin-custom-up');
+            setTimeout(() => {
+                this.calendar.remove();
+                this.calendar = null;
+                this.onDateSelect(formattedDate);
+            }, 300);
+        }
+    }
+}
+
+class ZhenshangyinDateRangePicker {
+    constructor(inputSelector, options = {}) {
+        this.dateInput = document.querySelector(inputSelector);
+        this.startDate = null;
+        this.endDate = null;
+        this.dateFormat = options.dateFormat || 'YYYY-MM-DD';
+        this.onDateRangeSelect = options.onDateRangeSelect || function () { };
+        this.showTime = this.dateFormat.includes('HH') || this.dateFormat.includes('mm') || this.dateFormat.includes('ss');
+        const currentDate = new Date();
+        this.startYear = currentDate.getFullYear();
+        this.startMonth = currentDate.getMonth();
+        this.endYear = currentDate.getFullYear();
+        this.endMonth = currentDate.getMonth() + 1;
+        if (this.endMonth > 11) {
+            this.endMonth = 0;
+            this.endYear++;
+        }
+        this.startTime = { hours: 0, minutes: 0, seconds: 0 };
+        this.endTime = { hours: 0, minutes: 0, seconds: 0 };
+        this.isSelectingStart = true;
+        this.separator = options.separator || ' - ';
+        this.init();
+    }
+    init() {
+        this.dateInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            this.createDateRangePicker();
+            this.togglePicker();
+            if (this.startDate && this.endDate) {
+                this.applyRangeStyle();
+            }
+        });
+        document.addEventListener('click', () => {
+            if (this.picker) {
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                }, 300);
+            }
+        });
+    }
+    togglePicker() {
+        const updateCalendarPosition = () => {
+            if (this.picker) {
+                const rect = this.dateInput.getBoundingClientRect();
+                const rectheight = this.dateInput.offsetHeight;
+                const spaceBelow = window.innerHeight - rect.bottom;
+                const distanceFromTop = rect.top + window.scrollY;
+                const spaceLeft = rect.left;
+                const spaceRight = window.innerWidth - rect.right;
+                this.picker.classList.add('zhenshangyin-custom-show');
+                const pickerHeight = this.picker.offsetHeight;
+                const pickerWidth = this.picker.offsetWidth;
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                if (spaceBelow < pickerHeight && distanceFromTop < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                } else if (spaceBelow < pickerHeight && distanceFromTop < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                } else if (spaceBelow < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop - pickerHeight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-up');
+                    this.picker.classList.remove('zhenshangyin-custom-down');
+                } else {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                }
+                if (spaceLeft + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                } else if (spaceRight + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.right + window.scrollX - pickerWidth}px`;
+                    this.picker.classList.add('zhenshangyin-custom-right');
+                } else {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                }
+            }
+        };
+        window.addEventListener('scroll', updateCalendarPosition);
+        window.addEventListener('resize', updateCalendarPosition);
+        updateCalendarPosition();
+    }
+    createDateRangePicker() {
+        if (this.picker) return;
+        const picker = document.createElement('div');
+        picker.className = 'zhenshangyin-custom-calendar date-range-calendar';
+        picker.innerHTML = `
+                <div class="zhenshangyin-date-range-container">
+                    <div class="zhenshangyin-date-picker-wrapper">${this.createDatePicker('start')}</div>
+                    <div class="zhenshangyin-date-picker-wrapper">${this.createDatePicker('end')}</div>
+                </div>
+                <div class="zhenshangyin-button-container">
+                    <button class="zhenshangyin-confirm-btn">确认</button>
+                </div>
+            `;
+        document.body.appendChild(picker);
+        this.picker = picker;
+
+        picker.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        this.setupDatePickers();
+        this.setupButtons();
+
+        if (this.showTime) {
+            this.setupTimeDropdowns('start');
+            this.setupTimeDropdowns('end');
+        }
+    }
+    createDatePicker(type) {
+        const year = type === 'start' ? this.startYear : this.endYear;
+        const month = type === 'start' ? this.startMonth : this.endMonth;
+        return `
+                <div class="zhenshangyin-custom-navigation">
+                    <button class="zhenshangyin-prev-year" data-type="${type}">
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M129.6 527.5L521 918.9c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L180.5 510.5 552 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L129.6 493.6c-9.4 9.3-9.4 24.5 0 33.9z" fill="#AAAAAA"></path>
+                            <path d="M464 510.5c0 6.4 2.5 12.5 7 17l391.4 391.4c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L522 510.5 893.5 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L471.1 493.6c-4.5 4.5-7.1 10.6-7.1 16.9z" fill="#AAAAAA"></path>
+                        </svg>
+                    </button>
+                    <button class="zhenshangyin-prev-month" data-type="${type}">
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M129.6 527.5L521 918.9c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L180.5 510.5 552 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L129.6 493.6c-9.4 9.3-9.4 24.5 0 33.9z" fill="#AAAAAA"></path>
+                        </svg>
+                    </button>
+                    <span class="zhenshangyin-current-display" data-type="${type}">${year}年 ${month + 1}月</span>
+                    <button class="zhenshangyin-next-month" data-type="${type}">
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M896.4 496.5L505 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9l374.4 374.4L474 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7l388.5-388.5c9.3-9.3 9.3-24.5-0.1-33.9z" fill="#AAAAAA"></path>
+                        </svg>
+                    </button>
+                    <button class="zhenshangyin-next-year" data-type="${type}">
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M896.4 496.5L505 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9l374.4 374.4L474 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7l388.5-388.5c9.3-9.3 9.3-24.5-0.1-33.9z" fill="#AAAAAA"></path>
+                            <path d="M561.9 513.5c0-6.4-2.5-12.5-7-17L163.5 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9L504 513.5 132.5 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7L555 530.4c4.4-4.5 6.9-10.6 6.9-16.9z" fill="#AAAAAA"></path>
+                        </svg>
+                    </button>
+                </div>
+                <table>
+                    <thead style="border-bottom: 1px solid #ebeef5;">
+                        <tr>
+                            <th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="zhenshangyin-table-container">
+                    <table>
+                        <tbody id="${type}-calendar-body"></tbody>
+                    </table>
+                </div>
+                ${this.showTime ? this.createTimePicker(type) : ''}
+            `;
+    }
+    createTimePicker(type) {
+        return `
+                <div class="zhenshangyin-time-picker">
+                    <div class="zhenshangyin-date-label" data-type="${type}">${this.formatDateOnly(type === 'start' ? this.startDate : this.endDate)}</div>
+                    <div class="zhenshangyin-time-dropdown" id="${type}-zhenshangyin-time-dropdown">
+                        <div class="zhenshangyin-dropdown-label">${this.formatTime(type)}</div>
+                        <div class="zhenshangyin-scroll-container" style="display: none;">
+                            <div class="zhenshangyin-scroll-scroll">
+                                <div class="zhenshangyin-time-scroll" id="${type}-hours-scroll">
+                                    ${this.createPlaceholder()}
+                                    ${Array.from({ length: 24 }, (_, i) => `<div class="zhenshangyin-scroll-item${i === 0 ? ' selected' : ''}">${String(i).padStart(2, '0')}</div>`).join('')}
+                                    ${this.createPlaceholder()}
+                                </div>
+                                <div class="zhenshangyin-time-scroll" id="${type}-minutes-scroll">
+                                    ${this.createPlaceholder()}
+                                    ${Array.from({ length: 60 }, (_, i) => `<div class="zhenshangyin-scroll-item${i === 0 ? ' selected' : ''}">${String(i).padStart(2, '0')}</div>`).join('')}
+                                    ${this.createPlaceholder()}
+                                </div>
+                                <div class="zhenshangyin-time-scroll" id="${type}-seconds-scroll">
+                                    ${this.createPlaceholder()}
+                                    ${Array.from({ length: 60 }, (_, i) => `<div class="zhenshangyin-scroll-item${i === 0 ? ' selected' : ''}">${String(i).padStart(2, '0')}</div>`).join('')}
+                                    ${this.createPlaceholder()}
+                                </div>
+                            </div>
+                            <button class="zhenshangyin-confirm-confirm">确认</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+    }
+    formatDateOnly(date) {
+        if (!date) return '未选择日期';
+        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    }
+    formatTime(type) {
+        const time = type === 'start' ? this.startTime : this.endTime;
+        return `${String(time.hours).padStart(2, '0')}:${String(time.minutes).padStart(2, '0')}:${String(time.seconds).padStart(2, '0')}`;
+    }
+    setupTimeDropdowns(type) {
+        const dropdown = this.picker.querySelector(`#${type}-zhenshangyin-time-dropdown`);
+        if (!dropdown) return;
+        const scrollContainer = dropdown.querySelector('.zhenshangyin-scroll-container');
+        const hoursScroll = scrollContainer.querySelector(`#${type}-hours-scroll`);
+        const minutesScroll = scrollContainer.querySelector(`#${type}-minutes-scroll`);
+        const secondsScroll = scrollContainer.querySelector(`#${type}-seconds-scroll`);
+        const dropdownLabel = dropdown.querySelector('.zhenshangyin-dropdown-label');
+        const confirm = scrollContainer.querySelector('.zhenshangyin-confirm-confirm');
+        if (dropdownLabel) {
+            dropdownLabel.addEventListener('click', (event) => {
+                event.stopPropagation();
+                scrollContainer.style.display = scrollContainer.style.display === 'none' ? 'block' : 'none';
+                this.centerScroll(hoursScroll, this[type + 'Time'].hours);
+                this.centerScroll(minutesScroll, this[type + 'Time'].minutes);
+                this.centerScroll(secondsScroll, this[type + 'Time'].seconds);
+            });
+        }
+        confirm.addEventListener('click', (event) => {
+            event.stopPropagation();
+            scrollContainer.style.display = 'none';
+        });
+        this.setupScroll(hoursScroll, 'hours', type);
+        this.setupScroll(minutesScroll, 'minutes', type);
+        this.setupScroll(secondsScroll, 'seconds', type);
+    }
+    centerScroll(scrollElement, value) {
+        scrollElement.scrollTop = (value + 2) * 30 - 60;
+    }
+    setupScroll(scrollElement, timeUnit, type) {
+        const items = scrollElement.querySelectorAll('.zhenshangyin-scroll-item:not(.placeholder)');
+        let scrollTimeout;
+        scrollElement.addEventListener('scroll', () => {
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const index = Math.round((scrollElement.scrollTop + 60) / 30) - 2;
+                this[type + 'Time'][timeUnit] = index;
+                items.forEach((item, i) => {
+                    item.classList.toggle('selected', i === index);
+                });
+                this.picker.querySelector(`#${type}-zhenshangyin-time-dropdown .zhenshangyin-dropdown-label`).textContent = this.formatTime(type);
+                this.centerScroll(scrollElement, index);
+            }, 100);
+        });
+        items.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                this[type + 'Time'][timeUnit] = index;
+                this.centerScroll(scrollElement, index);
+                this.picker.querySelector(`#${type}-zhenshangyin-time-dropdown .zhenshangyin-dropdown-label`).textContent = this.formatTime(type);
+            });
+        });
+    }
+    setupDatePickers() {
+        this.setupSingleDatePicker('start');
+        this.setupSingleDatePicker('end');
+    }
+    setupSingleDatePicker(type) {
+        const calendarBody = this.picker.querySelector(`#${type}-calendar-body`);
+        const year = type === 'start' ? this.startYear : this.endYear;
+        const month = type === 'start' ? this.startMonth : this.endMonth;
+        this.populateCalendar(calendarBody, year, month, type);
+        this.picker.querySelector(`.zhenshangyin-prev-year[data-type="${type}"]`).addEventListener('click', () => this.changeYear(-1, type));
+        this.picker.querySelector(`.zhenshangyin-next-year[data-type="${type}"]`).addEventListener('click', () => this.changeYear(1, type));
+        this.picker.querySelector(`.zhenshangyin-prev-month[data-type="${type}"]`).addEventListener('click', () => this.changeMonth(-1, type));
+        this.picker.querySelector(`.zhenshangyin-next-month[data-type="${type}"]`).addEventListener('click', () => this.changeMonth(1, type));
+        calendarBody.addEventListener('mouseover', (event) => {
+            if (this.startDate && !this.endDate) {
+                const target = event.target;
+                if (target.tagName === 'TD' && !target.style.opacity) {
+                    const day = parseInt(target.textContent, 10);
+                    const hoverDate = new Date(year, month, day);
+                    this.applyHoverRangeStyle(hoverDate);
+                }
+            }
+        });
+    }
+    applyHoverRangeStyle(hoverDate) {
+        const start = this.isSelectingStart ? hoverDate : this.startDate;
+        const end = this.isSelectingStart ? this.endDate : hoverDate;
+        const [rangeStart, rangeEnd] = start < end ? [start, end] : [end, start];
+        ['start', 'end'].forEach(type => {
+            const year = type === 'start' ? this.startYear : this.endYear;
+            const month = type === 'start' ? this.startMonth : this.endMonth;
+            const calendarBody = this.picker.querySelector(`#${type}-calendar-body`);
+
+            Array.from(calendarBody.querySelectorAll('td')).forEach(td => {
+                const day = parseInt(td.textContent, 10);
+                const date = new Date(year, month, day);
+
+                td.classList.remove('zhenshangyin-hover-range');
+                if (date >= rangeStart && date <= rangeEnd && !td.style.opacity) {
+                    td.classList.add('zhenshangyin-hover-range');
+                }
+            });
+        });
+    }
+    changeYear(direction, type) {
+        if (type === 'start') {
+            this.startYear += direction;
+        } else {
+            this.endYear += direction;
+        }
+        this.updateCalendar(type);
+        const calendarBody = this.picker.querySelector(`#${type}-calendar-body`);
+        calendarBody.addEventListener('mouseover', (event) => {
+            if (this.startDate && !this.endDate) {
+                const target = event.target;
+                if (target.tagName === 'TD' && !target.style.opacity) {
+                    const day = parseInt(target.textContent, 10);
+                    const hoverDate = new Date(
+                        type === 'start' ? this.startYear : this.endYear,
+                        type === 'start' ? this.startMonth : this.endMonth,
+                        day
+                    );
+                    this.applyHoverRangeStyle(hoverDate);
+                }
+            }
+        });
+    }
+    changeMonth(direction, type) {
+        if (type === 'start') {
+            this.startMonth += direction;
+            if (this.startMonth < 0) {
+                this.startMonth = 11;
+                this.startYear--;
+            } else if (this.startMonth > 11) {
+                this.startMonth = 0;
+                this.startYear++;
+            }
+        } else {
+            this.endMonth += direction;
+            if (this.endMonth < 0) {
+                this.endMonth = 11;
+                this.endYear--;
+            } else if (this.endMonth > 11) {
+                this.endMonth = 0;
+                this.endYear++;
+            }
+        }
+        this.updateCalendar(type);
+        const calendarBody = this.picker.querySelector(`#${type}-calendar-body`);
+        calendarBody.addEventListener('mouseover', (event) => {
+            if (this.startDate && !this.endDate) {
+                const target = event.target;
+                if (target.tagName === 'TD' && !target.style.opacity) {
+                    const day = parseInt(target.textContent, 10);
+                    const hoverDate = new Date(type === 'start' ? this.startYear : this.endYear, type === 'start' ? this.startMonth : this.endMonth, day);
+                    this.applyHoverRangeStyle(hoverDate);
+                }
+            }
+        });
+    }
+    updateCalendar(type) {
+        const calendarBody = this.picker.querySelector(`#${type}-calendar-body`);
+        const year = type === 'start' ? this.startYear : this.endYear;
+        const month = type === 'start' ? this.startMonth : this.endMonth;
+        this.populateCalendar(calendarBody, year, month, type);
+        const display = this.picker.querySelector(`.zhenshangyin-current-display[data-type="${type}"]`);
+        if (display) {
+            display.textContent = `${year}年 ${month + 1}月`;
+        }
+
+        if (this.startDate && this.endDate) {
+            this.applyRangeStyle();
+        }
+    }
+    populateCalendar(calendarBody, year, month, type) {
+        calendarBody.innerHTML = '';
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const daysInPrevMonth = new Date(year, month, 0).getDate();
+        const today = new Date();
+        const isCurrentMonth = today.getFullYear() === year && today.getMonth() === month;
+        let date = 1;
+        let nextMonthDate = 1;
+        for (let i = 0; i < 6; i++) {
+            const row = document.createElement('tr');
+            for (let j = 0; j < 7; j++) {
+                const cell = document.createElement('td');
+                if (i === 0 && j < firstDay) {
+                    const prevMonthDate = daysInPrevMonth - firstDay + j + 1;
+                    cell.innerHTML = prevMonthDate;
+                    cell.style.opacity = '0.5';
+                } else if (date > daysInMonth) {
+                    cell.innerHTML = nextMonthDate;
+                    cell.style.opacity = '0.5';
+                    nextMonthDate++;
+                } else {
+                    cell.innerHTML = date;
+                    if (isCurrentMonth && date === today.getDate()) {
+                        cell.classList.add('zhenshangyin-custom-today');
+                    }
+                    const selectedDate = date;
+                    cell.addEventListener('click', () => {
+                        this.highlightDate(selectedDate, month, year, type);
+                    });
+                    date++;
+                }
+                row.appendChild(cell);
+            }
+            calendarBody.appendChild(row);
+        }
+        Array.from(calendarBody.querySelectorAll('td')).forEach(td => {
+            td.classList.remove('zhenshangyin-hover-range', 'zhenshangyin-custom-selected', 'zhenshangyin-selected-range');
+        });
+    }
+    highlightDate(day, month, year, type) {
+        const selectedDate = new Date(year, month, day);
+        if (this.startDate && this.endDate) {
+            this.startDate = null;
+            this.endDate = null;
+            this.isSelectingStart = true;
+            this.picker.querySelectorAll('td').forEach(td => td.classList.remove('zhenshangyin-custom-selected', 'zhenshangyin-selected-range'));
+        }
+        if (this.isSelectingStart) {
+            this.startDate = selectedDate;
+            this.applySingleSelectionStyle(day, month, year, type);
+        } else {
+            this.endDate = selectedDate;
+        }
+        this.isSelectingStart = !this.isSelectingStart;
+
+        if (this.startDate && this.endDate && this.startDate > this.endDate) {
+            [this.startDate, this.endDate] = [this.endDate, this.startDate];
+        }
+        this.updateDateDisplay('start');
+        this.updateDateDisplay('end');
+        if (this.startDate && this.endDate) {
+            this.applyRangeStyle();
+        }
+    }
+    applySingleSelectionStyle(day, month, year, type) {
+        const calendarBody = this.picker.querySelector(`#${type}-calendar-body`);
+        Array.from(calendarBody.querySelectorAll('td')).forEach(td => {
+            const cellDay = parseInt(td.textContent, 10);
+            if (cellDay === day && !td.style.opacity) {
+                td.classList.add('zhenshangyin-custom-selected');
+            }
+        });
+    }
+    updateDateDisplay(type) {
+        const dateDisplay = this.formatDateOnly(type === 'start' ? this.startDate : this.endDate);
+        const dateLabel = this.picker.querySelector(`.zhenshangyin-date-label[data-type="${type}"]`);
+        if (dateLabel) {
+            dateLabel.textContent = dateDisplay || '未选择日期';
+        }
+    }
+    applyRangeStyle() {
+        if (!this.startDate || !this.endDate) return;
+        const startDateTime = this.startDate.getTime();
+        const endDateTime = this.endDate.getTime();
+        ['start', 'end'].forEach(type => {
+            const calendarBody = this.picker.querySelector(`#${type}-calendar-body`);
+            const year = type === 'start' ? this.startYear : this.endYear;
+            const month = type === 'start' ? this.startMonth : this.endMonth;
+            Array.from(calendarBody.querySelectorAll('td')).forEach(td => {
+                if (td.style.opacity) return;
+                const day = parseInt(td.textContent, 10);
+                const date = new Date(year, month, day);
+                date.setHours(0, 0, 0, 0);
+                const currentDateTime = date.getTime();
+                td.classList.remove('zhenshangyin-custom-selected', 'zhenshangyin-selected-range');
+                const isSameStartDate = this.isSameDate(date, this.startDate);
+                const isSameEndDate = this.isSameDate(date, this.endDate);
+                const isInRange = currentDateTime >= startDateTime && currentDateTime <= endDateTime;
+                if (isSameStartDate || isSameEndDate) {
+                    td.classList.add('zhenshangyin-custom-selected');
+                } else if (isInRange) {
+                    td.classList.add('zhenshangyin-selected-range');
+                }
+            });
+        });
+    }
+
+    isSameDate(date1, date2) {
+        return date1.getFullYear() === date2.getFullYear() &&
+            date1.getMonth() === date2.getMonth() &&
+            date1.getDate() === date2.getDate();
+    }
+    setupButtons() {
+        this.picker.querySelector('.zhenshangyin-confirm-btn').addEventListener('click', () => {
+            if (this.startDate && this.endDate) {
+                this.startDate.setHours(this.startTime.hours, this.startTime.minutes, this.startTime.seconds);
+                this.endDate.setHours(this.endTime.hours, this.endTime.minutes, this.endTime.seconds);
+
+                const formattedStartDate = this.formatDate(this.startDate);
+                const formattedEndDate = this.formatDate(this.endDate);
+                const formattedRange = `${formattedStartDate}${this.separator}${formattedEndDate}`;
+                this.dateInput.value = formattedRange;
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                    this.onDateRangeSelect(formattedRange);
+                }, 300);
+            }
+        });
+    }
+    formatDate(date) {
+        if (!date) return '未选择日期';
+        let formattedDate = this.dateFormat
+            .replace('YYYY', date.getFullYear())
+            .replace('MM', String(date.getMonth() + 1).padStart(2, '0'))
+            .replace('DD', String(date.getDate()).padStart(2, '0'))
+            .replace('HH', String(date.getHours()).padStart(2, '0'))
+            .replace('mm', String(date.getMinutes()).padStart(2, '0'))
+            .replace('ss', String(date.getSeconds()).padStart(2, '0'));
+        return formattedDate;
+    }
+    createPlaceholder() {
+        return Array.from({ length: 2 }, () => `<div class="zhenshangyin-scroll-item placeholder"></div>`).join('');
+    }
+}
+
+
+class ZhenshangyinMonthPicker {
+    constructor(inputSelector, options = {}) {
+        this.dateInput = document.querySelector(inputSelector);
+        this.currentYear = new Date().getFullYear();
+        this.selectedMonths = []; // Store objects with year and month
+        this.dateFormat = options.dateFormat || 'YYYY-MM';
+        this.onMonthSelect = options.onMonthSelect || function () { };
+        this.multiSelect = options.multiSelect || false;
+        this.init();
+    }
+    init() {
+        this.dateInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            this.createMonthPicker();
+            this.togglePicker();
+        });
+        document.addEventListener('click', () => {
+            if (this.picker) {
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                }, 300);
+            }
+        });
+    }
+    togglePicker() {
+        const updateCalendarPosition = () => {
+            if (this.picker) {
+                const rect = this.dateInput.getBoundingClientRect();
+                const rectheight = this.dateInput.offsetHeight;
+                const spaceBelow = window.innerHeight - rect.bottom;
+                const distanceFromTop = rect.top + window.scrollY;
+                const spaceLeft = rect.left;
+                const spaceRight = window.innerWidth - rect.right;
+                this.picker.classList.add('zhenshangyin-custom-show');
+                const pickerHeight = this.picker.offsetHeight;
+                const pickerWidth = this.picker.offsetWidth;
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                if (spaceBelow < pickerHeight && distanceFromTop < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                } else if (spaceBelow < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop - pickerHeight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-up');
+                    this.picker.classList.remove('zhenshangyin-custom-down');
+                } else {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                }
+                if (spaceLeft + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                } else if (spaceRight + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.right + window.scrollX - pickerWidth}px`;
+                    this.picker.classList.add('zhenshangyin-custom-right');
+                } else {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                }
+            }
+        };
+        window.addEventListener('scroll', updateCalendarPosition);
+        window.addEventListener('resize', updateCalendarPosition);
+        updateCalendarPosition();
+    }
+    createMonthPicker() {
+        if (this.picker) return;
+        const picker = document.createElement('div');
+        picker.className = 'zhenshangyin-custom-calendar';
+        picker.innerHTML = `
+                <div class="zhenshangyin-custom-navigation">
+                    <button class="zhenshangyin-prev-year"><svg t="1732243173238" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8093"><path d="M129.6 527.5L521 918.9c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L180.5 510.5 552 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L129.6 493.6c-9.4 9.3-9.4 24.5 0 33.9z" fill="#AAAAAA" p-id="8094"></path><path d="M464 510.5c0 6.4 2.5 12.5 7 17l391.4 391.4c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L522 510.5 893.5 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L471.1 493.6c-4.5 4.5-7.1 10.6-7.1 16.9z" fill="#AAAAAA" p-id="8095"></path></svg></button>
+                    <span class="zhenshangyin-current-display">${this.currentYear}</span>
+                    <button class="zhenshangyin-next-year"><svg t="1732243152928" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7738"><path d="M896.4 496.5L505 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9l374.4 374.4L474 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7l388.5-388.5c9.3-9.3 9.3-24.5-0.1-33.9z" fill="#AAAAAA" p-id="7739"></path><path d="M561.9 513.5c0-6.4-2.5-12.5-7-17L163.5 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9L504 513.5 132.5 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7L555 530.4c4.4-4.5 6.9-10.6 6.9-16.9z" fill="#AAAAAA" p-id="7740"></path></svg></button>
+                </div>
+                <div class="zhenshangyin-table-container">
+                    <table>
+                        <tbody id="month-picker-body">
+                            <tr><td>1月</td><td>2月</td><td>3月</td></tr>
+                            <tr><td>4月</td><td>5月</td><td>6月</td></tr>
+                            <tr><td>7月</td><td>8月</td><td>9月</td></tr>
+                            <tr><td>10月</td><td>11月</td><td>12月</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                ${this.multiSelect ? '<div class="zhenshangyin-button-container"><button class="zhenshangyin-confirm-btn">确认</button></div>' : ''}
+            `;
+        document.body.appendChild(picker);
+        this.picker = picker;
+        picker.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+        picker.querySelector('.zhenshangyin-prev-year').addEventListener('click', () => this.changeYear(-1));
+        picker.querySelector('.zhenshangyin-next-year').addEventListener('click', () => this.changeYear(1));
+        if (this.multiSelect) {
+            picker.querySelector('.zhenshangyin-confirm-btn').addEventListener('click', () => {
+                this.updateInputValue();
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                }, 300);
+            });
+        }
+        this.populateMonths();
+    }
+    changeYear(direction) {
+        this.currentYear += direction;
+        this.picker.querySelector('.zhenshangyin-current-display').textContent = this.currentYear;
+        this.populateMonths();
+    }
+    populateMonths() {
+        const monthCells = this.picker.querySelectorAll('#month-picker-body td');
+        monthCells.forEach(cell => cell.classList.remove('zhenshangyin-custom-selected'));
+        monthCells.forEach((cell, index) => {
+            const month = index + 1;
+            if (this.selectedMonths.some(m => m.year === this.currentYear && m.month === month)) {
+                cell.classList.add('zhenshangyin-custom-selected');
+            }
+            const newCell = cell.cloneNode(true);
+            cell.replaceWith(newCell);
+            newCell.addEventListener('click', () => {
+                if (this.multiSelect) {
+                    this.toggleMonthSelection(month);
+                } else {
+                    this.selectSingleMonth(month);
+                }
+            });
+        });
+    }
+    toggleMonthSelection(month) {
+        const existingIndex = this.selectedMonths.findIndex(m => m.year === this.currentYear && m.month === month);
+        if (existingIndex > -1) {
+            this.selectedMonths.splice(existingIndex, 1);
+        } else {
+            this.selectedMonths.push({ year: this.currentYear, month });
+        }
+        this.populateMonths();
+    }
+    selectSingleMonth(month) {
+        this.selectedMonths = [{ year: this.currentYear, month }];
+        this.updateInputValue();
+        this.picker.classList.remove('zhenshangyin-custom-show');
+        this.picker.classList.remove('zhenshangyin-custom-down');
+        this.picker.classList.remove('zhenshangyin-custom-up');
+        setTimeout(() => {
+            this.picker.remove();
+            this.picker = null;
+        }, 300);
+    }
+    updateInputValue() {
+        const formattedMonths = this.selectedMonths
+            .map(m => this.formatMonth(m.year, m.month))
+            .join(', ');
+        this.dateInput.value = formattedMonths;
+        this.onMonthSelect(formattedMonths);
+    }
+    formatMonth(year, month) {
+        return this.dateFormat
+            .replace('YYYY', year)
+            .replace('MM', String(month).padStart(2, '0'));
+    }
+}
+
+class ZhenshangyinYearPicker {
+    constructor(inputSelector, options = {}) {
+        this.dateInput = document.querySelector(inputSelector);
+        this.currentYear = new Date().getFullYear();
+        this.selectedYears = []; // Store selected years
+        this.onYearSelect = options.onYearSelect || function () { };
+        this.multiSelect = options.multiSelect || false; // New option for multi-select
+        this.init();
+    }
+    init() {
+        this.dateInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            this.createYearPicker();
+            this.togglePicker();
+        });
+        document.addEventListener('click', () => {
+            if (this.picker) {
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                }, 300);
+            }
+        });
+    }
+    togglePicker() {
+        const updateCalendarPosition = () => {
+            if (this.picker) {
+                const rect = this.dateInput.getBoundingClientRect();
+                const rectheight = this.dateInput.offsetHeight;
+                const spaceBelow = window.innerHeight - rect.bottom;
+                const distanceFromTop = rect.top + window.scrollY;
+                const spaceLeft = rect.left;
+                const spaceRight = window.innerWidth - rect.right;
+                this.picker.classList.add('zhenshangyin-custom-show');
+                const pickerHeight = this.picker.offsetHeight;
+                const pickerWidth = this.picker.offsetWidth;
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                if (spaceBelow < pickerHeight && distanceFromTop < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                } else if (spaceBelow < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop - pickerHeight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-up');
+                    this.picker.classList.remove('zhenshangyin-custom-down');
+                } else {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                }
+                if (spaceLeft + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                } else if (spaceRight + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.right + window.scrollX - pickerWidth}px`;
+                    this.picker.classList.add('zhenshangyin-custom-right');
+                } else {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                }
+            }
+        };
+        window.addEventListener('scroll', updateCalendarPosition);
+        window.addEventListener('resize', updateCalendarPosition);
+        updateCalendarPosition();
+    }
+    createYearPicker() {
+        if (this.picker) return;
+        const picker = document.createElement('div');
+        picker.className = 'zhenshangyin-custom-calendar';
+        picker.innerHTML = `
+                <div class="zhenshangyin-custom-navigation">
+                    <button class="prev-decade"><svg t="1732243173238" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8093"><path d="M129.6 527.5L521 918.9c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L180.5 510.5 552 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L129.6 493.6c-9.4 9.3-9.4 24.5 0 33.9z" fill="#AAAAAA" p-id="8094"></path><path d="M464 510.5c0 6.4 2.5 12.5 7 17l391.4 391.4c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L522 510.5 893.5 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L471.1 493.6c-4.5 4.5-7.1 10.6-7.1 16.9z" fill="#AAAAAA" p-id="8095"></path></svg></button>
+                    <span class="zhenshangyin-current-display">${this.currentYear - 5} - ${this.currentYear + 4}</span>
+                    <button class="next-decade"><svg t="1732243152928" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7738"><path d="M896.4 496.5L505 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9l374.4 374.4L474 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7l388.5-388.5c9.3-9.3 9.3-24.5-0.1-33.9z" fill="#AAAAAA" p-id="7739"></path><path d="M561.9 513.5c0-6.4-2.5-12.5-7-17L163.5 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9L504 513.5 132.5 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7L555 530.4c4.4-4.5 6.9-10.6 6.9-16.9z" fill="#AAAAAA" p-id="7740"></path></svg></button>
+                </div>
+                <div class="zhenshangyin-table-container">
+                    <table>
+                        <tbody id="year-picker-body">
+                            ${this.generateYearRows()}
+                        </tbody>
+                    </table>
+                </div>
+                ${this.multiSelect ? '<div class="zhenshangyin-button-container"><button class="zhenshangyin-confirm-btn">确认</button></div>' : ''}
+            `;
+        document.body.appendChild(picker);
+        this.picker = picker;
+        picker.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+        picker.querySelector('.prev-decade').addEventListener('click', () => this.changeDecade(-10));
+        picker.querySelector('.next-decade').addEventListener('click', () => this.changeDecade(10));
+        if (this.multiSelect) {
+            picker.querySelector('.zhenshangyin-confirm-btn').addEventListener('click', () => {
+                this.updateInputValue();
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                }, 300);
+            });
+        }
+        this.populateYears();
+    }
+    changeDecade(offset) {
+        this.currentYear += offset;
+        this.picker.querySelector('.zhenshangyin-current-display').textContent = `${this.currentYear - 5} - ${this.currentYear + 4}`;
+        this.updateYearRows();
+    }
+    generateYearRows() {
+        let rows = '';
+        for (let i = 0; i < 4; i++) {
+            rows += '<tr>';
+            for (let j = 0; j < 3; j++) {
+                rows += `<td>${this.currentYear - 5 + i * 3 + j}</td>`;
+            }
+            rows += '</tr>';
+        }
+        return rows;
+    }
+    updateYearRows() {
+        const yearBody = this.picker.querySelector('#year-picker-body');
+        yearBody.innerHTML = this.generateYearRows();
+        this.populateYears();
+    }
+    populateYears() {
+        const yearCells = this.picker.querySelectorAll('#year-picker-body td');
+        yearCells.forEach(cell => cell.classList.remove('zhenshangyin-custom-selected'));
+        yearCells.forEach((cell) => {
+            const year = parseInt(cell.textContent, 10);
+            if (this.selectedYears.includes(year)) {
+                cell.classList.add('zhenshangyin-custom-selected');
+            }
+            const newCell = cell.cloneNode(true);
+            cell.replaceWith(newCell);
+            newCell.addEventListener('click', () => {
+                if (this.multiSelect) {
+                    this.toggleYearSelection(year);
+                } else {
+                    this.selectSingleYear(year);
+                }
+            });
+        });
+    }
+    toggleYearSelection(year) {
+        const yearIndex = this.selectedYears.indexOf(year);
+        if (yearIndex > -1) {
+            this.selectedYears.splice(yearIndex, 1);
+        } else {
+            this.selectedYears.push(year);
+        }
+        this.populateYears();
+    }
+    selectSingleYear(year) {
+        this.selectedYears = [year];
+        this.updateInputValue();
+        this.picker.classList.remove('zhenshangyin-custom-show');
+        this.picker.classList.remove('zhenshangyin-custom-down');
+        this.picker.classList.remove('zhenshangyin-custom-up');
+        setTimeout(() => {
+            this.picker.remove();
+            this.picker = null;
+        }, 300);
+    }
+    updateInputValue() {
+        const formattedYears = this.selectedYears.join(', ');
+        this.dateInput.value = formattedYears;
+        this.onYearSelect(formattedYears);
+    }
+}
+
+
+class ZhenshangyinMonthRangePicker {
+    constructor(inputSelector, options = {}) {
+        this.dateInput = document.querySelector(inputSelector);
+        this.startMonth = null;
+        this.endMonth = null;
+        this.currentYear = new Date().getFullYear();
+        this.dateFormat = options.dateFormat || 'YYYY-MM';
+        this.onMonthRangeSelect = options.onMonthRangeSelect || function () { };
+        this.separator = options.separator || ' - ';
+        this.isSelectingStart = true;
+        this.endYear = this.currentYear + 1;
+        this.init();
+    }
+    init() {
+        this.dateInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            this.createMonthRangePicker();
+            this.togglePicker();
+            if (this.startMonth && this.endMonth) {
+                this.applyRangeStyle();
+            }
+        });
+        document.addEventListener('click', () => {
+            if (this.picker) {
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                }, 300);
+            }
+        });
+    }
+    togglePicker() {
+        const updateCalendarPosition = () => {
+            if (this.picker) {
+                const rect = this.dateInput.getBoundingClientRect();
+                const rectheight = this.dateInput.offsetHeight;
+                const spaceBelow = window.innerHeight - rect.bottom;
+                const distanceFromTop = rect.top + window.scrollY;
+                const spaceLeft = rect.left;
+                const spaceRight = window.innerWidth - rect.right;
+                this.picker.classList.add('zhenshangyin-custom-show');
+                const pickerHeight = this.picker.offsetHeight;
+                const pickerWidth = this.picker.offsetWidth;
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                if (spaceBelow < pickerHeight && distanceFromTop < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                } else if (spaceBelow < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop - pickerHeight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-up');
+                    this.picker.classList.remove('zhenshangyin-custom-down');
+                } else {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                }
+                if (spaceLeft + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                } else if (spaceRight + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.right + window.scrollX - pickerWidth}px`;
+                    this.picker.classList.add('zhenshangyin-custom-right');
+                } else {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                }
+            }
+        };
+        window.addEventListener('scroll', updateCalendarPosition);
+        window.addEventListener('resize', updateCalendarPosition);
+        updateCalendarPosition();
+    }
+    createMonthRangePicker() {
+        if (this.picker) return;
+        const picker = document.createElement('div');
+        picker.className = 'zhenshangyin-custom-calendar date-range-calendar';
+        picker.innerHTML = `
+                <div class="zhenshangyin-date-range-container">
+                    <div class="zhenshangyin-month-picker-wrapper">${this.createMonthPicker('start')}</div>
+                    <div class="zhenshangyin-month-picker-wrapper">${this.createMonthPicker('end')}</div>
+                </div>
+                <div class="zhenshangyin-button-container">
+                    <button class="zhenshangyin-confirm-btn">确认</button>
+                </div>
+            `;
+        document.body.appendChild(picker);
+        this.picker = picker;
+        picker.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+        this.setupMonthPickers();
+        this.setupButtons();
+    }
+    createMonthPicker(type) {
+        return `
+                <div class="zhenshangyin-custom-navigation">
+                    <button class="zhenshangyin-prev-year" data-type="${type}">
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M129.6 527.5L521 918.9c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L180.5 510.5 552 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L129.6 493.6c-9.4 9.3-9.4 24.5 0 33.9z" fill="#AAAAAA"></path>
+                            <path d="M464 510.5c0 6.4 2.5 12.5 7 17l391.4 391.4c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L522 510.5 893.5 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L471.1 493.6c-4.5 4.5-7.1 10.6-7.1 16.9z" fill="#AAAAAA"></path>
+                        </svg>
+                    </button>
+                    <span class="zhenshangyin-current-display" data-type="${type}">${type === 'start' ? this.currentYear : this.endYear}</span>
+                    <button class="zhenshangyin-next-year" data-type="${type}">
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M896.4 496.5L505 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9l374.4 374.4L474 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7l388.5-388.5c9.3-9.3 9.3-24.5-0.1-33.9z" fill="#AAAAAA"></path>
+                            <path d="M561.9 513.5c0-6.4-2.5-12.5-7-17L163.5 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9L504 513.5 132.5 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7L555 530.4c4.4-4.5 6.9-10.6 6.9-16.9z" fill="#AAAAAA"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="zhenshangyin-table-container">
+                    <table>
+                        <tbody id="${type}-month-picker-body">
+                            <tr><td>1月</td><td>2月</td><td>3月</td></tr>
+                            <tr><td>4月</td><td>5月</td><td>6月</td></tr>
+                            <tr><td>7月</td><td>8月</td><td>9月</td></tr>
+                            <tr><td>10月</td><td>11月</td><td>12月</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            `;
+    }
+    setupMonthPickers() {
+        this.setupSingleMonthPicker('start');
+        this.setupSingleMonthPicker('end');
+    }
+    setupSingleMonthPicker(type) {
+        const monthBody = this.picker.querySelector(`#${type}-month-picker-body`);
+        this.populateMonths(monthBody, type);
+        this.picker.querySelector(`.zhenshangyin-prev-year[data-type="${type}"]`).addEventListener('click', () => this.changeYear(-1, type));
+        this.picker.querySelector(`.zhenshangyin-next-year[data-type="${type}"]`).addEventListener('click', () => this.changeYear(1, type));
+        monthBody.addEventListener('mouseover', (event) => {
+            if (this.startMonth && !this.endMonth) {
+                const target = event.target;
+                if (target.tagName === 'TD') {
+                    const monthIndex = Array.from(monthBody.querySelectorAll('td')).indexOf(target);
+                    const hoverMonth = new Date(type === 'start' ? this.currentYear : this.endYear, monthIndex, 1);
+                    this.applyHoverRangeStyle(hoverMonth);
+                }
+            }
+        });
+        monthBody.addEventListener('mouseout', (event) => {
+            if (this.startMonth && !this.endMonth) {
+                this.applyHoverRangeStyle(null);
+            }
+        });
+    }
+    applyHoverRangeStyle(hoverMonth) {
+        const startDate = this.startMonth;
+        const endDate = this.endMonth;
+        this.picker.querySelectorAll('td').forEach((cell) => {
+            cell.classList.remove('zhenshangyin-custom-selected', 'zhenshangyin-selected-range', 'zhenshangyin-hover-range');
+            const year = parseInt(cell.dataset.year, 10);
+            const monthIndex = parseInt(cell.dataset.month, 10);
+            const cellDate = new Date(year, monthIndex, 1);
+            if (startDate && endDate) {
+                if (cellDate >= startDate && cellDate <= endDate) {
+                    cell.classList.add('zhenshangyin-selected-range');
+                    if (cellDate.getTime() === startDate.getTime() || cellDate.getTime() === endDate.getTime()) {
+                        cell.classList.add('zhenshangyin-custom-selected');
+                    }
+                }
+            } else if (startDate && !endDate && hoverMonth) {
+                const [rangeStart, rangeEnd] = startDate < hoverMonth ? [startDate, hoverMonth] : [hoverMonth, startDate];
+                if (cellDate >= rangeStart && cellDate <= rangeEnd) {
+                    cell.classList.add('zhenshangyin-hover-range');
+                    if (cellDate.getTime() === startDate.getTime()) {
+                        cell.classList.add('zhenshangyin-custom-selected');
+                    }
+                }
+            } else if (startDate && !endDate) {
+                if (cellDate.getTime() === startDate.getTime()) {
+                    cell.classList.add('zhenshangyin-custom-selected');
+                }
+            }
+        });
+    }
+    populateMonths(monthBody, type) {
+        const months = monthBody.querySelectorAll('td');
+        const year = type === 'start' ? this.currentYear : this.endYear;
+        months.forEach((cell, index) => {
+            cell.classList.remove('zhenshangyin-custom-selected', 'zhenshangyin-selected-range', 'zhenshangyin-hover-range');
+            cell.replaceWith(cell.cloneNode(true));
+            const newCell = monthBody.querySelectorAll('td')[index];
+            const month = new Date(year, index, 1);
+            newCell.dataset.year = year;
+            newCell.dataset.month = index;
+            if (this.startMonth && this.endMonth && month >= this.startMonth && month <= this.endMonth) {
+                newCell.classList.add(month.getTime() === this.startMonth.getTime() || month.getTime() === this.endMonth.getTime()
+                    ? 'zhenshangyin-custom-selected'
+                    : 'zhenshangyin-selected-range');
+            } else if (this.startMonth && !this.endMonth && month.getTime() === this.startMonth.getTime()) {
+                newCell.classList.add('zhenshangyin-custom-selected');
+            }
+            newCell.addEventListener('click', () => {
+                this.highlightMonth(index, type);
+            });
+        });
+    }
+    highlightMonth(monthIndex, type) {
+        const selectedYear = type === 'start' ? this.currentYear : this.endYear;
+        const selectedMonth = new Date(selectedYear, monthIndex, 1);
+        if (this.isSelectingStart) {
+            this.startMonth = selectedMonth;
+            this.endMonth = null;
+        } else {
+            this.endMonth = selectedMonth;
+            if (this.startMonth && this.startMonth > this.endMonth) {
+                [this.startMonth, this.endMonth] = [this.endMonth, this.startMonth];
+            }
+        }
+        this.isSelectingStart = !this.isSelectingStart;
+        this.applyRangeStyle();
+    }
+    applyRangeStyle() {
+        const startDate = this.startMonth;
+        const endDate = this.endMonth;
+        this.picker.querySelectorAll('td').forEach((cell) => {
+            cell.classList.remove('zhenshangyin-custom-selected', 'zhenshangyin-selected-range');
+            const year = parseInt(cell.dataset.year, 10);
+            const monthIndex = parseInt(cell.dataset.month, 10);
+            const cellDate = new Date(year, monthIndex, 1);
+            if (startDate && endDate) {
+                if (cellDate >= startDate && cellDate <= endDate) {
+                    cell.classList.add('zhenshangyin-selected-range');
+                    if (cellDate.getTime() === startDate.getTime() || cellDate.getTime() === endDate.getTime()) {
+                        cell.classList.add('zhenshangyin-custom-selected');
+                    }
+                }
+            } else if (startDate && !endDate) {
+                if (cellDate.getTime() === startDate.getTime()) {
+                    cell.classList.add('zhenshangyin-custom-selected');
+                }
+            }
+        });
+    }
+    changeYear(direction, type) {
+        if (type === 'start') {
+            this.currentYear += direction;
+        } else {
+            this.endYear += direction;
+        }
+        this.picker.querySelector(`.zhenshangyin-current-display[data-type="${type}"]`).textContent =
+            type === 'start' ? this.currentYear : this.endYear;
+        const monthBody = this.picker.querySelector(`#${type}-month-picker-body`);
+        this.populateMonths(monthBody, type);
+        if (this.startMonth && this.endMonth) {
+            if (this.startMonth > this.endMonth) {
+                [this.startMonth, this.endMonth] = [this.endMonth, this.startMonth];
+            }
+        }
+        this.applyRangeStyle();
+    }
+    setupButtons() {
+        this.picker.querySelector('.zhenshangyin-confirm-btn').addEventListener('click', () => {
+            if (this.startMonth && this.endMonth) {
+                if (this.startMonth > this.endMonth) {
+                    [this.startMonth, this.endMonth] = [this.endMonth, this.startMonth];
+                }
+                const formattedStartMonth = this.formatMonth(this.startMonth);
+                const formattedEndMonth = this.formatMonth(this.endMonth);
+                const formattedRange = `${formattedStartMonth}${this.separator}${formattedEndMonth}`;
+                this.dateInput.value = formattedRange;
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                    this.onMonthRangeSelect(formattedRange);
+                }, 300);
+            }
+        });
+    }
+    formatMonth(date) {
+        return this.dateFormat
+            .replace('YYYY', date.getFullYear())
+            .replace('MM', String(date.getMonth() + 1).padStart(2, '0'));
+    }
+}
+
+class ZhenshangyinYearRangePicker {
+    constructor(inputSelector, options = {}) {
+        this.dateInput = document.querySelector(inputSelector);
+        this.startYear = null;
+        this.endYear = null;
+        this.currentYear = new Date().getFullYear();
+        this.onYearRangeSelect = options.onYearRangeSelect || function () { };
+        this.separator = options.separator || ' - ';
+        this.isSelectingStart = true;
+        this.init();
+    }
+    init() {
+        this.dateInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            this.createYearRangePicker();
+            this.togglePicker();
+            if (this.startYear && this.endYear) {
+                this.applyRangeStyle();
+            }
+        });
+        document.addEventListener('click', () => {
+            if (this.picker) {
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                }, 300);
+            }
+        });
+    }
+    togglePicker() {
+        const updateCalendarPosition = () => {
+            if (this.picker) {
+                const rect = this.dateInput.getBoundingClientRect();
+                const rectheight = this.dateInput.offsetHeight;
+                const spaceBelow = window.innerHeight - rect.bottom;
+                const distanceFromTop = rect.top + window.scrollY;
+                const spaceLeft = rect.left;
+                const spaceRight = window.innerWidth - rect.right;
+                this.picker.classList.add('zhenshangyin-custom-show');
+                const pickerHeight = this.picker.offsetHeight;
+                const pickerWidth = this.picker.offsetWidth;
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                if (spaceBelow < pickerHeight && distanceFromTop < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                } else if (spaceBelow < pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop - pickerHeight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-up');
+                    this.picker.classList.remove('zhenshangyin-custom-down');
+                } else {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                }
+                if (spaceLeft + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                } else if (spaceRight + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.right + window.scrollX - pickerWidth}px`;
+                    this.picker.classList.add('zhenshangyin-custom-right');
+                } else {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                }
+            }
+        };
+        window.addEventListener('scroll', updateCalendarPosition);
+        window.addEventListener('resize', updateCalendarPosition);
+        updateCalendarPosition();
+    }
+    createYearRangePicker() {
+        if (this.picker) return;
+        const picker = document.createElement('div');
+        picker.className = 'zhenshangyin-custom-calendar date-range-calendar';
+        picker.innerHTML = `
+                <div class="zhenshangyin-date-range-container">
+                    <div class="zhenshangyin-year-picker-wrapper">${this.createYearPicker('start')}</div>
+                    <div class="zhenshangyin-year-picker-wrapper">${this.createYearPicker('end')}</div>
+                </div>
+                <div class="zhenshangyin-button-container">
+                    <button class="zhenshangyin-confirm-btn">确认</button>
+                </div>
+            `;
+        document.body.appendChild(picker);
+        this.picker = picker;
+
+        picker.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        this.setupYearPickers();
+        this.setupButtons();
+    }
+    createYearPicker(type) {
+        const baseYear = type === 'start' ? (this.startYear ? Math.floor(this.startYear / 10) * 10 : this.currentYear - (this.currentYear % 10)) : (this.endYear ? Math.floor(this.endYear / 10) * 10 : this.currentYear + 12 - (this.currentYear % 10));
+        return `
+                <div class="zhenshangyin-custom-navigation">
+                    <button class="prev-decade" data-type="${type}">
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M129.6 527.5L521 918.9c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L180.5 510.5 552 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L129.6 493.6c-9.4 9.3-9.4 24.5 0 33.9z" fill="#AAAAAA"></path>
+                            <path d="M464 510.5c0 6.4 2.5 12.5 7 17l391.4 391.4c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.4-24.6 0-33.9L522 510.5 893.5 139c9.4-9.4 9.4-24.6 0-33.9-4.7-4.7-10.8-7-17-7s-12.3 2.3-17 7L471.1 493.6c-4.5 4.5-7.1 10.6-7.1 16.9z" fill="#AAAAAA"></path>
+                        </svg>
+                    </button>
+                    <span class="zhenshangyin-current-display" data-type="${type}">${baseYear} - ${baseYear + 11}</span>
+                    <button class="next-decade" data-type="${type}">
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M896.4 496.5L505 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9l374.4 374.4L474 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7l388.5-388.5c9.3-9.3 9.3-24.5-0.1-33.9z" fill="#AAAAAA"></path>
+                            <path d="M561.9 513.5c0-6.4-2.5-12.5-7-17L163.5 105.1c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9L504 513.5 132.5 885c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7L555 530.4c4.4-4.5 6.9-10.6 6.9-16.9z" fill="#AAAAAA"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="zhenshangyin-table-container">
+                    <table>
+                        <tbody id="${type}-year-picker-body">
+                            ${this.generateYearRows(baseYear)}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+    }
+    generateYearRows(baseYear) {
+        let rows = '';
+        for (let i = 0; i < 4; i++) {
+            rows += '<tr>';
+            for (let j = 0; j < 3; j++) {
+                rows += `<td>${baseYear + i * 3 + j}</td>`;
+            }
+            rows += '</tr>';
+        }
+        return rows;
+    }
+    changeDecade(offset, type) {
+        const currentBaseYear = parseInt(this.picker.querySelector(`.zhenshangyin-current-display[data-type="${type}"]`).textContent.split(' - ')[0]);
+        const newBaseYear = currentBaseYear + (offset > 0 ? 12 : -12);
+        this.updateYearRows(type, newBaseYear);
+    }
+    updateYearRows(type, baseYear) {
+        const yearBody = this.picker.querySelector(`#${type}-year-picker-body`);
+        yearBody.innerHTML = this.generateYearRows(baseYear);
+        this.picker.querySelector(`.zhenshangyin-current-display[data-type="${type}"]`).textContent = `${baseYear} - ${baseYear + 11}`;
+        this.populateYears(yearBody, type);
+    }
+    setupYearPickers() {
+        this.setupSingleYearPicker('start');
+        this.setupSingleYearPicker('end');
+    }
+    setupSingleYearPicker(type) {
+        const yearBody = this.picker.querySelector(`#${type}-year-picker-body`);
+        this.populateYears(yearBody, type);
+        this.picker.querySelector(`.prev-decade[data-type="${type}"]`).addEventListener('click', () => this.changeDecade(-12, type));
+        this.picker.querySelector(`.next-decade[data-type="${type}"]`).addEventListener('click', () => this.changeDecade(12, type));
+        yearBody.addEventListener('mouseover', (event) => {
+            if (this.startYear && !this.endYear) {
+                const target = event.target;
+                if (target.tagName === 'TD') {
+                    const hoverYear = parseInt(target.textContent, 10);
+                    this.applyHoverRangeStyle(hoverYear);
+                }
+            }
+        });
+    }
+    applyHoverRangeStyle(hoverYear) {
+        const start = this.isSelectingStart ? hoverYear : this.startYear;
+        const end = this.isSelectingStart ? this.endYear : hoverYear;
+        const [rangeStart, rangeEnd] = start < end ? [start, end] : [end, start];
+        this.picker.querySelectorAll('td').forEach(td => td.classList.remove('zhenshangyin-hover-range'));
+        ['start', 'end'].forEach(type => {
+            const yearBody = this.picker.querySelector(`#${type}-year-picker-body`);
+            Array.from(yearBody.querySelectorAll('td')).forEach(td => {
+                const year = parseInt(td.textContent, 10);
+                if (year >= rangeStart && year <= rangeEnd) {
+                    td.classList.add('zhenshangyin-hover-range');
+                }
+            });
+        });
+    }
+    populateYears(yearBody, type) {
+        const years = yearBody.querySelectorAll('td');
+        years.forEach((cell) => {
+            cell.classList.remove('zhenshangyin-custom-selected', 'zhenshangyin-selected-range');
+            if (this.startYear && this.endYear) {
+                const year = parseInt(cell.textContent, 10);
+                if (year >= this.startYear && year <= this.endYear) {
+                    cell.classList.add('zhenshangyin-selected-range');
+                }
+            }
+            cell.addEventListener('click', () => {
+                this.highlightYear(parseInt(cell.textContent, 10), type);
+            });
+        });
+    }
+    highlightYear(year, type) {
+        if (this.startYear && this.endYear) {
+            this.startYear = null;
+            this.endYear = null;
+            this.isSelectingStart = true;
+            this.picker.querySelectorAll('td').forEach(td => td.classList.remove('zhenshangyin-custom-selected', 'zhenshangyin-selected-range'));
+        }
+        if (this.isSelectingStart) {
+            this.startYear = year;
+        } else {
+            this.endYear = year;
+        }
+        this.isSelectingStart = !this.isSelectingStart;
+
+        if (this.startYear && this.endYear && this.startYear > this.endYear) {
+            [this.startYear, this.endYear] = [this.endYear, this.startYear];
+        }
+        this.picker.querySelectorAll(`#${type}-year-picker-body td`).forEach(td => td.classList.remove('zhenshangyin-custom-selected', 'zhenshangyin-selected-range'));
+        const selectedCell = Array.from(this.picker.querySelectorAll(`#${type}-year-picker-body td`)).find(td => parseInt(td.textContent, 10) === year);
+        if (selectedCell) {
+            selectedCell.classList.add('zhenshangyin-custom-selected');
+        }
+        if (this.startYear && this.endYear) {
+            this.applyRangeStyle();
+        }
+    }
+    applyRangeStyle() {
+        if (this.startYear > this.endYear) {
+            [this.startYear, this.endYear] = [this.endYear, this.startYear];
+        }
+        const start = this.startYear;
+        const end = this.endYear;
+        ['start', 'end'].forEach(type => {
+            const yearBody = this.picker.querySelector(`#${type}-year-picker-body`);
+            Array.from(yearBody.querySelectorAll('td')).forEach(td => {
+                const year = parseInt(td.textContent, 10);
+                td.classList.remove('zhenshangyin-custom-selected', 'zhenshangyin-selected-range');
+                if (year >= start && year <= end) {
+                    if (year === start || year === end) {
+                        td.classList.add('zhenshangyin-custom-selected');
+                    } else {
+                        td.classList.add('zhenshangyin-selected-range');
+                    }
+                }
+            });
+        });
+    }
+    setupButtons() {
+        this.picker.querySelector('.zhenshangyin-confirm-btn').addEventListener('click', () => {
+            if (this.startYear && this.endYear) {
+                if (this.startYear > this.endYear) {
+                    [this.startYear, this.endYear] = [this.endYear, this.startYear];
+                }
+                const formattedRange = `${this.startYear}${this.separator}${this.endYear}`;
+                this.dateInput.value = formattedRange;
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                    this.onYearRangeSelect(formattedRange);
+                }, 300);
+            }
+        });
+    }
+}
+
+class ZhenshangyinTimePicker {
+    constructor(inputSelector, options = {}) {
+        this.dateInput = document.querySelector(inputSelector);
+        this.dateFormat = options.dateFormat || 'HH:mm:ss';
+        this.onTimeSelect = options.onTimeSelect || function () { };
+        this.showHours = this.dateFormat.includes('HH');
+        this.showMinutes = this.dateFormat.includes('mm');
+        this.showSeconds = this.dateFormat.includes('ss');
+        this.selectedTime = { hours: 0, minutes: 0, seconds: 0 };
+        this.isRange = options.isRange || false;
+        this.startTime = { hours: 0, minutes: 0, seconds: 0 };
+        this.endTime = { hours: 0, minutes: 0, seconds: 0 };
+        this.separator = options.separator || ' - ';
+        this.isSelectingStart = true;
+        this.init();
+        this.parseInputValue();
+    }
+
+    parseInputValue() {
+        const value = this.dateInput.value;
+        if (!value) return;
+        if (this.isRange) {
+            const [startStr, endStr] = value.split(this.separator);
+            if (startStr) {
+                const startParts = startStr.split(':');
+                this.startTime.hours = parseInt(startParts[0]) || 0;
+                this.startTime.minutes = parseInt(startParts[1]) || 0;
+                this.startTime.seconds = parseInt(startParts[2]) || 0;
+            }
+            if (endStr) {
+                const endParts = endStr.split(':');
+                this.endTime.hours = parseInt(endParts[0]) || 0;
+                this.endTime.minutes = parseInt(endParts[1]) || 0;
+                this.endTime.seconds = parseInt(endParts[2]) || 0;
+            }
+        } else {
+            const parts = value.split(':');
+            this.selectedTime.hours = parseInt(parts[0]) || 0;
+            this.selectedTime.minutes = parseInt(parts[1]) || 0;
+            this.selectedTime.seconds = parseInt(parts[2]) || 0;
+        }
+    }
+    init() {
+        this.dateInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            this.createTimePicker();
+            this.togglePicker();
+        });
+        document.addEventListener('click', () => {
+            if (this.picker) {
+                this.picker.classList.remove('zhenshangyin-custom-show');
+                this.picker.classList.remove('zhenshangyin-custom-down');
+                this.picker.classList.remove('zhenshangyin-custom-up');
+                setTimeout(() => {
+                    this.picker.remove();
+                    this.picker = null;
+                }, 300);
+            }
+        });
+    }
+    togglePicker() {
+        const updatePickerPosition = () => {
+            if (this.picker) {
+                const rect = this.dateInput.getBoundingClientRect();
+                const rectheight = this.dateInput.offsetHeight;
+                const spaceBelow = window.innerHeight - rect.bottom;
+                const distanceFromTop = rect.top + window.scrollY;
+                const spaceLeft = rect.left;
+                const spaceRight = window.innerWidth - rect.right;
+                this.picker.classList.add('zhenshangyin-custom-show');
+                const pickerHeight = this.picker.offsetHeight;
+                const pickerWidth = this.picker.offsetWidth;
+                if (spaceBelow < pickerHeight && distanceFromTop > pickerHeight) {
+                    this.picker.style.top = `${distanceFromTop - pickerHeight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-up');
+                    this.picker.classList.remove('zhenshangyin-custom-down');
+                } else {
+                    this.picker.style.top = `${distanceFromTop + rectheight}px`;
+                    this.picker.classList.add('zhenshangyin-custom-down');
+                    this.picker.classList.remove('zhenshangyin-custom-up');
+                }
+                if (spaceLeft + pickerWidth <= window.innerWidth) {
+                    this.picker.style.left = `${rect.left + window.scrollX}px`;
+                } else {
+                    this.picker.style.left = `${rect.right + window.scrollX - pickerWidth}px`;
+                    this.picker.classList.add('zhenshangyin-custom-right');
+                }
+            }
+        };
+        window.addEventListener('scroll', updatePickerPosition);
+        window.addEventListener('resize', updatePickerPosition);
+        updatePickerPosition();
+    }
+    createTimePicker() {
+        if (this.picker) return;
+        this.parseInputValue();
+        const picker = document.createElement('div');
+        picker.className = 'zhenshangyin-custom-calendar';
+        if (this.isRange) {
+            picker.innerHTML = `
+                <div class="zhenshangyin-date-range-container">
+                    <div class="zhenshangyin-time-picker-wrapper">
+                        ${this.createTimePickerContent('start')}
+                    </div>
+                    <div class="zhenshangyin-time-picker-wrapper">
+                        ${this.createTimePickerContent('end')}
+                    </div>
+                </div>
+                <div class="zhenshangyin-button-container">
+                    <button class="zhenshangyin-confirm-btn">确认</button>
+                </div>
+            `;
+        } else {
+            picker.innerHTML = this.createTimePickerContent('single');
+        }
+        document.body.appendChild(picker);
+        this.picker = picker;
+        picker.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+        this.setupTimeScrolls();
+        this.setupButtons();
+    }
+    createTimePickerContent(type) {
+        const time = type === 'start' ? this.startTime : (type === 'end' ? this.endTime : this.selectedTime);
+        return `
+            <div class="zhenshangyin-time-scroll-container">
+                ${this.showHours ? `
+                    <div class="zhenshangyin-time-scroll" id="${type}-hours-scroll">
+                        ${this.createPlaceholder()}
+                        ${Array.from({ length: 24 }, (_, i) =>
+            `<div class="zhenshangyin-scroll-item${i === time.hours ? ' selected' : ''}">${String(i).padStart(2, '0')}</div>`
+        ).join('')}
+                        ${this.createPlaceholder()}
+                    </div>
+                ` : ''}
+                ${this.showMinutes ? `
+                    <div class="zhenshangyin-time-scroll" id="${type}-minutes-scroll">
+                        ${this.createPlaceholder()}
+                        ${Array.from({ length: 60 }, (_, i) =>
+            `<div class="zhenshangyin-scroll-item${i === time.minutes ? ' selected' : ''}">${String(i).padStart(2, '0')}</div>`
+        ).join('')}
+                        ${this.createPlaceholder()}
+                    </div>
+                ` : ''}
+                ${this.showSeconds ? `
+                    <div class="zhenshangyin-time-scroll" id="${type}-seconds-scroll">
+                        ${this.createPlaceholder()}
+                        ${Array.from({ length: 60 }, (_, i) =>
+            `<div class="zhenshangyin-scroll-item${i === time.seconds ? ' selected' : ''}">${String(i).padStart(2, '0')}</div>`
+        ).join('')}
+                        ${this.createPlaceholder()}
+                    </div>
+                ` : ''}
+            </div>
+            ${!this.isRange ? `
+                <div class="zhenshangyin-button-container">
+                    <button class="zhenshangyin-current-time-btn zhenshangyin-itm-current-time-btn">此刻</button>
+                    <button class="zhenshangyin-confirm-btn">确认</button>
+                </div>
+            ` : ''}
+        `;
+    }
+    createPlaceholder() {
+        return Array.from({ length: 2 }, () => `<div class="zhenshangyin-scroll-item placeholder"></div>`).join('');
+    }
+    setupTimeScrolls() {
+        if (this.isRange) {
+            ['start', 'end'].forEach(type => {
+                this.setupTimeScroll(type);
+            });
+        } else {
+            this.setupTimeScroll('single');
+        }
+    }
+    setupTimeScroll(type) {
+        const container = this.picker.querySelector(`.zhenshangyin-time-scroll-container`);
+        if (this.showHours) {
+            this.setupScroll(`${type}-hours-scroll`, 'hours', type, 24);
+        }
+        if (this.showMinutes) {
+            this.setupScroll(`${type}-minutes-scroll`, 'minutes', type, 60);
+        }
+        if (this.showSeconds) {
+            this.setupScroll(`${type}-seconds-scroll`, 'seconds', type, 60);
+        }
+    }
+    setupScroll(scrollId, timeUnit, type, maxValue) {
+        const scrollElement = this.picker.querySelector(`#${scrollId}`);
+        if (!scrollElement) return;
+        const items = scrollElement.querySelectorAll('.zhenshangyin-scroll-item:not(.placeholder)');
+        let scrollTimeout;
+        const time = type === 'start' ? this.startTime :
+            (type === 'end' ? this.endTime : this.selectedTime);
+        this.centerScroll(scrollElement, time[timeUnit]);
+        scrollElement.addEventListener('scroll', () => {
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const index = Math.round((scrollElement.scrollTop + 60) / 30) - 2;
+                if (index >= 0 && index < maxValue) {
+                    const time = type === 'start' ? this.startTime :
+                        (type === 'end' ? this.endTime : this.selectedTime);
+                    time[timeUnit] = index;
+                    items.forEach((item, i) => {
+                        item.classList.toggle('selected', i === index);
+                    });
+                    this.centerScroll(scrollElement, index);
+                }
+            }, 100);
+        });
+        items.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const time = type === 'start' ? this.startTime :
+                    (type === 'end' ? this.endTime : this.selectedTime);
+                time[timeUnit] = index;
+                this.centerScroll(scrollElement, index);
+                items.forEach((item, i) => {
+                    item.classList.toggle('selected', i === index);
+                });
+            });
+        });
+    }
+    centerScroll(scrollElement, value) {
+        scrollElement.scrollTop = (value + 2) * 30 - 60;
+    }
+    setupButtons() {
+        if (!this.isRange) {
+            const currentTimeBtn = this.picker.querySelector('.zhenshangyin-current-time-btn');
+            if (currentTimeBtn) {
+                currentTimeBtn.addEventListener('click', () => {
+                    const now = new Date();
+                    this.selectedTime.hours = now.getHours();
+                    this.selectedTime.minutes = now.getMinutes();
+                    this.selectedTime.seconds = now.getSeconds();
+                    this.updateScrollPositions('single');
+                });
+            }
+        }
+        const confirmBtn = this.picker.querySelector('.zhenshangyin-confirm-btn');
+        if (confirmBtn) {
+            confirmBtn.addEventListener('click', () => {
+                this.updateInputValue();
+                this.closePicker();
+            });
+        }
+    }
+    updateScrollPositions(type) {
+        const time = type === 'start' ? this.startTime :
+            (type === 'end' ? this.endTime : this.selectedTime);
+        if (this.showHours) {
+            this.centerScroll(this.picker.querySelector(`#${type}-hours-scroll`), time.hours);
+        }
+        if (this.showMinutes) {
+            this.centerScroll(this.picker.querySelector(`#${type}-minutes-scroll`), time.minutes);
+        }
+        if (this.showSeconds) {
+            this.centerScroll(this.picker.querySelector(`#${type}-seconds-scroll`), time.seconds);
+        }
+    }
+    formatTime(time) {
+        let result = this.dateFormat;
+        if (this.showHours) {
+            result = result.replace('HH', String(time.hours).padStart(2, '0'));
+        }
+        if (this.showMinutes) {
+            result = result.replace('mm', String(time.minutes).padStart(2, '0'));
+        }
+        if (this.showSeconds) {
+            result = result.replace('ss', String(time.seconds).padStart(2, '0'));
+        }
+        return result;
+    }
+    updateInputValue() {
+        if (this.isRange) {
+            const formattedStartTime = this.formatTime(this.startTime);
+            const formattedEndTime = this.formatTime(this.endTime);
+            this.dateInput.value = `${formattedStartTime}${this.separator}${formattedEndTime}`;
+        } else {
+            this.dateInput.value = this.formatTime(this.selectedTime);
+        }
+        this.onTimeSelect(this.dateInput.value);
+    }
+    closePicker() {
+        if (this.picker) {
+            this.picker.classList.remove('zhenshangyin-custom-show');
+            this.picker.classList.remove('zhenshangyin-custom-down');
+            this.picker.classList.remove('zhenshangyin-custom-up');
+            setTimeout(() => {
+                this.picker.remove();
+                this.picker = null;
+            }, 300);
+        }
+    }
+}
+
+class ZhenshangyinNotification {
+    constructor({ title, message, type = 'info', duration = 2000 }) {
+        this.title = title;
+        this.message = message;
+        this.type = type;
+        this.duration = duration;
+        this.init();
+    }
+    init() {
+        this.createContainer();
+        this.createNotification();
+    }
+    createContainer() {
+        if (!document.getElementById('zhenshangyin-notification-container')) {
+            const container = document.createElement('div');
+            container.id = 'zhenshangyin-notification-container';
+            container.className = 'zhenshangyin-notification-container';
+            document.body.appendChild(container);
+        }
+    }
+    createNotification() {
+        const container = document.getElementById('zhenshangyin-notification-container');
+        const notification = document.createElement('div');
+        notification.className = `zhenshangyin-notification ${this.type}`;
+        notification.innerHTML = `
+                    
+
+                        <div class="zhenshangyin-notification-title">
+                            <div class="zhenshangyin-notification-icon">${this.getIcon()}</div>
+                           <h2> ${this.title}</h2>
+                            <div class="zhenshangyin-notification-close">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M764.288 214.592 512 466.88 259.712 214.592a31.936 31.936 0 0 0-45.12 45.12L466.752 512 214.528 764.224a31.936 31.936 0 1 0 45.12 45.184L512 557.184l252.288 252.288a31.936 31.936 0 0 0 45.12-45.12L557.12 512.064l252.288-252.352a31.936 31.936 0 1 0-45.12-45.184z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="zhenshangyin-notification-message">${this.message}</div>
+
+                `;
+        notification.querySelector('.zhenshangyin-notification-close').addEventListener('click', () => {
+            this.hideNotification(notification);
+        });
+        container.appendChild(notification);
+        setTimeout(() => notification.classList.add('zhenshangyin-notification-show'), 50);
+        if (this.duration) {
+            setTimeout(() => this.hideNotification(notification), this.duration);
+        }
+    }
+    getIcon() {
+        switch (this.type) {
+            case 'error':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896m0 393.664L407.936 353.6a38.4 38.4 0 1 0-54.336 54.336L457.664 512 353.6 616.064a38.4 38.4 0 1 0 54.336 54.336L512 566.336 616.064 670.4a38.4 38.4 0 1 0 54.336-54.336L566.336 512 670.4 407.936a38.4 38.4 0 1 0-54.336-54.336z"></path></svg>`;
+            case 'warning':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896.064A448 448 0 0 1 512 64m67.2 275.072c33.28 0 60.288-23.104 60.288-57.344s-27.072-57.344-60.288-57.344c-33.28 0-60.16 23.104-60.16 57.344s26.88 57.344 60.16 57.344M590.912 699.2c0-6.848 2.368-24.64 1.024-34.752l-52.608 60.544c-10.88 11.456-24.512 19.392-30.912 17.28a12.992 12.992 0 0 1-8.256-14.72l87.68-276.992c7.168-35.136-12.544-67.2-54.336-71.296-44.096 0-108.992 44.736-148.48 101.504 0 6.784-1.28 23.68.064 33.792l52.544-60.608c10.88-11.328 23.552-19.328 29.952-17.152a12.8 12.8 0 0 1 7.808 16.128L388.48 728.576c-10.048 32.256 8.96 63.872 55.04 71.04 67.84 0 107.904-43.648 147.456-100.416z"></path></svg>`;
+            case 'info':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896m0 192a58.432 58.432 0 0 0-58.24 63.744l23.36 256.384a35.072 35.072 0 0 0 69.76 0l23.296-256.384A58.432 58.432 0 0 0 512 256m0 512a51.2 51.2 0 1 0 0-102.4 51.2 51.2 0 0 0 0 102.4"></path></svg>`;
+            case 'success':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896m-55.808 536.384-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336z"></path></svg>`;
+            default:
+                return '';
+        }
+    }
+    hideNotification(notification) {
+        notification.classList.add('zhenshangyin-notification-hide');
+        setTimeout(() => notification.remove(), 500);
+    }
+}
+
+class ZhenshangyinMessage {
+    constructor({ message, type = 'info', duration = 2000 }) {
+        this.message = message;
+        this.type = type;
+        this.duration = duration;
+        this.init();
+    }
+    init() {
+        this.createContainer();
+        this.createMessage();
+    }
+    createContainer() {
+        if (!document.getElementById('zhenshangyin-message-container')) {
+            const container = document.createElement('div');
+            container.id = 'zhenshangyin-message-container';
+            container.className = 'zhenshangyin-message-container';
+            document.body.appendChild(container);
+        }
+    }
+    createMessage() {
+        const container = document.getElementById('zhenshangyin-message-container');
+        const messageElement = document.createElement('div');
+        messageElement.className = `zhenshangyin-message ${this.type}`;
+        messageElement.innerHTML = `${this.getIcon()} ${this.message}`;
+
+        container.appendChild(messageElement);
+        setTimeout(() => messageElement.classList.add('zhenshangyin-message-show'), 50);
+
+        if (this.duration) {
+            setTimeout(() => this.hideMessage(messageElement), this.duration);
+        }
+    }
+    getIcon() {
+        switch (this.type) {
+            case 'error':
+                return `<svg class="zhenshangyin-message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896m0 393.664L407.936 353.6a38.4 38.4 0 1 0-54.336 54.336L457.664 512 353.6 616.064a38.4 38.4 0 1 0 54.336 54.336L512 566.336 616.064 670.4a38.4 38.4 0 1 0 54.336-54.336L566.336 512 670.4 407.936a38.4 38.4 0 1 0-54.336-54.336z"></path></svg>`;
+            case 'warning':
+                return `<svg class="zhenshangyin-message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896.064A448 448 0 0 1 512 64m67.2 275.072c33.28 0 60.288-23.104 60.288-57.344s-27.072-57.344-60.288-57.344c-33.28 0-60.16 23.104-60.16 57.344s26.88 57.344 60.16 57.344M590.912 699.2c0-6.848 2.368-24.64 1.024-34.752l-52.608 60.544c-10.88 11.456-24.512 19.392-30.912 17.28a12.992 12.992 0 0 1-8.256-14.72l87.68-276.992c7.168-35.136-12.544-67.2-54.336-71.296-44.096 0-108.992 44.736-148.48 101.504 0 6.784-1.28 23.68.064 33.792l52.544-60.608c10.88-11.328 23.552-19.328 29.952-17.152a12.8 12.8 0 0 1 7.808 16.128L388.48 728.576c-10.048 32.256 8.96 63.872 55.04 71.04 67.84 0 107.904-43.648 147.456-100.416z"></path></svg>`;
+            case 'info':
+                return `<svg class="zhenshangyin-message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896m0 192a58.432 58.432 0 0 0-58.24 63.744l23.36 256.384a35.072 35.072 0 0 0 69.76 0l23.296-256.384A58.432 58.432 0 0 0 512 256m0 512a51.2 51.2 0 1 0 0-102.4 51.2 51.2 0 0 0 0 102.4"></path></svg>`;
+            case 'success':
+                return `<svg class="zhenshangyin-message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896m-55.808 536.384-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336z"></path></svg>`;
+            default:
+                return '';
+        }
+    }
+    hideMessage(el) {
+        el.classList.add('zhenshangyin-message-hide');
+        setTimeout(() => {
+            const container = document.getElementById('zhenshangyin-message-container');
+            container.removeChild(el);
+            if (!container.hasChildNodes()) {
+                document.body.removeChild(container);
+                const style = document.getElementById('zhenshangyin-message-style');
+                if (style) document.head.removeChild(style);
+            }
+        }, 600);
+    }
+}
+
+class ZhenshangyinDropdown {
+    constructor({
+        container,
+        data,
+        customParams,
+        onSelect,
+        searchEnabled = false,
+        inputSearchEnabled = false,
+        defaultSelected = null,
+        grouped = false,
+        multiSelect = false,
+        inputMultiSelect = false,
+    }) {
+        this.container = document.querySelector(container);
+        this.items = data;
+        this.customParams = customParams || {};
+        this.onSelect = onSelect || (() => { });
+        this.searchEnabled = searchEnabled;
+        this.inputSearchEnabled = inputSearchEnabled;
+        this.defaultSelected = defaultSelected;
+        this.grouped = grouped;
+        this.multiSelect = multiSelect;
+        this.inputMultiSelect = inputMultiSelect;
+        this.dropdown = null;
+        this.selectedItems = multiSelect ? [] : null;
+        this.styleId = `zhenshengyin-dropdown-style-${Math.random().toString(36).substr(2, 9)}`;
+        this.init();
+    }
+    init() {
+        this.container.onclick = (event) => this.showDropdown(event);
+        if (this.inputSearchEnabled) {
+            this.container.addEventListener('input', (e) => this.filterItems(e.target.value));
+        }
+        if (this.defaultSelected) {
+            const flatItems = this.grouped ? this.flattenGroupedItems(this.items) : this.items;
+            if (this.multiSelect) {
+                this.selectedItems = flatItems.filter(item => this.defaultSelected.includes(item.title));
+                this.updateInput();
+            } else {
+                this.selectedItems = flatItems.find(item => item.title === this.defaultSelected);
+                this.container.value = this.selectedItems ? this.selectedItems.title : '';
+            }
+        }
+    }
+    flattenGroupedItems(items) {
+        return items.reduce((acc, group) => acc.concat(group.children || []), []);
+    }
+    showDropdown(event) {
+        if (this.dropdown) {
+            this.dropdown.remove();
+            this.removeStyles();
+        }
+        this.dropdown = document.createElement('div');
+        this.dropdown.className = 'zhenshengyin-dropdown';
+        if (this.searchEnabled && !this.inputSearchEnabled) {
+            const searchInput = document.createElement('input');
+            searchInput.type = 'text';
+            searchInput.className = 'zhenshengyin-dropdown-search';
+            searchInput.placeholder = '搜索...';
+            searchInput.oninput = (e) => this.filterItems(e.target.value);
+            this.dropdown.appendChild(searchInput);
+        }
+        this.dropdown.style.width = `${this.container.offsetWidth}px`;
+        if (this.grouped) {
+            this.items.forEach(group => this.createGroup(group));
+        } else {
+            this.createItems(this.items);
+        }
+        const rect = this.container.getBoundingClientRect();
+        const rectHeight = this.container.offsetHeight;
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const spaceAbove = rect.top + window.scrollY;
+        document.body.appendChild(this.dropdown);
+        const pickerHeight = this.dropdown.offsetHeight;
+        const pickerWidth = this.dropdown.offsetWidth;
+        this.dropdown.classList.add('zhenshengyin-dropdown-show');
+        if (spaceBelow >= pickerHeight) {
+            this.dropdown.classList.add('zhenshengyin-dropdown-down');
+            this.dropdown.style.top = `${rect.bottom + window.scrollY}px`;
+        } else if (spaceAbove >= pickerHeight) {
+            this.dropdown.classList.add('zhenshengyin-dropdown-up');
+            this.dropdown.style.top = `${spaceAbove - pickerHeight}px`;
+        } else {
+            this.dropdown.classList.add('zhenshengyin-dropdown-down');
+            this.dropdown.style.top = `${rect.bottom + window.scrollY}px`;
+        }
+        if (rect.left + pickerWidth <= window.innerWidth) {
+            this.dropdown.style.left = `${rect.left + window.scrollX}px`;
+        } else if (window.innerWidth - rect.right >= pickerWidth) {
+            this.dropdown.style.left = `${rect.right + window.scrollX - pickerWidth}px`;
+        } else {
+            this.dropdown.style.left = `${rect.left + window.scrollX}px`;
+        }
+        document.removeEventListener('click', this.removeDropdown.bind(this));
+        document.addEventListener('click', this.removeDropdown.bind(this));
+    }
+    createGroup(group) {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'zhenshengyin-dropdown-group';
+        const groupTitle = document.createElement('div');
+        groupTitle.className = 'zhenshengyin-dropdown-group-title';
+        groupTitle.textContent = group.groupTitle || '分组';
+        groupDiv.appendChild(groupTitle);
+        this.createItems(group.children, groupDiv);
+        this.dropdown.appendChild(groupDiv);
+    }
+    createItems(items, container = this.dropdown) {
+        items.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'zhenshengyin-dropdown-item';
+            div.textContent = item.title;
+            div.onclick = () => this.selectItem(item);
+            container.appendChild(div);
+            if (
+                (this.multiSelect && this.selectedItems.some(selected => selected.title === item.title)) ||
+                (!this.multiSelect && this.selectedItems && this.selectedItems.title === item.title)
+            ) {
+                div.classList.add(this.multiSelect ? 'zhenshengyin-dropdown-item-selected-multiSelect' : 'zhenshengyin-dropdown-item-selected');
+            }
+        });
+    }
+    filterItems(query) {
+        if (this.grouped) {
+            const filteredGroups = this.items.map(group => {
+                const filteredChildren = group.children.filter(item =>
+                    item.title.toLowerCase().includes(query.toLowerCase())
+                );
+                return {
+                    ...group,
+                    children: filteredChildren,
+                };
+            }).filter(group => group.children.length > 0);
+
+            this.updateGroupedDropdown(filteredGroups);
+        } else {
+            const filteredItems = this.items.filter(item =>
+                item.title.toLowerCase().includes(query.toLowerCase())
+            );
+            this.updateDropdown(filteredItems);
+        }
+    }
+    updateGroupedDropdown(filteredGroups) {
+        const dropdownGroups = this.dropdown.querySelectorAll('.zhenshengyin-dropdown-group');
+        dropdownGroups.forEach(group => group.remove());
+        filteredGroups.forEach(group => this.createGroup(group));
+    }
+    updateDropdown(items) {
+        const dropdownItems = this.dropdown.querySelectorAll('.zhenshengyin-dropdown-item');
+        dropdownItems.forEach(item => item.remove());
+        this.createItems(items);
+    }
+    selectItem(item) {
+        if (this.multiSelect) {
+            const isSelected = this.selectedItems.some(selected => selected.title === item.title);
+
+            if (isSelected) {
+                this.selectedItems = this.selectedItems.filter(selected => selected.title !== item.title);
+            } else {
+                this.selectedItems.push(item);
+            }
+            this.updateInput();
+            const items = this.dropdown.querySelectorAll('.zhenshengyin-dropdown-item');
+            items.forEach(dropdownItem => {
+                if (this.selectedItems.some(selected => selected.title === dropdownItem.textContent)) {
+                    dropdownItem.classList.add('zhenshengyin-dropdown-item-selected-multiSelect');
+                } else {
+                    dropdownItem.classList.remove('zhenshengyin-dropdown-item-selected-multiSelect');
+                }
+            });
+        } else {
+            this.container.value = item.title;
+            const selectedItems = this.dropdown.querySelectorAll('.zhenshengyin-dropdown-item-selected');
+            selectedItems.forEach((selectedItem) => {
+                selectedItem.classList.remove('zhenshengyin-dropdown-item-selected');
+            });
+            const selectedItem = [...this.dropdown.children].find(child => child.textContent === item.title);
+            if (selectedItem) {
+                selectedItem.classList.add('zhenshengyin-dropdown-item-selected');
+            }
+            this.selectedItems = item;
+            this.dropdown.classList.remove('zhenshengyin-dropdown-show');
+            this.dropdown.classList.remove('zhenshengyin-dropdown-down');
+            this.dropdown.classList.remove('zhenshengyin-dropdown-up');
+            setTimeout(() => {
+                this.dropdown.remove();
+                this.removeStyles();
+            }, 300);
+        }
+        this.onSelect(item);
+    }
+    updateInput() {
+        if (this.inputMultiSelect) {
+            this.container.value = this.selectedItems.map(item => item.title).join(', ');
+        } else {
+            this.container.innerHTML = '';
+            this.selectedItems.forEach((item, index) => {
+                const itemText = item.title;
+                const removeButton = this.createRemoveButton(item);
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('zhenshengyin-dropdown-multiSelect');
+                itemElement.textContent = itemText;
+                itemElement.appendChild(removeButton);
+                this.container.appendChild(itemElement);
+            });
+        }
+    }
+    createRemoveButton(item) {
+        const removeButton = document.createElement('div');
+        removeButton.classList.add('zhenshengyin-dropdown-multiSelect-Button');
+        removeButton.textContent = ' ×';
+        removeButton.onclick = (event) => {
+            event.stopPropagation();
+            this.removeItem(item);
+        };
+        return removeButton;
+    }
+    removeItem(item) {
+        this.selectedItems = this.selectedItems.filter(selected => selected.title !== item.title);
+        this.updateInput();
+    }
+    removeDropdown(event) {
+        if (!this.dropdown.contains(event.target) && event.target !== this.container) {
+            this.dropdown.classList.remove('zhenshengyin-dropdown-show');
+            this.dropdown.classList.remove('zhenshengyin-dropdown-down');
+            this.dropdown.classList.remove('zhenshengyin-dropdown-up');
+            setTimeout(() => {
+                this.dropdown.remove();
+                this.removeStyles();
+            }, 300);
+        }
+    }
+    removeStyles() {
+        const styleElement = document.getElementById(this.styleId);
+        if (styleElement) {
+            styleElement.remove();
+        }
+    }
+}
+
+class ZhenshangyinLinkage {
+    constructor(options) {
+        this.inputElements = options.multiInputs
+            ? options.multiInputs.map(selector => document.querySelector(selector))
+            : [document.querySelector(options.container)];
+        this.data = options.data;
+        this.callback = options.callback || function () { };
+        this.separator = options.separator || " / ";
+        this.menu = null;
+        this.isMultiInputMode = options.multiInputs && options.multiInputs.length > 1;
+        this.selectedValues = [];
+        this.init();
+    }
+    init() {
+        this.inputElements.forEach((inputElement, index) => {
+            if (!inputElement || inputElement.tagName.toLowerCase() !== "input") return;
+            this.bindEvents(inputElement, index);
+        });
+    }
+    createDropdownMenu() {
+        if (this.menu) return;
+        this.menu = document.createElement("div");
+        this.menu.className = "zhenshangyin-dropdown-menu";
+        this.menu.innerHTML = `<ul class="zhenshangyin-dropdown-list"></ul>`;
+        document.body.appendChild(this.menu);
+    }
+    bindEvents(inputElement, level) {
+        inputElement.addEventListener("click", (event) => {
+            event.stopPropagation();
+            if (!this.menu) {
+                this.createDropdownMenu();
+            }
+            const list = this.menu.querySelector(".zhenshangyin-dropdown-list");
+            let currentData;
+            if (this.isMultiInputMode) {
+                if (level === 0) {
+                    currentData = this.data;
+                } else {
+                    let tempData = this.data;
+                    for (let i = 0; i < level; i++) {
+                        const selectedValue = this.selectedValues[i];
+                        const selectedItem = tempData.find(item => item.name === selectedValue);
+                        if (selectedItem && selectedItem.children) {
+                            tempData = selectedItem.children;
+                        } else {
+                            tempData = [];
+                            break;
+                        }
+                    }
+                    currentData = tempData;
+                }
+            } else {
+                currentData = level === 0 ? this.data : this.getSubData(level);
+            }
+            this.showDropdown(inputElement, list, currentData, level);
+        });
+        document.addEventListener("click", (event) => {
+            if (this.menu && !this.menu.contains(event.target) && !inputElement.contains(event.target)) {
+                this.closeDropdown();
+            }
+        });
+    }
+    showDropdown(inputElement, list, currentData, level) {
+        this.menu.innerHTML = '';
+        const firstList = document.createElement("ul");
+        firstList.className = "zhenshangyin-dropdown-list";
+        this.menu.appendChild(firstList);
+        if (this.isMultiInputMode) {
+            this.populateList(currentData, firstList, level);
+            this.bindListEvents(firstList, level);
+        } else {
+            this.populateList(this.data, firstList, 0);
+            this.bindListEvents(firstList, 0);
+            if (this.selectedValues.length > 0) {
+                let currentLevelData = this.data;
+                for (let i = 0; i < this.selectedValues.length - 1; i++) {
+                    const selectedItem = currentLevelData.find(item => item.name === this.selectedValues[i]);
+                    if (selectedItem && selectedItem.children) {
+                        currentLevelData = selectedItem.children;
+                        const nextList = document.createElement("ul");
+                        nextList.className = "zhenshangyin-dropdown-list";
+                        this.menu.appendChild(nextList);
+                        this.populateList(currentLevelData, nextList, i + 1);
+                        this.bindListEvents(nextList, i + 1);
+                    }
+                }
+            }
+        }
+        requestAnimationFrame(() => {
+            const rect = inputElement.getBoundingClientRect();
+            const rectHeight = inputElement.offsetHeight;
+            const spaceBelow = window.innerHeight - rect.bottom;
+            const distanceFromTop = rect.top + window.scrollY;
+            const pickerHeight = this.menu.offsetHeight;
+            this.menu.classList.add("zhenshangyin-dropdown-show");
+            this.menu.style.left = `${rect.left + window.scrollX}px`;
+            if (spaceBelow < pickerHeight && distanceFromTop < pickerHeight) {
+                this.menu.style.top = `${distanceFromTop + rectHeight}px`;
+                this.menu.classList.add("zhenshangyin-dropdown-down");
+            } else if (spaceBelow < pickerHeight) {
+                this.menu.style.top = `${distanceFromTop - pickerHeight}px`;
+                this.menu.classList.add("zhenshangyin-dropdown-up");
+            } else {
+                this.menu.style.top = `${distanceFromTop + rectHeight}px`;
+                this.menu.classList.add("zhenshangyin-dropdown-down");
+            }
+        });
+    }
+    bindListEvents(list, level) {
+        list.addEventListener("click", (event) => {
+            const target = event.target.closest("li");
+            if (!target) return;
+            [...list.children].forEach(item => item.classList.remove("zhenshangyin-dropdown-selected"));
+            target.classList.add("zhenshangyin-dropdown-selected");
+            const subData = target.dataset.children ? JSON.parse(target.dataset.children) : [];
+            this.updateSelection(level, target.innerText);
+
+            if (this.isMultiInputMode) {
+                this.closeDropdown();
+            } else {
+                this.clearLowerLevelMenus(level + 1);
+
+                if (subData.length > 0) {
+                    const nextList = document.createElement("ul");
+                    nextList.className = "zhenshangyin-dropdown-list";
+                    this.menu.appendChild(nextList);
+                    this.populateList(subData, nextList, level + 1);
+                    this.bindListEvents(nextList, level + 1);
+                } else {
+                    this.closeDropdown();
+                }
+            }
+        });
+    }
+    populateList(data, listElement, level) {
+        listElement.innerHTML = data
+            .map(item => {
+                const isSelected = this.selectedValues[level] === item.name;
+                return `<li data-children='${item.children ? JSON.stringify(item.children) : ''}' class="${isSelected ? 'zhenshangyin-dropdown-selected' : ''}">${item.name}</li>`;
+            })
+            .join('');
+    }
+    updateSelection(level, value) {
+        this.selectedValues[level] = value;
+        for (let i = level + 1; i < this.selectedValues.length; i++) {
+            this.selectedValues[i] = null;
+        }
+        if (this.isMultiInputMode) {
+            const inputElement = this.inputElements[level];
+            if (inputElement) inputElement.value = value;
+            for (let i = level + 1; i < this.inputElements.length; i++) {
+                this.inputElements[i].value = '';
+            }
+        } else {
+            const inputElement = this.inputElements[0];
+            inputElement.value = this.selectedValues.filter(Boolean).join(this.separator);
+        }
+        this.callback(this.getFullSelection());
+    }
+    getSubData(level) {
+        let data = this.data;
+        for (let i = 0; i < level; i++) {
+            const selectedValue = this.selectedValues[i];
+            const selectedItem = data.find(item => item.name === selectedValue);
+            data = selectedItem ? selectedItem.children || [] : [];
+        }
+        return data;
+    }
+    getFullSelection() {
+        return this.selectedValues.filter(Boolean).join(this.separator);
+    }
+    clearLowerLevelMenus(level) {
+        const lowerMenus = document.querySelectorAll('.zhenshangyin-dropdown-list');
+        for (let i = level; i < lowerMenus.length; i++) {
+            lowerMenus[i].parentNode.removeChild(lowerMenus[i]);
+        }
+    }
+    closeDropdown() {
+        if (this.menu) {
+            this.menu.classList.remove('zhenshangyin-dropdown-show');
+            setTimeout(() => {
+                if (this.menu) {
+                    this.menu.remove();
+                    this.menu = null;
+                }
+            }, 300);
+        }
+    }
+}
+
+class ZhenshangyinLoadingBar {
+    constructor({ height = '2px', backgroundColor = '#000000' } = {}) {
+        this.element = document.createElement('div');
+        this.element.id = 'loading';
+        this.element.style.height = height;
+        this.element.style.position = 'fixed';
+        this.element.style.top = '0';
+        this.element.style.left = '0';
+        this.element.style.background = backgroundColor;
+        this.element.style.zIndex = '999999';
+        this.element.style.width = '0';
+        document.body.appendChild(this.element);
+    }
+    hide() {
+        this.element.style.width = '0%';
+    }
+    updateProgress(percentage) {
+        this.element.style.width = percentage + '%';
+    }
+    bindToScroll() {
+        window.addEventListener('scroll', () => {
+            this.updateScrollProgress();
+        });
+    }
+    updateScrollProgress() {
+        const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPosition = window.scrollY;
+        const scrollPercentage = (scrollPosition / totalHeight) * 100;
+        this.updateProgress(scrollPercentage);
+    }
+}
