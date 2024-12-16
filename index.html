@@ -38,42 +38,42 @@
             <div class="MainRightList">
                 <h2>LoadingBar 加载进度条</h2>
                 <div class="code">
-                    <code>new ZhenshangyinLoadingBar({ });</code>
+                    <code>new ZhenshangyinLoadingBar(options);</code>
                 </div>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th><strong>参数/方法</strong></th>
-                                <th><strong>类型</strong></th>
-                                <th><strong>默认值</strong></th>
-                                <th><strong>说明</strong></th>
+                                <th>参数</th>
+                                <th>类型</th>
+                                <th>默认值</th>
+                                <th>说明</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><code>height</code></td>
-                                <td><code>String</code></td>
+                                <td><code>string</code></td>
                                 <td><code>'2px'</code></td>
-                                <td>加载条的高度。</td>
+                                <td>进度条高度</td>
                             </tr>
                             <tr>
                                 <td><code>backgroundColor</code></td>
-                                <td><code>String</code></td>
+                                <td><code>string</code></td>
                                 <td><code>'#000000'</code></td>
-                                <td>加载条的背景颜色。</td>
+                                <td>进度条背景色</td>
                             </tr>
                             <tr>
                                 <td><code>bindToScroll</code></td>
-                                <td><code>Function</code></td>
+                                <td><code>function</code></td>
                                 <td>-</td>
-                                <td>绑定滚动事件，将加载条的宽度根据滚动位置实时更新。</td>
+                                <td>绑定滚动事件，根据滚动位置更新进度</td>
                             </tr>
                             <tr>
                                 <td><code>updateProgress</code></td>
-                                <td><code>Function</code></td>
+                                <td><code>function</code></td>
                                 <td>-</td>
-                                <td>手动更新加载条的进度。接受一个数字类型的参数 <code>percentage</code>，表示加载进度（0 到 100）。</td>
+                                <td>手动更新进度，参数为进度值(0-100)</td>
                             </tr>
                         </tbody>
                     </table>
@@ -83,29 +83,29 @@
                 <h2>Message 消息提示</h2>
                 <ul class="grid4">
                     <li>
-                        <button id="showSuccessMessageA">显示成功消息</button>
+                        <button id="showSuccessMessageA">成功提示</button>
                     </li>
                     <li>
-                        <button id="showWarningMessageA">显示警告消息</button>
+                        <button id="showWarningMessageA">警告提示</button>
                     </li>
                     <li>
-                        <button id="showInfoMessageA">显示信息消息</button>
+                        <button id="showInfoMessageA">信息提示</button>
                     </li>
                     <li>
-                        <button id="showErrorMessageA">显示错误消息</button>
+                        <button id="showErrorMessageA">错误提示</button>
                     </li>
                 </ul>
                 <div class="code">
-                    <code>new ZhenshangyinMessage({ });</code>
+                    <code>new ZhenshangyinMessage(options);</code>
                 </div>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th><strong>参数</strong></th>
-                                <th><strong>类型</strong></th>
-                                <th><strong>默认值</strong></th>
-                                <th><strong>说明</strong></th>
+                                <th>参数</th>
+                                <th>类型</th>
+                                <th>默认值</th>
+                                <th>说明</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -113,20 +113,19 @@
                                 <td><code>message</code></td>
                                 <td><code>string</code></td>
                                 <td>-</td>
-                                <td>通知显示的主要内容。</td>
+                                <td>消息内容</td>
                             </tr>
                             <tr>
                                 <td><code>type</code></td>
                                 <td><code>string</code></td>
                                 <td><code>'info'</code></td>
-                                <td>通知的类型，决定通知的背景颜色和图标。可选值：<code>'info'</code>、<code>'success'</code>、<code>'warning'</code>、<code>'error'</code>。
-                                </td>
+                                <td>消息类型，可选值：<code>'info'</code>、<code>'success'</code>、<code>'warning'</code>、<code>'error'</code></td>
                             </tr>
                             <tr>
                                 <td><code>duration</code></td>
                                 <td><code>number</code></td>
                                 <td><code>2000</code></td>
-                                <td>通知显示的时长（以毫秒为单位）。通知在此时间后自动消失，若为 <code>0</code> 或未指定则通知永不消失。</td>
+                                <td>显示时长(毫秒)，设为 0 则不会自动关闭</td>
                             </tr>
                         </tbody>
                     </table>
@@ -136,29 +135,29 @@
                 <h2>Notification 通知</h2>
                 <ul class="grid4">
                     <li>
-                        <button id="showSuccessNotification">显示成功消息</button>
+                        <button id="showSuccessNotification">成功通知</button>
                     </li>
                     <li>
-                        <button id="showWarningNotification">显示警告消息</button>
+                        <button id="showWarningNotification">警告通知</button>
                     </li>
                     <li>
-                        <button id="showInfoNotification">显示信息消息</button>
+                        <button id="showInfoNotification">信息通知</button>
                     </li>
                     <li>
-                        <button id="showErrorNotification">显示错误消息</button>
+                        <button id="showErrorNotification">错误通知</button>
                     </li>
                 </ul>
                 <div class="code">
-                    <code>new ZhenshangyinNotification({ });</code>
+                    <code>new ZhenshangyinNotification(options);</code>
                 </div>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th><strong>参数</strong></th>
-                                <th><strong>类型</strong></th>
-                                <th><strong>默认值</strong></th>
-                                <th><strong>说明</strong></th>
+                                <th>参数</th>
+                                <th>类型</th>
+                                <th>默认值</th>
+                                <th>说明</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -166,26 +165,25 @@
                                 <td><code>title</code></td>
                                 <td><code>string</code></td>
                                 <td>-</td>
-                                <td>通知的标题文本，显示在通知的顶部部分。</td>
+                                <td>通知标题</td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
                                 <td><code>string</code></td>
                                 <td>-</td>
-                                <td>通知的主要内容，显示在通知的正文部分。</td>
+                                <td>通知内容</td>
                             </tr>
                             <tr>
                                 <td><code>type</code></td>
                                 <td><code>string</code></td>
                                 <td><code>'info'</code></td>
-                                <td>通知的类型，决定通知的背景颜色和图标。可选值：<code>'info'</code>、<code>'success'</code>、<code>'warning'</code>、<code>'error'</code>。
-                                </td>
+                                <td>通知类型，可选值：<code>'info'</code>、<code>'success'</code>、<code>'warning'</code>、<code>'error'</code></td>
                             </tr>
                             <tr>
                                 <td><code>duration</code></td>
                                 <td><code>number</code></td>
                                 <td><code>2000</code></td>
-                                <td>通知显示的时长（以毫秒为单位），到达此时间后通知自动消失。若为 <code>0</code> 或未指定则通知永不消失。</td>
+                                <td>显示时长(毫秒)，设为 0 则不会自动关闭</td>
                             </tr>
                         </tbody>
                     </table>
@@ -195,16 +193,54 @@
                 <h2>DatePicker 日期选择器</h2>
                 <ul class="grid2">
                     <li>
-                        <h3>选择日期</h3>
-                        <input type="text" id="datePickerSimple" placeholder="选择日期">
+                        <h3>基础用法</h3>
+                        <input type="text" id="datePickerSimple" placeholder="请选择日期">
                     </li>
                     <li>
-                        <h3>选择日期带时间</h3>
-                        <input type="text" id="datePickerWithTime" placeholder="选择日期带时间">
+                        <h3>日期时间</h3>
+                        <input type="text" id="datePickerWithTime" placeholder="请选择日期时间">
+                    </li>
+                </ul>
+                <ul class="grid2">
+                    <li>
+                        <h3>日期范围</h3>
+                        <input type="text" id="dateRangePickerSimple" placeholder="请选择日期范围">
+                    </li>
+                    <li>
+                        <h3>日期时间范围</h3>
+                        <input type="text" id="dateRangePickerWithTime" placeholder="请选择日期时间范围">
+                    </li>
+                </ul>
+                <ul class="grid3">
+                    <li>
+                        <h3>月份选择</h3>
+                        <input type="text" id="monthPickerSimple" placeholder="请选择月份">
+                    </li>
+                    <li>
+                        <h3>月份多选</h3>
+                        <input type="text" id="multiMonthPicker" placeholder="请选择多个月份">
+                    </li>
+                    <li>
+                        <h3>月份范围</h3>
+                        <input type="text" id="monthRangePicker" placeholder="请选择月份范围">
+                    </li>
+                </ul>
+                <ul class="grid3">
+                    <li>
+                        <h3>年份选择</h3>
+                        <input type="text" id="yearPickerSimple" placeholder="请选择年份">
+                    </li>
+                    <li>
+                        <h3>年份多选</h3>
+                        <input type="text" id="multiYearPicker" placeholder="请选择多个年份">
+                    </li>
+                    <li>
+                        <h3>年份范围</h3>
+                        <input type="text" id="yearRangePicker" placeholder="请选择年份范围">
                     </li>
                 </ul>
                 <div class="code">
-                    <code>new ZhenshangyinDatePicker('inputSelector', {});</code>
+                    <code>new ZhenshangyinDateSelector('inputSelector', options);</code>
                 </div>
                 <div class="table">
                     <table>
@@ -218,259 +254,64 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><code>inputSelector</code></td>
+                                <td><code>type</code></td>
                                 <td><code>string</code></td>
-                                <td><code>null</code></td>
-                                <td>选择日期输入框的 CSS 选择器。</td>
+                                <td><code>'date'</code></td>
+                                <td>选择器类型，可选值：<code>'date'</code>(日期)、<code>'dateRange'</code>(日期范围)、<code>'month'</code>(月份)、<code>'monthRange'</code>(月份范围)、<code>'year'</code>(年份)、<code>'yearRange'</code>(年份范围)</td>
                             </tr>
                             <tr>
                                 <td><code>dateFormat</code></td>
                                 <td><code>string</code></td>
                                 <td><code>'YYYY-MM-DD'</code></td>
-                                <td>日期格式，支持多种格式，如：<code>'YYYY-MM-DD'</code>, <code>'MM/DD/YYYY'</code>,
-                                    <code>'DD/MM/YYYY'</code>等。
-                                </td>
+                                <td>日期格式，支持：<code>YYYY</code>(年)、<code>MM</code>(月)、<code>DD</code>(日)、<code>HH</code>(时)、<code>mm</code>(分)、<code>ss</code>(秒)</td>
+                            </tr>
+                            <tr>
+                                <td><code>separator</code></td>
+                                <td><code>string</code></td>
+                                <td><code>'至'</code></td>
+                                <td>范围选择的分隔符</td>
+                            </tr>
+                            <tr>
+                                <td><code>multiSelect</code></td>
+                                <td><code>boolean</code></td>
+                                <td><code>false</code></td>
+                                <td>是否开启多选（仅月份和年份选择支持）</td>
                             </tr>
                             <tr>
                                 <td><code>onDateSelect</code></td>
                                 <td><code>function</code></td>
-                                <td><code>() => {}</code></td>
-                                <td>日期选择后的回调函数。</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <ul class="grid2">
-                    <li>
-                        <h3>选择日期区间</h3>
-                        <input type="text" id="dateRangePickerSimple" placeholder="选择日期区间">
-                    </li>
-                    <li>
-                        <h3>选择日期区间带时间</h3>
-                        <input type="text" id="dateRangePickerWithTime" placeholder="选择日期区间带时间">
-                    </li>
-                </ul>
-                <div class="code">
-                    <code>new ZhenshangyinDateRangePicker('inputSelector', {});</code>
-                </div>
-                <div class="table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>参数</th>
-                                <th>类型</th>
-                                <th>默认值</th>
-                                <th>说明</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>inputSelector</code></td>
-                                <td><code>string</code></td>
                                 <td>-</td>
-                                <td>输入框的选择器字符串</td>
-                            </tr>
-                            <tr>
-                                <td><code>dateFormat</code></td>
-                                <td><code>string</code></td>
-                                <td><code>'YYYY-MM-DD'</code></td>
-                                <td>日期格式，支持多种格式，如：'YYYY-MM-DD', 'MM/DD/YYYY', 'DD/MM/YYYY'等。</td>
+                                <td>日期选择的回调函数</td>
                             </tr>
                             <tr>
                                 <td><code>onDateRangeSelect</code></td>
                                 <td><code>function</code></td>
-                                <td><code>() => {}</code></td>
-                                <td>日期范围选择后的回调函数，默认为空函数</td>
-                            </tr>
-                            <tr>
-                                <td><code>separator</code></td>
-                                <td><code>string</code></td>
-                                <td><code>' - '</code></td>
-                                <td>日期范围分隔符，默认为 <code>' - '</code></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <ul class="grid2">
-                    <li>
-                        <h3>选择月份</h3>
-                        <input type="text" id="monthPickerSimple" placeholder="选择月份">
-                    </li>
-                    <li>
-                        <h3>选择多个月份</h3>
-                        <input type="text" id="multiMonthPicker" placeholder="选择多个月份">
-                    </li>
-                </ul>
-                <div class="code">
-                    <code>new ZhenshangyinMonthPicker('inputSelector', {});</code>
-                </div>
-                <div class="table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>参数</th>
-                                <th>类型</th>
-                                <th>默认值</th>
-                                <th>说明</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>inputSelector</code></td>
-                                <td><code>string</code></td>
                                 <td>-</td>
-                                <td>输入框的选择器字符串</td>
-                            </tr>
-                            <tr>
-                                <td><code>dateFormat</code></td>
-                                <td><code>string</code></td>
-                                <td><code>'YYYY-MM'</code></td>
-                                <td>日期格式，支持多种格式，如：'YYYY-MM-DD', 'MM/DD/YYYY', 'DD/MM/YYYY'等。</td>
+                                <td>日期范围选择的回调函数</td>
                             </tr>
                             <tr>
                                 <td><code>onMonthSelect</code></td>
                                 <td><code>function</code></td>
-                                <td><code>() => {}</code></td>
-                                <td>月份选择后的回调函数，默认为空函数</td>
-                            </tr>
-                            <tr>
-                                <td><code>multiSelect</code></td>
-                                <td><code>boolean</code></td>
-                                <td><code>false</code></td>
-                                <td>是否允许多选月份，默认为 <code>false</code></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <ul>
-                    <li>
-                        <h3>选择月份区间</h3>
-                        <input type="text" id="monthRangePicker" placeholder="选择月份区间">
-                    </li>
-                </ul>
-                <div class="code">
-                    <code>new ZhenshangyinMonthRangePicker('inputSelector', {});</code>
-                </div>
-                <div class="table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>参数</th>
-                                <th>类型</th>
-                                <th>默认值</th>
-                                <th>说明</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>inputSelector</code></td>
-                                <td><code>string</code></td>
                                 <td>-</td>
-                                <td>输入元素的选择器，用于绑定日期范围选择器</td>
-                            </tr>
-                            <tr>
-                                <td><code>dateFormat</code></td>
-                                <td><code>string</code></td>
-                                <td><code>'YYYY-MM'</code></td>
-                                <td>日期格式，支持多种格式，如：'YYYY-MM-DD', 'MM/DD/YYYY', 'DD/MM/YYYY'等。</code></td>
+                                <td>月份选择的回调函数</td>
                             </tr>
                             <tr>
                                 <td><code>onMonthRangeSelect</code></td>
                                 <td><code>function</code></td>
-                                <td>() => {}</td>
-                                <td>当月份范围选择完成后触发的回调函数</td>
-                            </tr>
-                            <tr>
-                                <td><code>separator</code></td>
-                                <td><code>string</code></td>
-                                <td><code>' - '</code></td>
-                                <td>开始月份和结束月份之间的分隔符，默认为 <code>' - '</code></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <ul class="grid2">
-                    <li>
-                        <h3>选择年份</h3>
-                        <input type="text" id="yearPickerSimple" placeholder="选择年份">
-                    </li>
-                    <li>
-                        <h3>选择多个年份</h3>
-                        <input type="text" id="multiYearPicker" placeholder="选择多个年份">
-                    </li>
-                </ul>
-                <div class="code">
-                    <code>new ZhenshangyinYearPicker('inputSelector', {});</code>
-                </div>
-                <div class="table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>参数</th>
-                                <th>类型</th>
-                                <th>默认值</th>
-                                <th>说明</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>inputSelector</code></td>
-                                <td><code>string</code></td>
                                 <td>-</td>
-                                <td>输入元素的选择器，用于绑定年份选择器</td>
+                                <td>月份范围选择的回调函数</td>
                             </tr>
                             <tr>
                                 <td><code>onYearSelect</code></td>
                                 <td><code>function</code></td>
-                                <td><code>() =&gt; {}</code></td>
-                                <td>当年份被选择时触发的回调函数</td>
-                            </tr>
-                            <tr>
-                                <td><code>multiSelect</code></td>
-                                <td><code>boolean</code></td>
-                                <td><code>false</code></td>
-                                <td>是否允许多选年份，默认为 <code>false</code></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <ul>
-                    <li>
-                        <h3>选择年份区间</h3>
-                        <input type="text" id="yearRangePicker" placeholder="选择年份区间">
-                    </li>
-                </ul>
-                <div class="code">
-                    <code>new ZhenshangyinYearRangePicker('inputSelector', {});</code>
-                </div>
-                <div class="table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>参数</th>
-                                <th>类型</th>
-                                <th>默认值</th>
-                                <th>说明</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>inputSelector</code></td>
-                                <td><code>string</code></td>
-                                <td><code>-</code></td>
-                                <td>选择器，用于选择输入框的 DOM 元素。</td>
+                                <td>-</td>
+                                <td>年份选择的回调函数</td>
                             </tr>
                             <tr>
                                 <td><code>onYearRangeSelect</code></td>
                                 <td><code>function</code></td>
-                                <td><code>() => {}</code></td>
-                                <td>选择年份范围后触发的回调函数。</td>
-                            </tr>
-                            <tr>
-                                <td><code>separator</code></td>
-                                <td><code>string</code></td>
-                                <td><code>' - '</code></td>
-                                <td>起始年份和结束年份之间的分隔符。</td>
+                                <td>-</td>
+                                <td>年份范围选择的回调函数</td>
                             </tr>
                         </tbody>
                     </table>
@@ -480,16 +321,16 @@
                 <h2>TimePicker 时间选择器</h2>
                 <ul class="grid2">
                     <li>
-                        <h3>选择时间</h3>
-                        <input type="text" id="timeInput" placeholder="选择时间">
+                        <h3>基础用法</h3>
+                        <input type="text" id="timeInput" placeholder="请选择时间">
                     </li>
                     <li>
-                        <h3>选择时间区间</h3>
-                        <input type="text" id="timeRangeInput" placeholder="选择时间区间">
+                        <h3>时间范围</h3>
+                        <input type="text" id="timeRangeInput" placeholder="请选择时间范围">
                     </li>
                 </ul>
                 <div class="code">
-                    <code>new ZhenshangyinTimePicker('inputSelector', {});</code>
+                    <code>new ZhenshangyinTimePicker('inputSelector', options);</code>
                 </div>
                 <div class="table">
                     <table>
@@ -506,31 +347,31 @@
                                 <td><code>inputSelector</code></td>
                                 <td><code>string</code></td>
                                 <td>-</td>
-                                <td>输入框的选择器字符串</td>
+                                <td>输入框选择器</td>
                             </tr>
                             <tr>
                                 <td><code>dateFormat</code></td>
                                 <td><code>string</code></td>
                                 <td><code>'HH:mm:ss'</code></td>
-                                <td>时间格式，支持 <code>'HH'</code>、<code>'HH:mm'</code>、<code>'HH:mm:ss'</code> 三种格式</td>
+                                <td>时间格式，支持：<code>'HH'</code>、<code>'HH:mm'</code>、<code>'HH:mm:ss'</code></td>
                             </tr>
                             <tr>
                                 <td><code>onTimeSelect</code></td>
                                 <td><code>function</code></td>
                                 <td><code>() => {}</code></td>
-                                <td>时间选择后的回调函数</td>
+                                <td>时间选择的回调函数</td>
                             </tr>
                             <tr>
                                 <td><code>isRange</code></td>
                                 <td><code>boolean</code></td>
                                 <td><code>false</code></td>
-                                <td>是否为时间范围选择器</td>
+                                <td>是否为时间范围选择</td>
                             </tr>
                             <tr>
                                 <td><code>separator</code></td>
                                 <td><code>string</code></td>
                                 <td><code>' - '</code></td>
-                                <td>范围选择时的分隔符</td>
+                                <td>范围选择的分隔符</td>
                             </tr>
                         </tbody>
                     </table>
@@ -540,20 +381,20 @@
                 <h2>Select 选择器</h2>
                 <ul class="grid3">
                     <li>
-                        <h3>下拉选择</h3>
+                        <h3>基础用法</h3>
                         <input type="text" id="dropdownSingleSelect">
                     </li>
                     <li>
-                        <h3>下拉多选带删除</h3>
+                        <h3>多选删除</h3>
                         <div id="dropdownMultiSelectWithDelete"></div>
                     </li>
                     <li>
-                        <h3>下拉多选</h3>
+                        <h3>多选</h3>
                         <input type="text" id="dropdownMultiSelect">
                     </li>
                 </ul>
                 <div class="code">
-                    <code>new ZhenshangyinDropdown({ });</code>
+                    <code>new ZhenshangyinDropdown(options);</code>
                 </div>
                 <div class="table">
                     <table>
@@ -569,62 +410,62 @@
                             <tr>
                                 <td><code>container</code></td>
                                 <td><code>string</code></td>
-                                <td><code>-</code></td>
-                                <td>必填，用于指定下拉菜单挂载的容器的选择器字符串。</td>
+                                <td>-</td>
+                                <td>选择器容器</td>
                             </tr>
                             <tr>
                                 <td><code>data</code></td>
                                 <td><code>array</code></td>
-                                <td><code>-</code></td>
-                                <td>必填，下拉菜单的数据项数组。</td>
+                                <td>-</td>
+                                <td>选项数据</td>
                             </tr>
                             <tr>
                                 <td><code>customParams</code></td>
                                 <td><code>object</code></td>
                                 <td><code>{}</code></td>
-                                <td>可选，自定义参数对象。</td>
+                                <td>自定义参数</td>
                             </tr>
                             <tr>
                                 <td><code>onSelect</code></td>
                                 <td><code>function</code></td>
-                                <td><code>() =&gt; {}</code></td>
-                                <td>可选，当选项被选中时的回调函数。</td>
+                                <td><code>() => {}</code></td>
+                                <td>选择的回调函数</td>
                             </tr>
                             <tr>
                                 <td><code>searchEnabled</code></td>
                                 <td><code>boolean</code></td>
                                 <td><code>false</code></td>
-                                <td>可选，是否启用搜索功能。</td>
+                                <td>是否开启搜索</td>
                             </tr>
                             <tr>
                                 <td><code>inputSearchEnabled</code></td>
                                 <td><code>boolean</code></td>
                                 <td><code>false</code></td>
-                                <td>可选，是否在输入框中启用搜索功能。</td>
+                                <td>是否开启输入框搜索</td>
                             </tr>
                             <tr>
                                 <td><code>defaultSelected</code></td>
                                 <td><code>string/array</code></td>
                                 <td><code>null</code></td>
-                                <td>可选，初始选中的选项标题或标题数组（多选时）。</td>
+                                <td>默认选中项</td>
                             </tr>
                             <tr>
                                 <td><code>grouped</code></td>
                                 <td><code>boolean</code></td>
                                 <td><code>false</code></td>
-                                <td>可选，数据项是否分组。</td>
+                                <td>是否开启分组</td>
                             </tr>
                             <tr>
                                 <td><code>multiSelect</code></td>
                                 <td><code>boolean</code></td>
                                 <td><code>false</code></td>
-                                <td>可选，是否允许多选。</td>
+                                <td>是否开启多选</td>
                             </tr>
                             <tr>
                                 <td><code>inputMultiSelect</code></td>
                                 <td><code>boolean</code></td>
                                 <td><code>false</code></td>
-                                <td>可选，是否在输入框中显示多选结果。</td>
+                                <td>是否在输入框显示多选结果</td>
                             </tr>
                         </tbody>
                     </table>
@@ -634,15 +475,15 @@
                 <h2>Cascader 级联选择器</h2>
                 <ul class="grid3">
                     <li>
-                        <h3>省市区级联选择</h3>
+                        <h3>基础用法</h3>
                         <input type="text" id="cascaderProvinceCityDistrict" placeholder="请选择">
                     </li>
                     <li>
-                        <h3>无限联动</h3>
+                        <h3>无限级联</h3>
                         <input type="text" id="cascaderInfinite" placeholder="请选择">
                     </li>
                     <li>
-                        <h3>省市区级联选择</h3>
+                        <h3>多级联动</h3>
                         <div class="grid3">
                             <input type="text" id="cascaderProvinceInput" placeholder="请选择">
                             <input type="text" id="cascaderCityInput" placeholder="请选择">
@@ -651,7 +492,7 @@
                     </li>
                 </ul>
                 <div class="code">
-                    <code>new ZhenshangyinLinkage({ });</code>
+                    <code>new ZhenshangyinLinkage(options);</code>
                 </div>
                 <div class="table">
                     <table>
@@ -667,34 +508,32 @@
                             <tr>
                                 <td><code>container</code></td>
                                 <td><code>string</code></td>
-                                <td><code>-</code></td>
-                                <td>级联选择器的容器选择器，例如 <code>#cascaderProvinceCityDistrict</code>。</td>
+                                <td>-</td>
+                                <td>选择器容器</td>
                             </tr>
                             <tr>
                                 <td><code>multiInputs</code></td>
                                 <td><code>string[]</code></td>
-                                <td><code>-</code></td>
-                                <td>多输入框的选择器数组，例如
-                                    <code>['#cascaderProvinceInput', '#cascaderCityInput', '#cascaderDistrictInput']</code>。
-                                </td>
+                                <td>-</td>
+                                <td>多选择器容器数组</td>
                             </tr>
                             <tr>
                                 <td><code>data</code></td>
                                 <td><code>object[]</code></td>
-                                <td><code>-</code></td>
-                                <td>数据源，包含级联选择的数据结构。</td>
+                                <td>-</td>
+                                <td>级联数据</td>
                             </tr>
                             <tr>
                                 <td><code>separator</code></td>
                                 <td><code>string</code></td>
-                                <td><code>"-"</code></td>
-                                <td>分隔符，用于连接选择的值，默认为 <code>-</code>。</td>
+                                <td><code>'-'</code></td>
+                                <td>选项分隔符</td>
                             </tr>
                             <tr>
                                 <td><code>callback</code></td>
                                 <td><code>function</code></td>
                                 <td><code>() => {}</code></td>
-                                <td>回调函数，在选择值发生变化时触发，参数为选中的值。</td>
+                                <td>选择的回调函数</td>
                             </tr>
                         </tbody>
                     </table>
@@ -738,21 +577,27 @@
             new ZhenshangyinNotification({ title: '提示', message: '出错了', type: 'error', duration: 2000 });
         });
 
-        new ZhenshangyinDatePicker('#datePickerSimple', {
+        // 选择日期
+        new ZhenshangyinDateSelector('#datePickerSimple', {
+            type: 'date',
             dateFormat: 'YYYY-MM-DD',
             onDateSelect: (formattedDate) => {
-                console.log('Selected Date and Time:', formattedDate);
+                console.log('Selected Date:', formattedDate);
             }
         });
 
-        new ZhenshangyinDatePicker('#datePickerWithTime', {
+        // 选择日期带时间
+        new ZhenshangyinDateSelector('#datePickerWithTime', {
+            type: 'date', 
             dateFormat: 'YYYY-MM-DD HH:mm:ss',
             onDateSelect: (formattedDate) => {
                 console.log('Selected Date and Time:', formattedDate);
             }
         });
 
-        new ZhenshangyinDateRangePicker('#dateRangePickerSimple', {
+        // 选择日期区间
+        new ZhenshangyinDateSelector('#dateRangePickerSimple', {
+            type: 'dateRange',
             dateFormat: 'YYYY/MM/DD',
             separator: '至',
             onDateRangeSelect: (formattedRange) => {
@@ -760,7 +605,9 @@
             }
         });
 
-        new ZhenshangyinDateRangePicker('#dateRangePickerWithTime', {
+        // 选择日期区间带时间
+        new ZhenshangyinDateSelector('#dateRangePickerWithTime', {
+            type: 'dateRange',
             dateFormat: 'YYYY-MM-DD HH:mm:ss',
             separator: '至',
             onDateRangeSelect: (formattedRange) => {
@@ -768,14 +615,18 @@
             }
         });
 
-        new ZhenshangyinMonthPicker('#monthPickerSimple', {
+        // 选择月份
+        new ZhenshangyinDateSelector('#monthPickerSimple', {
+            type: 'month',
             dateFormat: 'YYYY-MM',
             onMonthSelect: (selectedMonth) => {
                 console.log('Selected Month:', selectedMonth);
             }
         });
 
-        new ZhenshangyinMonthPicker('#multiMonthPicker', {
+        // 选择多个月份
+        new ZhenshangyinDateSelector('#multiMonthPicker', {
+            type: 'month',
             dateFormat: 'YYYY-MM',
             multiSelect: true,
             onMonthSelect: (selectedMonths) => {
@@ -783,7 +634,9 @@
             }
         });
 
-        new ZhenshangyinMonthRangePicker('#monthRangePicker', {
+        // 选择月份区间
+        new ZhenshangyinDateSelector('#monthRangePicker', {
+            type: 'monthRange',
             dateFormat: 'YYYY-MM',
             separator: '至',
             onMonthRangeSelect: (formattedRange) => {
@@ -791,20 +644,26 @@
             }
         });
 
-        new ZhenshangyinYearPicker('#yearPickerSimple', {
+        // 选择年份
+        new ZhenshangyinDateSelector('#yearPickerSimple', {
+            type: 'year',
             onYearSelect: (selectedYear) => {
                 console.log('Selected Year:', selectedYear);
             }
         });
 
-        new ZhenshangyinYearPicker('#multiYearPicker', {
+        // 选择多个年份
+        new ZhenshangyinDateSelector('#multiYearPicker', {
+            type: 'year',
             multiSelect: true,
             onYearSelect: (selectedYears) => {
                 console.log('Selected Years:', selectedYears);
             }
         });
 
-        new ZhenshangyinYearRangePicker('#yearRangePicker', {
+        // 选择年份区间
+        new ZhenshangyinDateSelector('#yearRangePicker', {
+            type: 'yearRange',
             separator: '至',
             onYearRangeSelect: (formattedRange) => {
                 console.log('Selected Year Range:', formattedRange);
